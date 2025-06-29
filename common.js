@@ -129,22 +129,45 @@ function speakWord(word, options = {}) {
         const utterance = new SpeechSynthesisUtterance(word);
         utterance.lang = lang;
 
-        if (window.speechSynthesisVoices.length > 0) {
-            // iOS/macOSの高品質な女性の声(Serena)を最優先
-            const selectedVoice = window.speechSynthesisVoices.find(voice => voice.lang === lang && voice.name === 'Serena') ||
-                                 // 次に名前に "Female" を含む女性の声を探す
-                                 window.speechSynthesisVoices.find(voice => voice.lang === lang && /female/i.test(voice.name)) ||
-                                 // Google製の高品質な声を探す (Android/Windows向け)
-                                 window.speechSynthesisVoices.find(voice => voice.lang === lang && /google/i.test(voice.name)) ||
-                                 // それでもなければ、指定言語に一致する最初の声（OSのデフォルト）
-                                 window.speechSynthesisVoices.find(voice => voice.lang === lang) ||
-                                 // 最終手段として、'en'で始まる言語の最初の声
-                                 window.speechSynthesisVoices.find(voice => voice.lang.startsWith('en'));
-            if (selectedVoice) {
-                utterance.voice = selectedVoice;
+        // --- 音声選択ロジックを強化 ---
+        // 1. 利用可能な音声リストを取得。グローバルリストを優先し、空なら再取得を試みる。
+        let voices = window.speechSynthesisVoices;
+        if (!voices || voices.length === 0) {
+            console.warn('グローバル音声リストが空です。同期的に再取得を試みます。');
+            voices = speechSynthesis.getVoices();
+        }
+
+        // デバッグ用に、利用可能な音声のリストをコンソールに出力
+        if (voices.length > 0 && caller !== 'warmup') {
+            console.log(`利用可能な音声 (${voices.length}件):`, voices.map(v => `${v.name} (${v.lang})`));
+        }
+
+        if (voices.length > 0) {
+            // 2. 音声選択の優先順位を定義
+            const voicePriority = [
+                // iOS/macOSの高品質な女性の声
+                v => v.lang === lang && v.name === 'Serena',
+                v => v.lang === lang && v.name === 'Samantha',
+                // 一般的な女性の声
+                v => v.lang === lang && /female/i.test(v.name),
+                // Google製の高品質な声 (Android/Windows向け)
+                v => v.lang === lang && /google/i.test(v.name),
+                // OSのデフォルト (指定言語)
+                v => v.lang === lang,
+                // 最終手段 (英語なら何でも)
+                v => v.lang.startsWith('en')
+            ];
+
+            // 3. 優先順位に従って最適な音声を探す
+            for (const condition of voicePriority) {
+                const foundVoice = voices.find(condition);
+                if (foundVoice) {
+                    utterance.voice = foundVoice;
+                    break; // 最適な音声が見つかったらループを抜ける
+                }
             }
         } else {
-            console.warn('音声リストが空です。ブラウザのデフォルト音声を使用します。');
+            console.warn('音声リストが取得できませんでした。ブラウザのデフォルト音声を使用します。');
         }
 
         utterance.rate = 1;
