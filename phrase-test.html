@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phrase Quiz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const isGitHub = window.location.hostname.includes('github.io');
+        const projectPath = '/learning/english-words/'; // GitHub Pages上のプロジェクトパス
+        if (isGitHub) {
+            document.write(`<base href="${projectPath}">`);
+        }
+        document.write(`<link rel="stylesheet" href="styles.css?v=${new Date().getTime()}">`);
+    </script>
+</head>
+<body class="phrase-quiz-page">
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-md">
+            <a class="navbar-brand fw-bold" href="index.html"><i class="fas fa-book-open me-2"></i>Vocab Fun</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link rounded px-3" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link rounded px-3" href="quiz.html">Quiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active rounded px-3" href="phrase-test.html">Phrase Quiz</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="quiz-container">
+        <h1 class="quiz-header">フレーズ聞き取りクイズ</h1>
+        <div id="quizContainer">
+            <div class="text-center">
+                <p>クイズを読み込み中...</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="progress-section fixed-bottom">
+        <div class="container-md">
+            <div class="progress mb-2" style="height: 10px;">
+                <div class="progress-bar bg-success" id="progressBar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <div id="scoreText" class="small fw-bold me-auto">正解: 0 / 0</div>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-sm btn-outline-secondary" id="resetButton"><i class="fas fa-redo me-1"></i>リセット</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Feedback Modal (from quiz.html) -->
+    <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header"><h5 class="modal-title" id="feedbackModalLabel"></h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body" id="feedbackModalBody"></div>
+                <div class="modal-footer"><button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+    <!-- Custom Scripts with Cache Busting -->
+    <script>
+        const version = new Date().getTime();
+        document.write(`<script src="common.js?v=${version}"><\/script>`);
+        document.write(`<script src="phrase-quiz.js?v=${version}"><\/script>`);
+    </script>
+</body>
+</html>

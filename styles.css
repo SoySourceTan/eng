@@ -1,0 +1,356 @@
+/* 既存のスタイル */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.vocab-icon-spin {
+    animation: spin 0.5s linear;
+}
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* index.htmlから移動したスタイル */
+/* モダンなカードデザイン */
+.vocab-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.vocab-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.vocab-card .card-body {
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.vocab-card .vocab-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #495057;
+    /* for Iconify */
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    vertical-align: -0.125em;
+}
+
+.vocab-card .card-title {
+    font-size: 1.25rem;
+    color: #212529;
+}
+
+.vocab-card .card-text {
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+
+/* カテゴリごとの背景色 */
+.bg-color { background-color: #fff0f0; }
+.bg-vegetable { background-color: #e8f5e9; }
+.bg-fruit { background-color: #fff8e1; }
+.bg-animal { background-color: #fbe9e7; }
+.bg-weather { background-color: #e3f2fd; }
+.bg-number { background-color: #ede7f6; }
+.bg-place { background-color: #e0f2f1; }
+.bg-action { background-color: #fce4ec; }
+.bg-time { background-color: #f1f8e9; }
+.bg-school { background-color: #fffde7; }
+.bg-emotion { background-color: #fff3e0; }
+.bg-fish { background-color: #e0f7fa; }
+.bg-meat { background-color: #fce4ec; }
+.bg-soy { background-color: #f9fbe7; }
+.bg-household { background-color: #eceff1; }
+.bg-shopping { background-color: #e8eaf6; }
+.bg-asking { background-color: #e0f2f1; }
+.bg-utilities { background-color: #f3e5f5; }
+.bg-banking { background-color: #e8f5e9; }
+.bg-roads { background-color: #fafafa; }
+.bg-transport { background-color: #f5f5f5; }
+.bg-daily_life { background-color: #fff9c4; }
+.bg-society { background-color: #e6f3fa; }
+.bg-culture { background-color: #f3e6fa; }
+
+/* --- New Styles for index.html --- */
+
+/* Body padding for sticky footer on mobile */
+@media (max-width: 991.98px) {
+    body {
+        padding-bottom: 70px; /* Adjust to match footer height */
+    }
+}
+
+/* Category Section Titles */
+.category-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #343a40;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #007bff;
+    display: inline-block;
+}
+
+/* Sticky Footer Navigation */
+.category-nav-footer {
+    height: 60px;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.category-nav-footer #categoryNavContainer {
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.category-nav-link {
+    color: #6c757d;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.5rem;
+    transition: color 0.2s ease-in-out;
+}
+
+.category-nav-link:hover {
+    color: #007bff;
+}
+
+/* Compact Card Design for Mobile */
+@media (max-width: 576px) {
+    /* The p-2 class in index.js is overridden by more specific CSS, so we adjust it here. */
+    .vocab-card .card-body {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .vocab-card .vocab-icon {
+        font-size: 2.25rem;
+        margin-bottom: 0.5rem;
+    }
+    .vocab-card .card-title {
+        font-size: 1rem;
+    }
+    .vocab-card .card-text {
+        font-size: 0.85rem;
+        line-height: 1.2;
+    }
+}
+
+/* --- Styles moved from quiz.html --- */
+
+/* A specific body style for the quiz pages */
+body.quiz-page,
+body.phrase-quiz-page {
+    background: linear-gradient(135deg, #e3f2fd, #e8eaf6);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 72px; /* fixed-top navbarの高さ分の余白を追加 */
+    padding-bottom: 100px; /* スティッキーフッターの高さ分の余白 */
+}
+
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    color: #007bff !important;
+}
+
+.quiz-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.quiz-header {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.question-card {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.question-card:hover {
+    transform: scale(1.02);
+}
+
+.sound-icon {
+    font-size: 2rem;
+    color: #6c757d;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+.sound-icon:hover {
+    color: #007bff !important;
+    transform: scale(1.1);
+}
+.sound-icon.speaking {
+    color: #0d6efd !important;
+    animation: pulse 0.5s infinite alternate;
+}
+
+.question-card .vocab-icon {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    padding: 0.5rem;
+}
+
+.question-card .vocab-icon::after {
+    content: 'タップで発音！';
+    position: absolute;
+    top: 20%;
+    right: 100%;
+    transform: translateY(-50%);
+    background: #007bff;
+    color: #fff;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    opacity: 1;
+    white-space: nowrap;
+    margin-right: 10px;
+}
+
+.question-card .vocab-icon:hover {
+    color: #007bff;
+    transform: scale(1.2);
+}
+
+.answer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+}
+
+.answer-card {
+    background: #ffffff;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 0.75rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.answer-card:hover {
+    background: #f0f0f0;
+    border-color: #007bff;
+    transform: translateY(-2px);
+}
+
+.correct {
+    background: #d4edda !important;
+    border-color: #28a745 !important;
+    animation: sparkle 0.5s ease-in-out;
+}
+
+.incorrect {
+    background: #f8d7da !important;
+    border-color: #dc3545 !important;
+    animation: shake 0.3s ease-in-out;
+}
+
+@keyframes sparkle {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    75% { transform: translateX(3px); }
+}
+
+.progress-section {
+    background: #ffffff;
+    padding: 0.75rem 0;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+    border-top: 1px solid #dee2e6;
+}
+
+.toast {
+    border-radius: 10px;
+    border: 2px solid #007bff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.toast-body {
+    font-weight: bold;
+    color: #333;
+}
+
+/* --- Styles for phrase-quiz.html --- */
+.question-card h3.display-6 {
+    font-weight: 500;
+    color: #0056b3;
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+@keyframes pulse {
+    to {
+        transform: scale(1.1);
+    }
+}
+
+/* --- Back to top button --- */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none; /* Initially hidden */
+    z-index: 1000;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Adjust position on mobile to avoid overlapping with the category nav */
+@media (max-width: 991.98px) {
+    .back-to-top {
+        bottom: 80px; /* 60px (nav height) + 20px (margin) */
+    }
+}

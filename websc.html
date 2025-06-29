@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>TwitCasting WebSocket Client</title>
+    <style>
+        #log { max-height: 400px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>TwitCasting ライブモニター</h1>
+    <div ded): console.log('接続確立');
+    ws.onmessage = (e) => {
+        try {
+            const data = JSON.parse(e.data);
+            logDiv.innerHTML += `<p>メッセージ: ${JSON.stringify(data)}</p>`;
+            logDiv.scrollTop = logDiv.scrollHeight;
+        } catch (err) {
+            logDiv.innerHTML += `<p class="error">メッセージ解析エラー: ${err.message}</p>`;
+        }
+    };
+    ws.onerror = (error) => {
+        logDiv.innerHTML += `<p class="error">WebSocketエラー: ${error.message}</p>`;
+    };
+    ws.onclose = () => {
+        logDiv.innerHTML += `<p>接続終了</p>`;
+        statusDiv.textContent = '接続終了';
+    };
+</script>
+</body>
+</html>
