@@ -1,3 +1,19 @@
+// Service Workerの登録
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        // sw.jsはサイトのルートにあると仮定して登録します。
+        // GitHub Pagesで /eng/ のようなサブディレクトリにある場合でも、
+        // この相対パス指定で正しく動作します。
+        navigator.serviceWorker.register('sw.js')
+            .then(registration => {
+                console.log('Service Worker registered with scope:', registration.scope);
+            })
+            .catch(error => {
+                console.log('Service Worker registration failed:', error);
+            });
+    });
+}
+
 if (!window.words) {
     window.words = [];
 }

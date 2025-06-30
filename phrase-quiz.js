@@ -3,7 +3,8 @@ $(document).ready(function() {
     let questions = [];
     let currentQuestionIndex = 0;
     let score = 0;
-    let feedbackModal;
+    // Bootstrap 5のModalインスタンスは、jQueryオブジェクトではなくDOM要素を渡して生成します。
+    const feedbackModal = new bootstrap.Modal(document.getElementById('feedbackModal'));
 
     function startGame() {
         questions = [...phrasesData].sort(() => 0.5 - Math.random());
@@ -136,9 +137,8 @@ $(document).ready(function() {
         fetch(`phrase.json?v=${new Date().getTime()}`)
             .then(res => res.json())
             .then(data => {
-                if (data && data.length > 3) {
+                if (data && data.length >= 4) { // 選択肢は4つ必要
                     phrasesData = data;
-                    feedbackModal = new bootstrap.Modal($('#feedbackModal'));
                     startGame();
                 } else {
                     throw new Error('フレーズデータが不足しています。クイズには最低4つのフレーズが必要です。');
