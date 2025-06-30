@@ -43,14 +43,19 @@
 
     <div class="container my-5">
         <h1 class="mb-4 text-center">Vocabulary Cards</h1>
-        <div class="text-center mb-4">
+        <!-- Desktop Mode Toggle -->
+        <div class="text-center mb-4 d-none d-lg-block">
             <div class="btn-group" role="group" aria-label="Mode toggle">
-                <input type="radio" class="btn-check" name="mode-toggle" id="mode-words" autocomplete="off" checked>
-                <label class="btn btn-outline-primary" for="mode-words"><i class="fas fa-font me-1"></i>単語モード</label>
+                <input type="radio" class="btn-check" name="mode-toggle" id="mode-words-desktop" autocomplete="off" checked>
+                <label class="btn btn-outline-primary" for="mode-words-desktop"><i class="fas fa-font me-1"></i>単語モード</label>
 
-                <input type="radio" class="btn-check" name="mode-toggle" id="mode-phrases" autocomplete="off">
-                <label class="btn btn-outline-primary" for="mode-phrases"><i class="fas fa-comments me-1"></i>フレーズモード</label>
+                <input type="radio" class="btn-check" name="mode-toggle" id="mode-phrases-desktop" autocomplete="off">
+                <label class="btn btn-outline-primary" for="mode-phrases-desktop"><i class="fas fa-comments me-1"></i>フレーズモード</label>
             </div>
+        </div>
+        <!-- Desktop Category Navigation -->
+        <div id="desktopCategoryNavContainer" class="mb-4 d-none d-lg-flex flex-wrap justify-content-center">
+            <!-- Desktop category links will be inserted here -->
         </div>
         <div id="cardContainer">
             <!-- Cards will be dynamically inserted here -->
@@ -59,8 +64,23 @@
 
     <!-- Sticky Footer Navigation for Mobile -->
     <nav class="category-nav-footer fixed-bottom bg-light border-top d-lg-none">
-        <div id="categoryNavContainer" class="d-flex justify-content-around align-items-center h-100 px-2">
-            <!-- Category icons will be inserted here by JS -->
+        <div class="container-fluid h-100">
+            <div class="d-flex align-items-center h-100">
+                <!-- Mode Toggle -->
+                <div class="mode-toggle-container me-2">
+                    <div class="btn-group" role="group" aria-label="Mode toggle">
+                        <input type="radio" class="btn-check" name="mode-toggle" id="mode-words" autocomplete="off" checked>
+                        <label class="btn btn-sm btn-outline-primary" for="mode-words" title="単語モード"><i class="fas fa-font"></i></label>
+
+                        <input type="radio" class="btn-check" name="mode-toggle" id="mode-phrases" autocomplete="off">
+                        <label class="btn btn-sm btn-outline-primary" for="mode-phrases" title="フレーズモード"><i class="fas fa-comments"></i></label>
+                    </div>
+                </div>
+                <!-- Category Nav -->
+                <div id="categoryNavContainer" class="d-flex align-items-center h-100 flex-grow-1">
+                    <!-- Category icons will be inserted here by JS -->
+                </div>
+            </div>
         </div>
     </nav>
 

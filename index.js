@@ -1,7 +1,23 @@
 $(document).ready(function() {
+    const learnedWordsKey = 'learnedWords';
+    const learnedPhrasesKey = 'learnedPhrases';
+
+    function getLearnedItems(key) {
+        return new Set(JSON.parse(localStorage.getItem(key) || '[]'));
+    }
+
+    function setLearnedItems(key, learnedSet) {
+        localStorage.setItem(key, JSON.stringify(Array.from(learnedSet)));
+    }
+
     function bindCardEvents(dataAttribute = 'word') {
         // カード全体をクリックまたはタップした時に音声を再生
-        $('#cardContainer').on('click', '.vocab-card', function(e) {
+        $('#cardContainer').off('click', '.vocab-card').on('click', '.vocab-card', function(e) {
+            // クリックされたのがチェックボックス自身なら、何もしない（チェックボックスの動作を優先）
+            if ($(e.target).is('.learned-checkbox')) {
+                return;
+            }
+
             e.preventDefault();
 
             const $card = $(this);
@@ -39,6 +55,7 @@ $(document).ready(function() {
         $cardContainer.empty();
 
         const sortedCategories = Object.keys(groupedByCategory).sort();
+        const learnedWords = getLearnedItems(learnedWordsKey);
 
         for (const category of sortedCategories) {
             const wordsInCategory = groupedByCategory[category];
@@ -48,12 +65,14 @@ $(document).ready(function() {
                 <h2 class="category-title h4"><span class="iconify me-2" data-icon="${(window.defaultIcons && defaultIcons[category]) || 'mdi:help-circle-outline'}"></span>${categoryTitle}</h2>
                     <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 g-3">
                         ${wordsInCategory.map(word => {
+                            const isLearned = learnedWords.has(word.word);
                             const icon = word.icon || (window.defaultIcons && defaultIcons[word.category]) || 'mdi:help-circle-outline';
                         const iconStyle = word.color ? `color: ${word.color};` : '';
                             return `
                                 <div class="col">
-                                    <div class="card vocab-card h-100 ${word.background || 'bg-light'}" data-word="${word.word}">
-                                    <div class="card-body text-center p-2 d-flex flex-column justify-content-center">
+                                    <div class="card vocab-card h-100 ${word.background || 'bg-light'} ${isLearned ? 'learned' : ''}" data-word="${word.word}">
+                                        <input type="checkbox" class="form-check-input learned-checkbox" ${isLearned ? 'checked' : ''} title="学習済みとしてマーク">
+                                        <div class="card-body text-center p-2 d-flex flex-column justify-content-center">
                                         <span class="vocab-icon iconify" data-icon="${icon}" style="${iconStyle}"></span>
                                         <h6 class="card-title fw-bold mt-2 mb-1">${word.word}</h6>
                                         <p class="card-text small mb-0">${word.ruby || word.meaning}</p>
@@ -72,6 +91,7 @@ $(document).ready(function() {
         $cardContainer.empty();
 
         const sortedCategories = Object.keys(groupedByPhraseCategory).sort();
+        const learnedPhrases = getLearnedItems(learnedPhrasesKey);
 
         for (const category of sortedCategories) {
             const phrasesInCategory = groupedByPhraseCategory[category];
@@ -80,16 +100,19 @@ $(document).ready(function() {
             <section id="category-${category}" class="mb-4">
                 <h2 class="category-title h4"><span class="iconify me-2" data-icon="${(window.defaultIcons && defaultIcons[category]) || 'mdi:help-circle-outline'}"></span>${categoryTitle}</h2>
                 <div class="row row-cols-1 row-cols-md-2 g-3">
-                    ${phrasesInCategory.map(phrase => `
+                    ${phrasesInCategory.map(phrase => {
+                        const isLearned = learnedPhrases.has(phrase.phrase_en);
+                        return `
                         <div class="col">
-                            <div class="card vocab-card h-100" data-phrase_en="${phrase.phrase_en}">
+                            <div class="card vocab-card h-100 ${isLearned ? 'learned' : ''}" data-phrase_en="${phrase.phrase_en}">
+                                <input type="checkbox" class="form-check-input learned-checkbox" ${isLearned ? 'checked' : ''} title="学習済みとしてマーク">
                                 <div class="card-body p-3">
                                     <p class="card-title fw-bold mb-1">${phrase.phrase_en}</p>
                                     <p class="card-text small text-muted mb-2">${phrase.phrase_ja}</p>
                                     ${phrase.situation ? `<p class="card-text small text-info fst-italic mb-0"><i class="fas fa-info-circle me-1"></i>${phrase.situation}</p>` : ''}
                                 </div>
                             </div>
-                        </div>`).join('')}
+                        </div>`;}).join('')}
                 </div>
             </section>`;
             $cardContainer.append(sectionHtml);
@@ -97,23 +120,43 @@ $(document).ready(function() {
     }
 
     function renderCategoryNav(groupedByCategory) {
-        const $navContainer = $('#categoryNavContainer');
-        if (!$navContainer.length) return;
+        const $mobileNav = $('#categoryNavContainer');
+        const $desktopNav = $('#desktopCategoryNavContainer');
 
         const categories = Object.keys(groupedByCategory).sort();
-        $navContainer.empty();
+
+        // Clear both containers
+        $mobileNav.empty();
+        $desktopNav.empty();
+
+        let mobileNavHtml = '';
+        let desktopNavHtml = '';
+
         for (const category of categories) {
             const icon = (window.defaultIcons && defaultIcons[category]) || 'mdi:help-circle-outline';
-            const navLinkHtml = `
-                <a href="#category-${category}" class="category-nav-link" title="${category}">
+            const categoryTitle = category.charAt(0).toUpperCase() + category.slice(1).replace(/_/g, ' ');
+
+            // Mobile version (icon only)
+            mobileNavHtml += `
+                <a href="#category-${category}" class="category-nav-link" title="${categoryTitle}">
                     <span class="iconify" data-icon="${icon}"></span>
                 </a>`;
-            $navContainer.append(navLinkHtml);
+
+            // Desktop version (icon + text)
+            desktopNavHtml += `
+                <a href="#category-${category}" class="btn btn-outline-secondary btn-sm me-2 mb-2 category-nav-link-desktop">
+                    <span class="iconify" data-icon="${icon}"></span>
+                    ${categoryTitle}
+                </a>`;
         }
+
+        $mobileNav.html(mobileNavHtml);
+        $desktopNav.html(desktopNavHtml);
     }
 
     function bindNavEvents() {
-        $('#categoryNavContainer').on('click', 'a.category-nav-link', function(e) {
+        // Combine event handlers for both mobile and desktop navs
+        $('body').on('click', 'a.category-nav-link, a.category-nav-link-desktop', function(e) {
             e.preventDefault();
             const targetId = $(this).attr('href');
             const $target = $(targetId);
@@ -122,6 +165,34 @@ $(document).ready(function() {
                 $('html, body').animate({
                     scrollTop: $target.offset().top - navHeight - 15
                 }, 300);
+            }
+        });
+    }
+
+    function bindCheckboxEvents() {
+        $('#cardContainer').on('change', '.learned-checkbox', function(e) {
+            e.stopPropagation(); // カードクリックイベントの発火を防ぐ
+            const $checkbox = $(this);
+            const $card = $checkbox.closest('.vocab-card');
+            const isChecked = $checkbox.is(':checked');
+
+            const word = $card.data('word');
+            const phrase = $card.data('phrase_en');
+
+            if (word) {
+                const learnedItems = getLearnedItems(learnedWordsKey);
+                isChecked ? learnedItems.add(word) : learnedItems.delete(word);
+                setLearnedItems(learnedWordsKey, learnedItems);
+            } else if (phrase) {
+                const learnedItems = getLearnedItems(learnedPhrasesKey);
+                isChecked ? learnedItems.add(phrase) : learnedItems.delete(phrase);
+                setLearnedItems(learnedPhrasesKey, learnedItems);
+            }
+
+            if (isChecked) {
+                $card.addClass('learned');
+            } else {
+                $card.removeClass('learned');
             }
         });
     }
@@ -146,7 +217,16 @@ $(document).ready(function() {
     }
 
     $('input[name="mode-toggle"]').on('change', function() {
-        const selectedMode = this.id === 'mode-words' ? 'words' : 'phrases';
+        const isWords = this.id.includes('words');
+        const selectedMode = isWords ? 'words' : 'phrases';
+
+        // モバイル用とデスクトップ用の両方のボタンの状態を同期させる
+        if (isWords) {
+            $('#mode-words, #mode-words-desktop').prop('checked', true);
+        } else {
+            $('#mode-phrases, #mode-phrases-desktop').prop('checked', true);
+        }
+
         switchMode(selectedMode);
     });
 
@@ -160,6 +240,7 @@ $(document).ready(function() {
         phrasesData = phrases;
         switchMode('words'); // 初期表示は単語モード
         bindNavEvents();
+        bindCheckboxEvents();
     }).catch(error => {
         console.error("データ読み込みエラー:", error);
         $('#cardContainer').html('<p class="text-center text-danger">データの読み込みに失敗しました。</p>');

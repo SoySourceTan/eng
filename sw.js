@@ -35,10 +35,14 @@ self.addEventListener('fetch', event => {
         // まずネットワークから最新のファイルを取得しにいく
         fetch(event.request).then(networkResponse => {
             // 取得に成功したら、レスポンスをキャッシュに保存してからブラウザに返す
-            return caches.open(CACHE_NAME).then(cache => {
-                cache.put(event.request, networkResponse.clone());
-                return networkResponse;
-            });
+            // 正常なレスポンス(status: 200)のみをキャッシュする
+            if (networkResponse && networkResponse.status === 200) {
+                const responseToCache = networkResponse.clone();
+                caches.open(CACHE_NAME).then(cache => {
+                    cache.put(event.request, responseToCache);
+                });
+            }
+            return networkResponse;
         }).catch(() => {
             // ネットワークに接続できない場合は、キャッシュからファイルを探して返す
             return caches.match(event.request);

@@ -56,6 +56,7 @@
             </div>
             <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
                 <div id="scoreText" class="small fw-bold me-auto">正解: 0 / 0</div>
+                <div id="levelText" class="small fw-bold mx-3">Level: 1</div>
                 <div class="d-flex gap-2">
                     <a href="clear-cache.html" class="btn btn-sm btn-outline-warning" title="キャッシュクリア"><i class="fas fa-broom"></i></a>
                     <button class="btn btn-sm btn-outline-secondary" id="resetButton"><i class="fas fa-redo me-1"></i>リセット</button>
@@ -84,6 +85,19 @@
                 </div>
                 <div class="modal-body">
                     <p>準備ができたら下のボタンを押してクイズを開始してください。</p>
+                    <div class="my-3">
+                        <label class="form-label fw-bold">難易度を選択してください:</label>
+                        <div class="btn-group w-100" role="group" aria-label="Difficulty selection">
+                            <input type="radio" class="btn-check" name="difficulty" id="difficulty-easy" value="easy" autocomplete="off" checked>
+                            <label class="btn btn-outline-primary" for="difficulty-easy">EASY</label>
+
+                            <input type="radio" class="btn-check" name="difficulty" id="difficulty-hard" value="hard" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="difficulty-hard">HARD</label>
+                        </div>
+                        <div class="form-text mt-2" id="difficulty-description">
+                            EASY: 英語の音声を聞いて、英語の選択肢から選びます。
+                        </div>
+                    </div>
                     <p class="small text-muted">音声が再生されますので、音量にご注意ください。</p>
                 </div>
                 <div class="modal-footer">
