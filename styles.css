@@ -354,3 +354,17 @@ body.phrase-quiz-page {
         bottom: 80px; /* 60px (nav height) + 20px (margin) */
     }
 }
+
+/* --- Quiz Hint Area --- */
+/* ヒントエリアの初期状態（ぼかし） */
+#hint-area {
+    filter: blur(8px); /* 強めのぼかしをかける */
+    opacity: 0.6;      /* 少し透明にする */
+    transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out; /* 変化を滑らかにする */
+}
+
+/* ヒント表示後の状態（クリア） */
+#hint-area.revealed {
+    filter: blur(0);
+    opacity: 1;
+}

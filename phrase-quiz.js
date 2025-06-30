@@ -5,23 +5,6 @@ $(document).ready(function() {
     let score = 0;
     let feedbackModal;
 
-    // --- データ読み込みとゲーム開始 ---
-    fetch(`phrase.json?v=${new Date().getTime()}`)
-        .then(res => res.json())
-        .then(data => {
-            if (data && data.length > 3) {
-                phrasesData = data;
-                feedbackModal = new bootstrap.Modal($('#feedbackModal'));
-                startGame();
-            } else {
-                throw new Error('フレーズデータが不足しています。クイズには最低4つのフレーズが必要です。');
-            }
-        })
-        .catch(error => {
-            console.error("フレーズデータの読み込みに失敗しました:", error);
-            $('#quizContainer').html(`<p class="text-center text-danger">${error.message}</p>`);
-        });
-
     function startGame() {
         questions = [...phrasesData].sort(() => 0.5 - Math.random());
         currentQuestionIndex = 0;
@@ -140,4 +123,30 @@ $(document).ready(function() {
 
     // --- 初期化 ---
     bindEvents();
+
+    const startModal = new bootstrap.Modal('#startModal');
+    const startGameButton = $('#startGameButton');
+
+    // ページ読み込み時にモーダルを表示
+    startModal.show();
+
+    // 「ゲームを始める」ボタンがクリックされたらクイズを開始
+    startGameButton.on('click', function() {
+        // --- データ読み込みとゲーム開始 ---
+        fetch(`phrase.json?v=${new Date().getTime()}`)
+            .then(res => res.json())
+            .then(data => {
+                if (data && data.length > 3) {
+                    phrasesData = data;
+                    feedbackModal = new bootstrap.Modal($('#feedbackModal'));
+                    startGame();
+                } else {
+                    throw new Error('フレーズデータが不足しています。クイズには最低4つのフレーズが必要です。');
+                }
+            })
+            .catch(error => {
+                console.error("フレーズデータの読み込みに失敗しました:", error);
+                $('#quizContainer').html(`<p class="text-center text-danger">${error.message}</p>`);
+            });
+    });
 });

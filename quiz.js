@@ -70,7 +70,7 @@ $(document).ready(function() {
                 <div class="my-3">
                     <i class="fas fa-volume-up sound-icon" data-word="${question.word}" style="font-size: 3rem; cursor: pointer;"></i>
                 </div>
-                <div id="hint-area" style="visibility: hidden; min-height: 7rem;">
+                <div id="hint-area" style="min-height: 7rem;">
                     <span class="vocab-icon iconify" data-icon="${icon}" ${iconStyle} style="font-size: 4rem;"></span>
                     <h4 class="mt-2" id="questionWord">${question.word}</h4>
                 </div>
@@ -93,6 +93,9 @@ $(document).ready(function() {
                 </button>
             </div>
         `);
+        // 前の問題で表示されたヒントの revealed クラスを削除し、ぼかし状態に戻す
+        $('#hint-area').removeClass('revealed');
+
         console.log('アイコン生成確認:', $('.vocab-icon').length, $('.vocab-icon').data('word'));
 
         // ★★★ 重要 ★★★
@@ -117,7 +120,7 @@ $(document).ready(function() {
         // ヒントボタンのイベント
         $(document).on('click', '#hintButton', function() {
             hintUsed = true;
-            $('#hint-area').css('visibility', 'visible');
+            $('#hint-area').addClass('revealed');
             $(this).prop('disabled', true).addClass('disabled');
             showToast('ヒントを使用しました (正解で+1点)', 'info');
         });
@@ -287,10 +290,21 @@ $(document).ready(function() {
         bindEvents();
     }
 
-    loadData(function(data) {
-        window.words = data.sort(() => Math.random() - 0.5);
-        console.log(`${window.words.length}語を読み込みました`);
-        initializePage();
+    // --- クイズ開始ロジック ---
+    const startModal = new bootstrap.Modal('#startModal');
+    const startGameButton = $('#startGameButton');
+
+    // ページ読み込み時にモーダルを表示
+    startModal.show();
+
+    // 「ゲームを始める」ボタンがクリックされたらクイズを開始
+    startGameButton.on('click', function() {
+        // データの読み込みとクイズの初期化
+        loadData(function(data) {
+            window.words = data.sort(() => Math.random() - 0.5);
+            console.log(`${window.words.length}語を読み込みました`);
+            initializePage();
+        });
     });
     console.log('quiz.js ロード完了');
 });
