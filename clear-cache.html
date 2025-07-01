@@ -34,6 +34,12 @@
                     <li class="nav-item">
                         <a class="nav-link rounded px-3" href="phrase-test.html">Phrase Quiz</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link rounded px-3" href="phrasal.html">Phrasal Verb Quiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link rounded px-3" href="stats.html">学習記録</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -45,8 +51,11 @@
                 <h1 class="card-title">キャッシュクリア</h1>
                 <p class="card-text text-muted mt-3">ブラウザにたまった古いデータを、<br>以下のボタンで削除できます。</p>
                 <div class="d-grid gap-2 col-md-8 mx-auto mt-4">
-                    <button id="clearCacheButton" class="btn btn-danger btn-lg">
+                    <button id="clearCacheButton" class="btn btn-danger">
                         <i class="fas fa-trash-alt me-2"></i>キャッシュを削除して更新
+                    </button>
+                    <button id="clearStorageButton" class="btn btn-warning">
+                        <i class="fas fa-user-graduate me-2"></i>学習データをリセット
                     </button>
                 </div>
                 <div id="status" class="mt-4" style="min-height: 50px;"></div>
@@ -64,6 +73,7 @@
     <script>
         $(document).ready(function() {
             const clearButton = $('#clearCacheButton');
+            const clearStorageButton = $('#clearStorageButton');
             const statusDiv = $('#status');
 
             clearButton.on('click', function() {
@@ -78,9 +88,10 @@
                                 <p class="text-success fw-bold">キャッシュをクリアしました！</p>
                                 <p class="mt-3">各ページに戻って最新の状態を確認してください。</p>
                                 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mt-4">
-                                    <a href="index.html" class="btn btn-outline-primary btn-lg px-4">Home</a>
-                                    <a href="quiz.html" class="btn btn-primary btn-lg px-4">Quiz</a>
-                                    <a href="phrase-test.html" class="btn btn-primary btn-lg px-4">Phrase Quiz</a>
+                                    <a href="index.html" class="btn btn-outline-primary px-4">Home</a>
+                                    <a href="quiz.html" class="btn btn-primary px-4">Quiz</a>
+                                    <a href="phrase-test.html" class="btn btn-primary px-4">Phrase Quiz</a>
+                                    <a href="phrasal.html" class="btn btn-primary px-4">Phrasal Verb Quiz</a>
                                 </div>
                             `;
                             statusDiv.html(successHtml);
@@ -90,6 +101,31 @@
                 } else {
                     statusDiv.html('<p class="text-danger fw-bold">キャッシュの削除に失敗しました。</p><p class="small">Service Workerが有効でないか、まだ準備ができていません。少し待ってから再試行するか、手動でブラウザのキャッシュをクリアしてください。</p>');
                     $(this).prop('disabled', false);
+                }
+            });
+
+            clearStorageButton.on('click', function() {
+                if (confirm('すべてのクイズのレベルと「学習済み」のチェックがリセットされます。よろしいですか？')) {
+                    try {
+                        // アプリケーションで使われているlocalStorageのキー
+                        const keysToRemove = [
+                            'learnedWords',
+                            'learnedPhrases',
+                            'vocabQuizLevel',
+                            'phraseQuizLevel',
+                            'phrasalQuizLevel',
+                            'vocabQuizStats' // 単語クイズの統計データを追加
+                        ];
+                        
+                        keysToRemove.forEach(key => {
+                            localStorage.removeItem(key);
+                        });
+
+                        statusDiv.html('<p class="text-success fw-bold mt-3">すべての学習データをリセットしました！</p>');
+                    } catch (e) {
+                        statusDiv.html('<p class="text-danger fw-bold mt-3">学習データのリセットに失敗しました。</p>');
+                        console.error('Error clearing localStorage:', e);
+                    }
                 }
             });
         });

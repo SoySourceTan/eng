@@ -1,9 +1,11 @@
 $(document).ready(function() {
+    const LEVEL_STORAGE_KEY = 'phraseQuizLevel';
+
     let phrasesData = [];
     let questions = [];
     let currentQuestionIndex = 0;
     let score = 0;
-    let level = 1;
+    let level = parseInt(localStorage.getItem(LEVEL_STORAGE_KEY)) || 1;
     let incorrectQuestions = [];
     let isReviewMode = false;
     let levelUpOccurred = false; // レベルアップしたかを判定するフラグ
@@ -18,7 +20,6 @@ $(document).ready(function() {
         questions = [...phrasesData].sort(() => 0.5 - Math.random());
         currentQuestionIndex = 0;
         score = 0;
-        level = 1;
         levelUpOccurred = false;
         incorrectQuestions = [];
         updateProgress();
@@ -32,7 +33,6 @@ $(document).ready(function() {
         incorrectQuestions = []; // 次の復習のためにクリア
         currentQuestionIndex = 0;
         score = 0;
-        level = 1; // レベルはリセット
         updateProgress();
         generateQuestion();
     }
@@ -129,6 +129,7 @@ $(document).ready(function() {
                 // レベルアップ判定
                 if (score > 0 && score % POINTS_FOR_LEVEL_UP === 0) {
                     level++;
+                    localStorage.setItem(LEVEL_STORAGE_KEY, level);
                     levelUpOccurred = true;
                     playCorrectSound();
                     showFeedback('レベルアップ！🎉', `おめでとうございます！<br>Level ${level} に到達しました！`);
@@ -154,11 +155,19 @@ $(document).ready(function() {
         });
 
         // リセットボタン
-        $('#resetButton').on('click', startGame);
+        $('#resetButton').on('click', function() {
+            localStorage.removeItem(LEVEL_STORAGE_KEY);
+            level = 1;
+            startGame();
+        });
         
         // 動的に追加されるボタンのイベント
         $('#quizContainer').on('click', '#reviewButton', startReview);
-        $('#quizContainer').on('click', '#restartButton', startGame);
+        $('#quizContainer').on('click', '#restartButton', function() {
+            localStorage.removeItem(LEVEL_STORAGE_KEY);
+            level = 1;
+            startGame();
+        });
         // モーダルが閉じた後の処理
         $('#feedbackModal').on('hidden.bs.modal', function() {
             if (levelUpOccurred) {

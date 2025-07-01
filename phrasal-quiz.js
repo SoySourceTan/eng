@@ -18,6 +18,10 @@ $(document).ready(function() {
     let difficulty = 'easy'; // デフォルト
     let levelUpOccurred = false;
 
+    // Bootstrap 5のModalインスタンスを生成
+    const feedbackModal = new bootstrap.Modal(document.getElementById('feedbackModal'));
+    const startModal = new bootstrap.Modal(document.getElementById('startModal'));
+
     // --- 関数 ---
 
     /**
@@ -155,7 +159,7 @@ $(document).ready(function() {
     function showFeedback(title, body) {
         $('#feedbackModalLabel').text(title);
         $('#feedbackModalBody').html(body);
-        $('#feedbackModal').modal('show');
+        feedbackModal.show();
     }
 
     function showError(message) {
@@ -217,6 +221,5 @@ $(document).ready(function() {
     });
 
     // --- 初期表示 ---
-    const startModal = new bootstrap.Modal('#startModal');
     startModal.show();
 });

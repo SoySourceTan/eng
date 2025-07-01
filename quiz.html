@@ -38,6 +38,9 @@
                     <li class="nav-item">
                         <a class="nav-link rounded px-3" href="phrasal.html">Phrasal Verb Quiz</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link rounded px-3" href="stats.html">学習記録</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -94,6 +97,12 @@
                 <div class="modal-body">
                     <p>準備ができたら下のボタンを押してクイズを開始してください。</p>
                     <p class="small text-muted">音声が再生されますので、音量にご注意ください。</p>
+                    <div id="stats-area" class="mt-4 p-3 bg-light rounded" style="display: none;">
+                        <h6 class="text-center mb-3 fw-bold"><i class="fas fa-chart-line me-2"></i>学習の記録</h6>
+                        <div id="stats-content" class="small">
+                            <p class="text-center">まだ学習記録はありません。</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" id="startGameButton" data-bs-dismiss="modal">ゲームを始める</button>
