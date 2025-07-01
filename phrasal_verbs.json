@@ -1,0 +1,26 @@
+[
+  {
+    "phrase_en": "take off",
+    "phrase_ja": "離陸する、脱ぐ",
+    "category": "action",
+    "situation": "飛行機が飛び立つ時や、服や靴を脱ぐ時に使う。",
+    "example_en": "The plane will take off in ten minutes.",
+    "example_ja": "飛行機は10分後に離陸します。"
+  },
+  {
+    "phrase_en": "take away",
+    "phrase_ja": "持ち帰る、取り去る",
+    "category": "eating_out",
+    "situation": "レストランで食べ物をテイクアウトする時に使う。",
+    "example_en": "I'd like a cheeseburger to take away, please.",
+    "example_ja": "チーズバーガーを一つ、持ち帰りでお願いします。"
+  },
+  {
+    "phrase_en": "look for",
+    "phrase_ja": "～を探す",
+    "category": "daily_life",
+    "situation": "失くしたものや、目的のものを探している時に使う。",
+    "example_en": "I'm looking for my keys.",
+    "example_ja": "私は鍵を探しています。"
+  }
+]

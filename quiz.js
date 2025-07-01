@@ -1,22 +1,26 @@
 window.isInitialized = false;
 
 $(document).ready(function() {
-    if (window.isInitialized) {
-        console.log('quiz.js 既に初期化済み、スキップ');
-        return;
-    }
+    if (window.isInitialized) return;
     window.isInitialized = true;
     console.log('quiz.js ロード開始');
+
+    // --- 定数定義 ---
+    const LEVEL_STORAGE_KEY = 'vocabQuizLevel'; // localStorageのキー
+    const POINTS_FOR_LEVEL_UP = 20; // レベルアップに必要なポイント数
+
+    // --- 音声ファイルの準備 ---
+    const levelUpSound = new Audio('lvup.mp3');
+
+    // --- 変数定義 ---
     let currentQuestion = 0;
-    let score = 0;
-    let totalQuestions = 0;
-    let currentLevel = 1;
+    let score = 0; // レベルアップ判定用のスコア
+    let currentLevel = parseInt(localStorage.getItem(LEVEL_STORAGE_KEY)) || 1; // localStorageからレベルを読み込む
     let incorrectQuestions = [];
     let isReviewMode = false;
     let allWords = []; // 元の単語リストを保持
     let levelUpOccurred = false; // レベルアップしたかを判定するフラグ
     let hintUsed = false;
-    const POINTS_FOR_LEVEL_UP = 20;
 
     function startReview() {
         if (incorrectQuestions.length === 0) return;
@@ -26,12 +30,11 @@ $(document).ready(function() {
         // 復習用の単語リストを設定
         window.words = [...incorrectQuestions].sort(() => Math.random() - 0.5);
         incorrectQuestions = []; // 次の通常セッションのためにクリア
-
         currentQuestion = 0;
-        score = 0;
+        score = 0; // スコアをリセット
         levelUpOccurred = false;
 
-        // 復習モードではプログレスバーの目標は問題数になる
+        // 復習モードのUIを更新
         updateProgress();
         generateQuestion();
     }
@@ -43,12 +46,12 @@ $(document).ready(function() {
 
     function generateQuestion() {
         console.log(`クイズ生成開始: currentQuestion=${currentQuestion}, words.length=${window.words.length}`);
-        if (window.words.length === 0) {
+        if (!window.words || window.words.length === 0) {
             console.warn('データがありません。デフォルトデータを使用。');
             showToast('データがありません。デフォルトデータを使います。', 'error');
             window.words = fallbackWords.sort(() => Math.random() - 0.5);
         }
-        if (currentQuestion >= window.words.length) {
+        if (currentQuestion >= window.words.length || window.words.length === 0) {
             console.log('現在のセットのクイズが終了しました');
             showCompletionScreen();
             return;
@@ -68,18 +71,24 @@ $(document).ready(function() {
         const correctAnswer = question.ruby || question.meaning;
         const wrongAnswers = [];
         const usedMeanings = new Set([question.meaning]);
-        const sameCategoryWords = window.words.filter(w => w.category === question.category && w.meaning !== question.meaning);
+
+        // 修正点: 不正解の選択肢は常に元の全単語リスト(allWords)から探す
+        const sourceForChoices = allWords.length > 0 ? allWords : window.words;
+
+        // 同じカテゴリから不正解の選択肢を探す
+        const sameCategoryWords = sourceForChoices.filter(w => w.category === question.category && w.meaning !== question.meaning);
         while (wrongAnswers.length < 3 && sameCategoryWords.length > 0) {
             const randomIndex = Math.floor(Math.random() * sameCategoryWords.length);
             const randomWord = sameCategoryWords[randomIndex];
             if (!usedMeanings.has(randomWord.meaning)) {
                 wrongAnswers.push(randomWord.ruby || randomWord.meaning);
                 usedMeanings.add(randomWord.meaning);
-                sameCategoryWords.splice(randomIndex, 1);
             }
+            sameCategoryWords.splice(randomIndex, 1); // 一度使った候補は削除
         }
-        while (wrongAnswers.length < 3 && window.words.length > 1) {
-            const randomWord = window.words[Math.floor(Math.random() * window.words.length)];
+        // それでも足りない場合は、カテゴリに関係なく不正解の選択肢を探す
+        while (wrongAnswers.length < 3 && sourceForChoices.length > wrongAnswers.length + 1) {
+            const randomWord = sourceForChoices[Math.floor(Math.random() * sourceForChoices.length)];
             if (!usedMeanings.has(randomWord.meaning)) {
                 wrongAnswers.push(randomWord.ruby || randomWord.meaning);
                 usedMeanings.add(randomWord.meaning);
@@ -163,40 +172,57 @@ $(document).ready(function() {
 
             $('.answer-card, #hintButton').off('click touchstart').addClass('disabled');
 
+            // 正解・不正解の判定
             if (selectedAnswer === correctAnswer) {
-                const points = hintUsed ? 1 : 2;
-                score += points;
                 $card.addClass('correct');
                 playCorrectSound();
                 if (navigator.vibrate) navigator.vibrate([200, 100, 200]);
 
-                const goal = isReviewMode ? window.words.length : POINTS_FOR_LEVEL_UP;
-                if (score >= goal) {
-                    levelUpOccurred = true;
-                    currentLevel++;
-                    updateProgress();
-                    const modalTitle = isReviewMode ? '復習完了！' : `レベルアップ！🎉 Level ${currentLevel}達成！`;
-                    const modalBody = isReviewMode ? '間違えた問題をすべてクリアしました！' : `おめでとうございます！<br>${POINTS_FOR_LEVEL_UP}点獲得でクイズクリアです！`;
-                    showFeedback(modalTitle, modalBody);
+                if (isReviewMode) {
+                    // --- 復習モードの正解処理 ---
+                    updateProgress(true); // 先に進捗を更新
+                    if (currentQuestion + 1 >= window.words.length) {
+                        // 全問正解で復習完了
+                        levelUpOccurred = true; // 完了画面表示用のフラグ
+                        showFeedback('復習完了！', '間違えた問題をすべてクリアしました！');
+                    } else {
+                        setTimeout(handleNextQuestion, 1500);
+                    }
                 } else {
+                    // --- 通常モードの正解処理 ---
+                    const points = hintUsed ? 1 : 2;
+                    score += points;
+                    updateProgress(); // UIを更新
                     showToast(`正解！ +${points}点`, 'success');
-                    setTimeout(handleNextQuestion, 1500); // 1.5秒後に自動で次の問題へ
+
+                    // レベルアップ判定
+                    if (score >= POINTS_FOR_LEVEL_UP) {
+                        levelUpOccurred = true;
+                        currentLevel++;
+                        score = 0; // スコアをリセット
+
+                        // 1. レベルを永続化
+                        localStorage.setItem(LEVEL_STORAGE_KEY, currentLevel);
+                        // 2. 効果音を再生
+                        levelUpSound.play().catch(e => console.error("Audio play failed:", e));
+                        // 3. フィードバックを表示
+                        showFeedback(`レベルアップ！🎉 Level ${currentLevel}達成！`, `おめでとうございます！<br>次のレベルに進みます！`);
+                    } else {
+                        // レベルアップしない場合は、次の問題へ
+                        setTimeout(handleNextQuestion, 1500);
+                    }
                 }
             } else {
-                // 不正解の場合、復習リストに追加（重複チェック）
-                if (!isReviewMode && !incorrectQuestions.some(q => q.word === window.words[currentQuestion].word)) {
-                    incorrectQuestions.push(window.words[currentQuestion]);
-                }
+                // --- 不正解の処理 (モード共通) ---
                 $card.addClass('incorrect');
                 playIncorrectSound();
                 if (navigator.vibrate) navigator.vibrate([100, 50, 100]);
+                if (!isReviewMode && !incorrectQuestions.some(q => q.word === window.words[currentQuestion].word)) {
+                    incorrectQuestions.push(window.words[currentQuestion]);
+                }
                 const feedbackBody = `"${window.words[currentQuestion].word}" は <strong>"${correctAnswer}"</strong> です、<br>"${selectedAnswer}" ではありません！`;
                 showFeedback('おっと！もう一度挑戦！😉', feedbackBody);
-                // 不正解の場合も、モーダルを閉じた後に自動で次の問題へ進む
-                // setTimeout(handleNextQuestion, 2500); // 2.5秒表示させてから次へ
             }
-
-            updateProgress();
         });
 
         $(document).on('click touchstart', '.vocab-icon', function(e) {
@@ -268,7 +294,7 @@ $(document).ready(function() {
             if (levelUpOccurred) {
                 showCompletionScreen();
                 levelUpOccurred = false; // フラグをリセット
-            } else if ($('#nextChallengeButton').length === 0 && $('#reviewButton').length === 0) {
+            } else if ($('#quizContainer').find('#nextChallengeButton, #reviewButton').length === 0) {
                 // クイズ完了画面が表示されていない場合のみ次の問題へ
                 handleNextQuestion();
             }
@@ -281,7 +307,7 @@ $(document).ready(function() {
                 <h3 class="mb-3">🎉 ${isReviewMode ? '復習完了！' : 'クイズクリア'} 🎉</h3>
                 <p class="lead">${isReviewMode ? '間違えた問題をすべてクリアしました！' : `Level ${currentLevel} になりました！`}</p>
                 <button id="nextChallengeButton" class="btn btn-success mt-3">
-                    <i class="fas fa-arrow-right me-2"></i>${isReviewMode ? '最初のクイズに戻る' : '次のレベルに挑戦！'}
+                    <i class="fas fa-arrow-right me-2"></i>${isReviewMode ? 'クイズに戻る' : '次のレベルに挑戦！'}
                 </button>
         `;
 
@@ -310,18 +336,23 @@ $(document).ready(function() {
         $('#feedbackModal').modal('hide');
     });
 
-    function updateProgress() {
-        const goal = isReviewMode ? window.words.length : POINTS_FOR_LEVEL_UP;
-        const currentPoints = isReviewMode ? currentQuestion : score;
-        const progress = goal > 0 ? Math.min((currentPoints / goal) * 100, 100) : 0;
-
-        $('#progressBar').css('width', progress + '%').attr('aria-valuenow', progress);
-
+    function updateProgress(answeredInReview = false) {
         if (isReviewMode) {
-            $('#scoreText').text(`復習中: ${currentQuestion} / ${goal} 問`);
+            const total = window.words.length;
+            // answeredInReviewがtrueの場合、現在の問題もカウントに含める
+            const completed = answeredInReview ? currentQuestion + 1 : currentQuestion;
+            const progress = total > 0 ? (completed / total) * 100 : 0;
+            $('#progressBar').css('width', progress + '%').attr('aria-valuenow', progress);
+            $('#scoreText').text(`復習中: ${completed} / ${total} 問`);
         } else {
-            $('#scoreText').text(`スコア: ${score} / ${goal} (Level ${currentLevel})`);
+            const goal = POINTS_FOR_LEVEL_UP;
+            const progress = goal > 0 ? (score / goal) * 100 : 0;
+            $('#progressBar').css('width', progress + '%').attr('aria-valuenow', progress);
+            // 正解数を表示
+            $('#scoreText').text(`スコア: ${score} / ${goal}`);
         }
+        // 常に現在のレベルをフッターに表示
+        $('#levelText').text(`Level: ${currentLevel}`);
     }
 
     function startNewChallenge() {
@@ -330,7 +361,7 @@ $(document).ready(function() {
         if (!window.audioContext) initAudioContext();
         currentQuestion = 0;
         score = 0;
-        incorrectQuestions = []; // 間違えた問題リストをリセット
+        // incorrectQuestions はリセットしない（次の通常セッションで使うため）
 
         // 元の全単語リストから新しいクイズを開始
         window.words = [...allWords].sort(() => Math.random() - 0.5);
@@ -341,7 +372,11 @@ $(document).ready(function() {
 
     $('#resetButton').on('click', function() {
         console.log('リセットボタンクリック');
+        // localStorageからレベル情報を削除
+        localStorage.removeItem(LEVEL_STORAGE_KEY);
         currentLevel = 1; // レベルをリセット
+        incorrectQuestions = []; // 間違えた問題リストもリセット
+        $('#levelText').text(`Level: ${currentLevel}`); // UIを更新
         startNewChallenge();
     });
 
@@ -354,6 +389,7 @@ $(document).ready(function() {
         // ここで呼んでおくことで、最初のクリック時の遅延を減らせる可能性がある。
         if (!window.audioContext) initAudioContext();
         generateQuestion();
+        updateProgress(); // 初期表示のために呼び出し
         bindEvents();
     }
 

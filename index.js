@@ -86,6 +86,40 @@ $(document).ready(function() {
         }
     }
 
+    function renderPhrasalVerbCards(groupedByPhraseCategory) {
+        const $cardContainer = $('#cardContainer');
+        $cardContainer.empty();
+
+        const sortedCategories = Object.keys(groupedByPhraseCategory).sort();
+        const learnedPhrases = getLearnedItems(learnedPhrasesKey); // 句動詞もフレーズと同じキーで管理
+
+        for (const category of sortedCategories) {
+            const phrasesInCategory = groupedByPhraseCategory[category];
+            const categoryTitle = category.charAt(0).toUpperCase() + category.slice(1).replace(/_/g, ' ');
+            const sectionHtml = `
+            <section id="category-${category}" class="mb-4">
+                <h2 class="category-title h4"><span class="iconify me-2" data-icon="${(window.defaultIcons && defaultIcons[category]) || 'mdi:help-circle-outline'}"></span>${categoryTitle}</h2>
+                <div class="row row-cols-1 row-cols-md-2 g-3">
+                    ${phrasesInCategory.map(phrase => {
+                        const isLearned = learnedPhrases.has(phrase.phrase_en);
+                        return `
+                        <div class="col">
+                            <div class="card vocab-card h-100 ${isLearned ? 'learned' : ''}" data-phrase_en="${phrase.phrase_en}">
+                                <input type="checkbox" class="form-check-input learned-checkbox" ${isLearned ? 'checked' : ''} title="学習済みとしてマーク">
+                                <div class="card-body p-3">
+                                    <p class="card-title fw-bold mb-1">${phrase.phrase_en}</p>
+                                    <p class="card-text small text-muted mb-2">${phrase.phrase_ja}</p>
+                                    ${phrase.example_en ? `<p class="card-text small mt-2 mb-0"><strong class="text-primary">e.g.</strong> <em>${phrase.example_en}</em><br><span class="text-muted">${phrase.example_ja}</span></p>` : ''}
+                                    ${phrase.situation ? `<p class="card-text small text-info fst-italic mt-2 mb-0"><i class="fas fa-info-circle me-1"></i>${phrase.situation}</p>` : ''}
+                                </div>
+                            </div>
+                        </div>`;}).join('')}
+                </div>
+            </section>`;
+            $cardContainer.append(sectionHtml);
+        }
+    }
+
     function renderPhraseCards(groupedByPhraseCategory) {
         const $cardContainer = $('#cardContainer');
         $cardContainer.empty();
@@ -199,33 +233,46 @@ $(document).ready(function() {
 
     let wordsData = [];
     let phrasesData = [];
+    let phrasalVerbsData = [];
 
     function switchMode(mode) {
-        if (mode === 'words') {
-            const groupedData = groupDataByCategory(wordsData);
-            renderCategorizedCards(groupedData);
-            renderCategoryNav(groupedData);
-            bindCardEvents('word');
-        } else { // mode === 'phrases'
-            const groupedData = groupDataByCategory(phrasesData);
-            renderPhraseCards(groupedData);
-            // フレーズモードでも同じカテゴリナビを再利用
-            renderCategoryNav(groupedData);
-            bindCardEvents('phrase_en');
+        console.log(`Switching to mode: ${mode}`);
+        let dataToShow, renderFunction, cardDataAttribute;
+
+        switch (mode) {
+            case 'phrases':
+                dataToShow = phrasesData;
+                renderFunction = renderPhraseCards;
+                cardDataAttribute = 'phrase_en';
+                break;
+            case 'phrasal_verbs':
+                dataToShow = phrasalVerbsData;
+                renderFunction = renderPhrasalVerbCards;
+                cardDataAttribute = 'phrase_en';
+                break;
+            case 'words':
+            default:
+                dataToShow = wordsData;
+                renderFunction = renderCategorizedCards;
+                cardDataAttribute = 'word';
+                break;
         }
+
+        const groupedData = groupDataByCategory(dataToShow);
+        renderFunction(groupedData);
+        renderCategoryNav(groupedData);
+        bindCardEvents(cardDataAttribute);
         Iconify.scan();
     }
 
     $('input[name="mode-toggle"]').on('change', function() {
-        const isWords = this.id.includes('words');
-        const selectedMode = isWords ? 'words' : 'phrases';
+        const selectedId = this.id;
+        let selectedMode = 'words'; // default
+        if (selectedId.includes('phrases')) selectedMode = 'phrases';
+        if (selectedId.includes('phrasal-verbs')) selectedMode = 'phrasal_verbs';
 
         // モバイル用とデスクトップ用の両方のボタンの状態を同期させる
-        if (isWords) {
-            $('#mode-words, #mode-words-desktop').prop('checked', true);
-        } else {
-            $('#mode-phrases, #mode-phrases-desktop').prop('checked', true);
-        }
+        $(`input[id*="${selectedMode}"]`).prop('checked', true);
 
         switchMode(selectedMode);
     });
@@ -233,11 +280,13 @@ $(document).ready(function() {
     // 両方のJSONファイルを読み込む
     Promise.all([
         fetch(`kidswords.json?v=${new Date().getTime()}`).then(res => res.json()),
-        fetch(`phrase.json?v=${new Date().getTime()}`).then(res => res.json())
-    ]).then(([words, phrases]) => {
-        console.log('単語とフレーズのデータ読み込み成功');
+        fetch(`phrase.json?v=${new Date().getTime()}`).then(res => res.json()),
+        fetch(`phrasal_verbs.json?v=${new Date().getTime()}`).then(res => res.json())
+    ]).then(([words, phrases, phrasalVerbs]) => {
+        console.log('単語、フレーズ、句動詞のデータ読み込み成功');
         wordsData = words;
         phrasesData = phrases;
+        phrasalVerbsData = phrasalVerbs;
         switchMode('words'); // 初期表示は単語モード
         bindNavEvents();
         bindCheckboxEvents();
