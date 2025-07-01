@@ -65,6 +65,7 @@
                 <div id="levelText" class="small fw-bold mx-3">Level: 1</div>
                 <div class="d-flex gap-2">
                     <a href="clear-cache.html" class="btn btn-sm btn-outline-warning" title="キャッシュクリア"><i class="fas fa-broom"></i></a>
+                    <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#settingsModal" title="設定"><i class="fas fa-cog"></i></button>
                     <button class="btn btn-sm btn-outline-secondary" id="resetButton"><i class="fas fa-redo me-1"></i>リセット</button>
                 </div>
             </div>
@@ -108,6 +109,29 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" id="startGameButton" data-bs-dismiss="modal">ゲームを始める</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="settingsModalLabel">設定</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="voiceSelector" class="form-label">音声（ボイス）の選択</label>
+                        <select class="form-select" id="voiceSelector"><option>読み込み中...</option></select>
+                        <div class="form-text">より自然に聞こえる声を選択できます。設定はブラウザに保存されます。</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+                    <button type="button" class="btn btn-primary" id="saveSettingsButton">設定を保存</button>
                 </div>
             </div>
         </div>

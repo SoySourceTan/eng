@@ -7,8 +7,8 @@ $(document).ready(function() {
 
     // --- 定数定義 ---
     const LEVEL_STORAGE_KEY = 'vocabQuizLevel'; // localStorageのキー
+    const LEARNING_STATS_KEY = 'learningStats'; // 共通の統計キー
     const POINTS_FOR_LEVEL_UP = 20; // レベルアップに必要なポイント数
-    const STATS_STORAGE_KEY = 'vocabQuizStats'; // 学習統計のキー
 
     // Bootstrap 5のModalインスタンスは、jQueryオブジェクトではなくDOM要素を渡して生成します。
     const feedbackModal = new bootstrap.Modal(document.getElementById('feedbackModal'));
@@ -20,11 +20,7 @@ $(document).ready(function() {
     let currentQuestion = 0;
     let score = 0; // レベルアップ判定用のスコア
     let currentLevel = parseInt(localStorage.getItem(LEVEL_STORAGE_KEY)) || 1; // localStorageからレベルを読み込む
-    let quizStats = JSON.parse(localStorage.getItem(STATS_STORAGE_KEY)) || {
-        totalQuestions: 0,
-        totalCorrect: 0,
-        wordStats: {}, // { word: { correct: 0, incorrect: 0, category: '...' } }
-    };
+    // 統計データは `common.js` の `updateLearningStats` で直接localStorageを更新するため、ここでは保持しない
     let incorrectQuestions = [];
     let isReviewMode = false;
     let allWords = []; // 元の単語リストを保持
@@ -78,31 +74,36 @@ $(document).ready(function() {
         }
 
         const correctAnswer = question.ruby || question.meaning;
-        const wrongAnswers = [];
-        const usedMeanings = new Set([question.meaning]);
 
         // 修正点: 不正解の選択肢は常に元の全単語リスト(allWords)から探す
         const sourceForChoices = allWords.length > 0 ? allWords : window.words;
 
-        // 同じカテゴリから不正解の選択肢を探す
-        const sameCategoryWords = sourceForChoices.filter(w => w.category === question.category && w.meaning !== question.meaning);
-        while (wrongAnswers.length < 3 && sameCategoryWords.length > 0) {
-            const randomIndex = Math.floor(Math.random() * sameCategoryWords.length);
-            const randomWord = sameCategoryWords[randomIndex];
-            if (!usedMeanings.has(randomWord.meaning)) {
-                wrongAnswers.push(randomWord.ruby || randomWord.meaning);
-                usedMeanings.add(randomWord.meaning);
+        // --- 不正解の選択肢をより堅牢な方法で生成 ---
+        // 1. 同じカテゴリの不正解候補をシャッフルして取得
+        const sameCategoryChoices = sourceForChoices
+            .filter(w => w.category === question.category && w.word !== question.word)
+            .sort(() => 0.5 - Math.random());
+
+        // 2. その他のカテゴリの不正解候補をシャッフルして取得
+        const otherCategoryChoices = sourceForChoices
+            .filter(w => w.category !== question.category)
+            .sort(() => 0.5 - Math.random());
+
+        // 3. 候補を結合 (同じカテゴリを優先)
+        const wrongAnswerPool = [...sameCategoryChoices, ...otherCategoryChoices];
+        
+        // 4. 意味が重複しないように3つの不正解を選択
+        const wrongAnswers = [];
+        const usedMeanings = new Set([correctAnswer]);
+        for (const candidate of wrongAnswerPool) {
+            if (wrongAnswers.length >= 3) break;
+            const meaning = candidate.ruby || candidate.meaning;
+            if (!usedMeanings.has(meaning)) {
+                wrongAnswers.push(meaning);
+                usedMeanings.add(meaning);
             }
-            sameCategoryWords.splice(randomIndex, 1); // 一度使った候補は削除
         }
-        // それでも足りない場合は、カテゴリに関係なく不正解の選択肢を探す
-        while (wrongAnswers.length < 3 && sourceForChoices.length > wrongAnswers.length + 1) {
-            const randomWord = sourceForChoices[Math.floor(Math.random() * sourceForChoices.length)];
-            if (!usedMeanings.has(randomWord.meaning)) {
-                wrongAnswers.push(randomWord.ruby || randomWord.meaning);
-                usedMeanings.add(randomWord.meaning);
-            }
-        }
+
         const answers = [correctAnswer, ...wrongAnswers].sort(() => Math.random() - 0.5);
 
         $('#quizContainer').empty();
@@ -233,7 +234,7 @@ $(document).ready(function() {
                 if (!isReviewMode && !incorrectQuestions.some(q => q.word === window.words[currentQuestion].word)) {
                     incorrectQuestions.push(window.words[currentQuestion]);
                 }
-                // 不正解の統計を更新 (モード共通)
+                // 不正解の統計を更新
                 updateStats(window.words[currentQuestion], false);
                 const feedbackBody = `"${window.words[currentQuestion].word}" は <strong>"${correctAnswer}"</strong> です、<br>"${selectedAnswer}" ではありません！`;
                 showFeedback('おっと！もう一度挑戦！😉', feedbackBody);
@@ -385,7 +386,7 @@ $(document).ready(function() {
      * @returns {Array} 優先順位付けされた単語リスト
      */
     function createPrioritizedWordList(words, stats) {
-        if (Object.keys(stats.wordStats).length === 0) {
+        if (!stats || !stats.wordStats || Object.keys(stats.wordStats).length === 0) {
             // 統計データがなければ、単純にシャッフルして返す
             return [...words].sort(() => Math.random() - 0.5);
         }
@@ -408,22 +409,17 @@ $(document).ready(function() {
     $('#resetButton').on('click', function() {
         console.log('リセットボタンクリック');
         // localStorageからレベルと統計情報を削除
+        // 注意: `LEARNING_STATS_KEY` は全クイズ共通なので、ここでは削除しない方針。
+        // 個別のクイズの統計だけリセットしたい場合は、より詳細なロジックが必要。
         localStorage.removeItem(LEVEL_STORAGE_KEY);
-        localStorage.removeItem(STATS_STORAGE_KEY);
 
         // 変数を初期化
         currentLevel = 1;
         score = 0;
-        quizStats = {
-            totalQuestions: 0,
-            totalCorrect: 0,
-            wordStats: {},
-        };
         incorrectQuestions = []; // 間違えた問題リストもリセット
 
         // UIを更新して新しいクイズを開始
         $('#levelText').text(`Level: ${currentLevel}`); // UIを更新
-        displayStats(); // 統計表示もリセット
         startNewChallenge();
     });
 
@@ -433,30 +429,15 @@ $(document).ready(function() {
      * @param {boolean} isCorrect - 正解したかどうか
      */
     function updateStats(wordData, isCorrect) {
-        // 総計を更新
-        quizStats.totalQuestions++;
-        if (isCorrect) {
-            quizStats.totalCorrect++;
-        }
-
-        // 単語別統計を更新
-        const word = wordData.word;
-        if (!quizStats.wordStats[word]) {
-            quizStats.wordStats[word] = { correct: 0, incorrect: 0, category: wordData.category };
-        }
-        isCorrect ? quizStats.wordStats[word].correct++ : quizStats.wordStats[word].incorrect++;
-
-        // localStorageに保存
-        localStorage.setItem(STATS_STORAGE_KEY, JSON.stringify(quizStats));
-        // スタートモーダルの統計表示も更新
-        displayStats();
+        updateLearningStats('wordQuiz', wordData.word, { category: wordData.category }, isCorrect);
     }
 
     /**
      * スタートモーダルに統計情報を表示する
      */
     function displayStats() {
-        const learnedWordsCount = Object.keys(quizStats.wordStats).length;
+        const quizStats = (JSON.parse(localStorage.getItem(LEARNING_STATS_KEY)) || {}).wordQuiz || {};
+        const learnedWordsCount = Object.keys(quizStats.wordStats || {}).length;
         if (learnedWordsCount === 0) {
             $('#stats-area').hide();
             return;
@@ -467,7 +448,7 @@ $(document).ready(function() {
         const accuracy = totalQuestions > 0 ? ((totalCorrect / totalQuestions) * 100).toFixed(1) : 0;
 
         // 苦手な単語トップ3を取得 (不正解数が多い順)
-        const weakWords = Object.entries(quizStats.wordStats)
+        const weakWords = Object.entries(quizStats.wordStats || {})
             .sort(([, a], [, b]) => b.incorrect - a.incorrect)
             .slice(0, 3)
             .map(([word]) => `<li>${word}</li>`)
@@ -508,7 +489,8 @@ $(document).ready(function() {
         // データの読み込みとクイズの初期化
         loadData(function(data) {
             allWords = data; // 元のデータを保持
-            window.words = createPrioritizedWordList(allWords, quizStats);
+            const wordQuizStats = (JSON.parse(localStorage.getItem(LEARNING_STATS_KEY)) || {}).wordQuiz || {};
+            window.words = createPrioritizedWordList(allWords, wordQuizStats);
 
             console.log(`${window.words.length}語を読み込みました`);
             initializePage();

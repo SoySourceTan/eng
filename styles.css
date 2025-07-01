@@ -297,6 +297,12 @@ body.phrase-quiz-page {
     font-weight: bold;
     color: #333;
 }
+.answer-card .answer-text {
+    font-weight: bold;
+}
+.answer-card .answer-hint {
+    font-style: italic;
+}
 
 .answer-card:hover {
     background: #f0f0f0;
@@ -387,14 +393,14 @@ body.phrase-quiz-page {
 
 /* --- Quiz Hint Area --- */
 /* ヒントエリアの初期状態（ぼかし） */
-#hint-area {
+.quiz-page #hint-area {
     filter: blur(8px); /* 強めのぼかしをかける */
     opacity: 0.6;      /* 少し透明にする */
     transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out; /* 変化を滑らかにする */
 }
 
 /* ヒント表示後の状態（クリア） */
-#hint-area.revealed {
+.quiz-page #hint-area.revealed {
     filter: blur(0);
     opacity: 1;
 }

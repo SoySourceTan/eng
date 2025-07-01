@@ -48,8 +48,22 @@
     <div class="container mt-5 pt-5">
         <div class="card shadow-sm">
             <div class="card-body p-4 p-md-5">
-                <h1 class="card-title text-center"><i class="fas fa-chart-pie me-2"></i>学習の記録</h1>
-                <div id="stats-container" class="mt-4">
+                <h1 class="card-title text-center mb-4"><i class="fas fa-chart-pie me-2"></i>学習の記録</h1>
+
+                <ul class="nav nav-tabs nav-fill mb-4" id="statsTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="word-stats-tab" data-bs-toggle="tab" data-bs-target="#word-stats-pane" type="button" role="tab" aria-controls="word-stats-pane" aria-selected="true">単語クイズ</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="phrase-stats-tab" data-bs-toggle="tab" data-bs-target="#phrase-stats-pane" type="button" role="tab" aria-controls="phrase-stats-pane" aria-selected="false">フレーズクイズ</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="phrasal-verb-stats-tab" data-bs-toggle="tab" data-bs-target="#phrasal-verb-stats-pane" type="button" role="tab" aria-controls="phrasal-verb-stats-pane" aria-selected="false">句動詞クイズ</button>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="statsTabContent">
+                    <!-- Content will be injected by stats.js -->
                     <p class="text-center text-muted">統計データを読み込み中...</p>
                 </div>
             </div>

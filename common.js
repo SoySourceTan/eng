@@ -126,14 +126,31 @@ function playIncorrectSound() {
     });
 }
 
+const SELECTED_VOICE_URI_KEY = 'selectedVoiceURI';
+
 function speakWord(word, options = {}) {
     const {
+        audioFile = null, // MP3ファイルパスをオプションで受け取る
         caller = 'unknown',
         lang = 'en-GB',
         onStart,
         onEnd,
         onError
     } = options;
+
+    // 1. audioFileが指定されている場合、それを最優先で再生
+    if (audioFile) {
+        console.log(`MP3再生: ${audioFile}`);
+        const audio = new Audio(audioFile);
+        if (onStart) onStart();
+        audio.play()
+            .then(() => { if (onEnd) onEnd(); })
+            .catch(err => {
+                console.error(`MP3再生エラー: ${audioFile}`, err);
+                if (onError) onError();
+            });
+        return;
+    }
 
     if (!window.speechEnabled) {
         console.warn('Speech is disabled by user.');
@@ -158,11 +175,20 @@ function speakWord(word, options = {}) {
         utterance.lang = lang;
 
         // --- 音声選択ロジックを強化 ---
-        // 1. 利用可能な音声リストを取得。グローバルリストを優先し、空なら再取得を試みる。
         let voices = window.speechSynthesisVoices;
         if (!voices || voices.length === 0) {
             console.warn('グローバル音声リストが空です。同期的に再取得を試みます。');
             voices = speechSynthesis.getVoices();
+        }
+
+        const savedVoiceURI = localStorage.getItem(SELECTED_VOICE_URI_KEY);
+
+        // 1. ユーザーが保存した声を最優先で探す
+        if (savedVoiceURI && voices.length > 0) {
+            const savedVoice = voices.find(v => v.voiceURI === savedVoiceURI);
+            if (savedVoice) {
+                utterance.voice = savedVoice;
+            }
         }
 
         // デバッグ用に、利用可能な音声のリストをコンソールに出力
@@ -170,7 +196,8 @@ function speakWord(word, options = {}) {
             console.log(`利用可能な音声 (${voices.length}件):`, voices.map(v => `${v.name} (${v.lang})`));
         }
 
-        if (voices.length > 0) {
+        // 2. 保存した声がない場合、または見つからなかった場合、既存の優先順位ロジックで探す
+        if (!utterance.voice && voices.length > 0) {
             // 2. 音声選択の優先順位を定義
             const voicePriority = [
                 // iOS/macOSの高品質な女性の声
@@ -252,8 +279,88 @@ function validateWords(data) {
     );
 }
 
+const LEARNING_STATS_KEY = 'learningStats'; // 統一された統計キー
+
+/**
+ * 汎用的な学習統計更新関数
+ * @param {string} quizType - 'wordQuiz', 'phraseQuiz', 'phrasalVerbQuiz' など
+ * @param {string} itemKey - 統計のキーとなる単語やフレーズ (e.g., 'apple', 'look up')
+ * @param {object} itemData - { category: '...' } などの追加データ
+ * @param {boolean} isCorrect - 正解したかどうか
+ */
+function updateLearningStats(quizType, itemKey, itemData, isCorrect) {
+    // 1. localStorageから全体の統計データを読み込む
+    const allStats = JSON.parse(localStorage.getItem(LEARNING_STATS_KEY)) || {};
+
+    // 2. 対象のクイズタイプの統計オブジェクトを初期化
+    if (!allStats[quizType]) {
+        allStats[quizType] = {
+            totalQuestions: 0,
+            totalCorrect: 0,
+            itemStats: {},
+        };
+    }
+    const quizStats = allStats[quizType];
+
+    // 3. クイズ全体の統計を更新
+    quizStats.totalQuestions++;
+    if (isCorrect) {
+        quizStats.totalCorrect++;
+    }
+
+    // 4. アイテム別の統計を更新
+    if (!quizStats.itemStats[itemKey]) {
+        quizStats.itemStats[itemKey] = {
+            correct: 0,
+            incorrect: 0,
+            category: itemData.category || 'unknown',
+        };
+    }
+    isCorrect ? quizStats.itemStats[itemKey].correct++ : quizStats.itemStats[itemKey].incorrect++;
+
+    // 5. 更新した統計データをlocalStorageに保存
+    localStorage.setItem(LEARNING_STATS_KEY, JSON.stringify(allStats));
+}
+
 // サイト全体で共通のUIイベントをバインドします
 $(document).ready(function() {
+    // --- Settings Modal Logic ---
+    function populateVoiceSelector() {
+        const selector = $('#voiceSelector');
+        if (selector.length === 0) return; // No settings modal on this page
+
+        const voices = window.speechSynthesisVoices || [];
+
+        if (voices.length > 0) {
+            selector.empty(); // Clear loading message
+            const savedVoiceURI = localStorage.getItem(SELECTED_VOICE_URI_KEY);
+
+            voices
+                .filter(voice => voice.lang.startsWith('en')) // Only show English voices
+                .sort((a, b) => a.name.localeCompare(b.name)) // Sort alphabetically
+                .forEach(voice => {
+                    const option = $('<option></option>')
+                        .val(voice.voiceURI)
+                        .text(`${voice.name} (${voice.lang})`);
+                    if (voice.voiceURI === savedVoiceURI) {
+                        option.prop('selected', true);
+                    }
+                    selector.append(option);
+                });
+        } else {
+            selector.html('<option>利用可能な音声がありません。</option>');
+        }
+    }
+
+    $('#settingsModal').on('show.bs.modal', populateVoiceSelector);
+
+    $('#saveSettingsButton').on('click', function() {
+        const selectedVoiceURI = $('#voiceSelector').val();
+        localStorage.setItem(SELECTED_VOICE_URI_KEY, selectedVoiceURI);
+        showToast('設定を保存しました！', 'success');
+        $('#settingsModal').modal('hide');
+    });
+
     // 音声切り替えボタンのイベントハンドラ
     $('#toggleSpeechButton').on('click', function() {
         window.speechEnabled = !window.speechEnabled;

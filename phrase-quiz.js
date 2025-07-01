@@ -9,6 +9,7 @@ $(document).ready(function() {
     let incorrectQuestions = [];
     let isReviewMode = false;
     let levelUpOccurred = false; // レベルアップしたかを判定するフラグ
+    let hintUsed = false; // ヒント使用フラグ
     let difficulty = 'easy'; // デフォルト難易度
     const POINTS_FOR_LEVEL_UP = 5;
 
@@ -39,55 +40,56 @@ $(document).ready(function() {
 
     // --- 問題生成 ---
     function generateQuestion() {
+        hintUsed = false; // 新しい問題ごとにリセット
         if (currentQuestionIndex >= questions.length) {
-            showCompletionScreen();
+            showCompletionScreen(false); // isLevelUp = false
             return;
         }
 
         const question = questions[currentQuestionIndex];
         const correctAnswerEn = question.phrase_en;
 
-        let displayAnswers;
-        let correctDisplayAnswer;
+        // 正解の選択肢オブジェクトを作成
+        const correctAnswerObj = {
+            display: (difficulty === 'hard') ? question.phrase_ja : correctAnswerEn,
+            hint: (difficulty === 'hard') ? correctAnswerEn : question.phrase_ja
+        };
 
-        if (difficulty === 'hard') {
-            // HARDモード: 日本語の選択肢
-            correctDisplayAnswer = question.phrase_ja;
-            const wrongAnswers = [];
-            const tempPhrases = [...phrasesData].filter(p => p.phrase_en !== correctAnswerEn);
-            while (wrongAnswers.length < 3 && tempPhrases.length > 0) {
-                const randomIndex = Math.floor(Math.random() * tempPhrases.length);
-                wrongAnswers.push(tempPhrases.splice(randomIndex, 1)[0].phrase_ja);
-            }
-            displayAnswers = [correctDisplayAnswer, ...wrongAnswers];
-        } else {
-            // EASYモード: 英語の選択肢 (デフォルト)
-            correctDisplayAnswer = correctAnswerEn;
-            const wrongAnswers = [];
-            const tempPhrases = [...phrasesData].filter(p => p.phrase_en !== correctAnswerEn);
-            while (wrongAnswers.length < 3 && tempPhrases.length > 0) {
-                const randomIndex = Math.floor(Math.random() * tempPhrases.length);
-                wrongAnswers.push(tempPhrases.splice(randomIndex, 1)[0].phrase_en);
-            }
-            displayAnswers = [correctDisplayAnswer, ...wrongAnswers];
+        // 不正解の選択肢オブジェクトを作成
+        const wrongAnswerObjs = [];
+        const tempPhrases = [...phrasesData].filter(p => p.phrase_en !== correctAnswerEn);
+        while (wrongAnswerObjs.length < 3 && tempPhrases.length > 0) {
+            const randomIndex = Math.floor(Math.random() * tempPhrases.length);
+            const wrongPhrase = tempPhrases.splice(randomIndex, 1)[0];
+            wrongAnswerObjs.push({
+                display: (difficulty === 'hard') ? wrongPhrase.phrase_ja : wrongPhrase.phrase_en,
+                hint: (difficulty === 'hard') ? wrongPhrase.phrase_en : wrongPhrase.phrase_ja
+            });
         }
 
-        // 選択肢をシャッフル
-        displayAnswers.sort(() => 0.5 - Math.random());
+        // 全ての選択肢を結合してシャッフル
+        let allAnswers = [correctAnswerObj, ...wrongAnswerObjs].sort(() => 0.5 - Math.random());
 
         const quizHtml = `
             <div class="question-card text-center">
                 <p class="lead mb-3">この音声のフレーズはどれ？</p>
-                <button id="playQuestionSound" class="btn btn-lg btn-primary mb-4 shadow-sm">
-                    <span class="iconify" data-icon="fa-solid:volume-up" style="font-size: 1.5rem; vertical-align: middle;"></span>
-                    <span class="ms-2">音声を聞く</span>
-                </button>
+                <div class="d-flex justify-content-center align-items-center gap-2 mb-4">
+                    <button id="playQuestionSound" class="btn btn-lg btn-primary shadow-sm">
+                        <span class="iconify" data-icon="fa-solid:volume-up" style="font-size: 1.5rem; vertical-align: middle;"></span>
+                        <span class="ms-2">音声を聞く</span>
+                    </button>
+                    <button id="hintButton" class="btn btn-lg btn-outline-secondary shadow-sm">
+                        <i class="fas fa-lightbulb"></i>
+                        <span class="ms-2">ヒント</span>
+                    </button>
+                </div>
             </div>
             <div class="row row-cols-1 row-cols-md-2 g-3">
-                ${displayAnswers.map(answer => `
+                ${allAnswers.map(answer => `
                     <div class="col">
-                        <div class="answer-card h-100 d-flex align-items-center justify-content-center p-3" data-answer="${answer}">
-                            <span class="answer-text">${answer}</span>
+                        <div class="answer-card h-100 d-flex flex-column align-items-center justify-content-center p-3" data-answer="${answer.display}">
+                            <span class="answer-text">${answer.display}</span>
+                            <span class="answer-hint small text-muted mt-2" style="display: none;">${answer.hint}</span>
                         </div>
                     </div>
                 `).join('')}
@@ -108,6 +110,14 @@ $(document).ready(function() {
             speakWord(correctAnswer, { lang: 'en-GB' });
         });
 
+        // ヒントボタン
+        $('#quizContainer').on('click', '#hintButton', function() {
+            hintUsed = true;
+            $('.answer-hint').slideDown();
+            $(this).prop('disabled', true).addClass('disabled');
+            showToast('ヒントを表示しました', 'info');
+        });
+
         // 回答カード
         $('#quizContainer').on('click', '.answer-card', function() {
             const $card = $(this);
@@ -119,12 +129,15 @@ $(document).ready(function() {
             const questionData = questions[currentQuestionIndex];
             const correctAnswerEn = questionData.phrase_en;
             const correctAnswerJa = questionData.phrase_ja;
+            const itemKey = questionData.phrase_en;
+            const itemData = { category: questionData.category || 'phrase' };
 
             const isCorrect = (difficulty === 'hard') ? (selectedAnswer === correctAnswerJa) : (selectedAnswer === correctAnswerEn);
 
             if (isCorrect) {
                 score++;
                 $card.addClass('correct');
+                updateLearningStats('phraseQuiz', itemKey, itemData, true);
 
                 // レベルアップ判定
                 if (score > 0 && score % POINTS_FOR_LEVEL_UP === 0) {
@@ -141,6 +154,7 @@ $(document).ready(function() {
                 }
             } else {
                 playIncorrectSound();
+                updateLearningStats('phraseQuiz', itemKey, itemData, false);
                 $card.addClass('incorrect');
                 // 正解のカードをハイライト
                 const correctDisplayAnswer = (difficulty === 'hard') ? correctAnswerJa : correctAnswerEn;
@@ -164,14 +178,14 @@ $(document).ready(function() {
         // 動的に追加されるボタンのイベント
         $('#quizContainer').on('click', '#reviewButton', startReview);
         $('#quizContainer').on('click', '#restartButton', function() {
-            localStorage.removeItem(LEVEL_STORAGE_KEY);
-            level = 1;
+            // レベルをリセットせずに、現在のレベルのまま新しいゲームを開始する
             startGame();
         });
         // モーダルが閉じた後の処理
         $('#feedbackModal').on('hidden.bs.modal', function() {
             if (levelUpOccurred) {
-                showCompletionScreen();
+                // レベルアップ時は完了画面を表示
+                showCompletionScreen(true); // isLevelUp = true
                 levelUpOccurred = false; // フラグをリセット
             } else if (currentQuestionIndex < questions.length) {
                 // クイズ完了画面が表示されていない場合のみ次の問題へ
