@@ -38,7 +38,7 @@ $(document).ready(function() {
      * @param {function} callback - データ読み込み後に実行するコールバック関数
      */
     function loadData(callback) {
-        fetch(`phrasal_verbs.json?v=${new Date().getTime()}`)
+        fetch(`phrase_with_audio.json?v=${new Date().getTime()}`)
             .then(res => res.json())
             .then(data => {
                 if (data && data.length > 0) {

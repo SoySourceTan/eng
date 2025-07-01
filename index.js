@@ -23,16 +23,19 @@ $(document).ready(function() {
             const $card = $(this);
             const $icon = $card.find('.vocab-icon');
 
-            const word = $(this).data(dataAttribute);
-            if (!word) {
+            const textToSpeak = $(this).data(dataAttribute);
+            const audioFile = $(this).data('audio-file'); // 音声ファイルパスを取得
+
+            if (!textToSpeak) {
                 console.error('単語データが見つかりません', this);
                 return;
             }
-            console.log(`音声アイコンクリック: ${word}`);
+            console.log(`音声アイコンクリック: ${textToSpeak}`);
 
             $icon.addClass('speaking vocab-icon-spin');
 
-            speakWord(word, {
+            speakWord(textToSpeak, {
+                audioFile: audioFile, // 音声ファイルパスを渡す
                 caller: 'index-sound-icon',
                 onEnd: () => $icon.removeClass('speaking vocab-icon-spin'),
                 onError: () => $icon.removeClass('speaking vocab-icon-spin')
@@ -104,7 +107,7 @@ $(document).ready(function() {
                         const isLearned = learnedPhrases.has(phrase.phrase_en);
                         return `
                         <div class="col">
-                            <div class="card vocab-card h-100 ${isLearned ? 'learned' : ''}" data-phrase_en="${phrase.phrase_en}">
+                            <div class="card vocab-card h-100 ${isLearned ? 'learned' : ''}" data-phrase_en="${phrase.phrase_en}" data-audio-file="${phrase.audio_file || ''}">
                                 <input type="checkbox" class="form-check-input learned-checkbox" ${isLearned ? 'checked' : ''} title="学習済みとしてマーク">
                                 <div class="card-body p-3">
                                     <p class="card-title fw-bold mb-1">${phrase.phrase_en}</p>
@@ -138,7 +141,7 @@ $(document).ready(function() {
                         const isLearned = learnedPhrases.has(phrase.phrase_en);
                         return `
                         <div class="col">
-                            <div class="card vocab-card h-100 ${isLearned ? 'learned' : ''}" data-phrase_en="${phrase.phrase_en}">
+                            <div class="card vocab-card h-100 ${isLearned ? 'learned' : ''}" data-phrase_en="${phrase.phrase_en}" data-audio-file="${phrase.audio_file || ''}">
                                 <input type="checkbox" class="form-check-input learned-checkbox" ${isLearned ? 'checked' : ''} title="学習済みとしてマーク">
                                 <div class="card-body p-3">
                                     <p class="card-title fw-bold mb-1">${phrase.phrase_en}</p>
@@ -280,7 +283,7 @@ $(document).ready(function() {
     // 両方のJSONファイルを読み込む
     Promise.all([
         fetch(`kidswords.json?v=${new Date().getTime()}`).then(res => res.json()),
-        fetch(`phrase.json?v=${new Date().getTime()}`).then(res => res.json()),
+        fetch(`phrase_with_audio.json?v=${new Date().getTime()}`).then(res => res.json()),
         fetch(`phrasal_verbs.json?v=${new Date().getTime()}`).then(res => res.json())
     ]).then(([words, phrases, phrasalVerbs]) => {
         console.log('単語、フレーズ、句動詞のデータ読み込み成功');

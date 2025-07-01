@@ -1,0 +1,1668 @@
+[
+    {
+        "phrase_en": "Hello, my name is ...",
+        "phrase_ja": "こんにちは、私の名前は…です。",
+        "category": "introductions",
+        "situation": "自己紹介の基本フレーズです。",
+        "audio_file": "audio/hello__my_name_is____.mp3"
+    },
+    {
+        "phrase_en": "Nice to meet you.",
+        "phrase_ja": "はじめまして。",
+        "category": "introductions",
+        "situation": "初めて会った人に使います。",
+        "audio_file": "audio/nice_to_meet_you_.mp3"
+    },
+    {
+        "phrase_en": "I'm from Japan.",
+        "phrase_ja": "日本から来ました。",
+        "category": "introductions",
+        "situation": "出身を伝える時に使います。",
+        "audio_file": "audio/i_m_from_japan_.mp3"
+    },
+    {
+        "phrase_en": "I'm 11 years old.",
+        "phrase_ja": "11歳です。",
+        "category": "introductions",
+        "situation": "年齢を伝える時に使います。",
+        "audio_file": "audio/i_m_11_years_old_.mp3"
+    },
+    {
+        "phrase_en": "Good morning.",
+        "phrase_ja": "おはようございます。",
+        "category": "greetings",
+        "situation": "朝の挨拶です。",
+        "audio_file": "audio/good_morning_.mp3"
+    },
+    {
+        "phrase_en": "How are you?",
+        "phrase_ja": "元気ですか？",
+        "category": "greetings",
+        "situation": "相手の調子を尋ねる時に使います。",
+        "audio_file": "audio/how_are_you_.mp3"
+    },
+    {
+        "phrase_en": "See you tomorrow.",
+        "phrase_ja": "また明日。",
+        "category": "greetings",
+        "situation": "別れ際の挨拶です。",
+        "audio_file": "audio/see_you_tomorrow_.mp3"
+    },
+    {
+        "phrase_en": "May I go to the toilet, please?",
+        "phrase_ja": "トイレに行ってもいいですか？",
+        "category": "in_class",
+        "situation": "授業中に先生に許可をもらう時に使います。",
+        "audio_file": "audio/may_i_go_to_the_toilet__please_.mp3"
+    },
+    {
+        "phrase_en": "I don't understand.",
+        "phrase_ja": "わかりません。",
+        "category": "in_class",
+        "situation": "先生や友達の話が理解できない時に使います。",
+        "audio_file": "audio/i_don_t_understand_.mp3"
+    },
+    {
+        "phrase_en": "Can I borrow a pencil, please?",
+        "phrase_ja": "鉛筆を借りてもいいですか？",
+        "category": "in_class",
+        "situation": "持ち物を借りたい時に使います。",
+        "audio_file": "audio/can_i_borrow_a_pencil__please_.mp3"
+    },
+    {
+        "phrase_en": "What page are we on?",
+        "phrase_ja": "今、何ページですか？",
+        "category": "in_class",
+        "situation": "教科書のページが分からなくなった時に使います。",
+        "audio_file": "audio/what_page_are_we_on_.mp3"
+    },
+    {
+        "phrase_en": "Can I play with you?",
+        "phrase_ja": "一緒に遊んでもいい？",
+        "category": "making_friends",
+        "situation": "休み時間に友達を誘う時に使います。",
+        "audio_file": "audio/can_i_play_with_you_.mp3"
+    },
+    {
+        "phrase_en": "Do you want to have lunch together?",
+        "phrase_ja": "一緒にお昼ごはんを食べませんか？",
+        "category": "making_friends",
+        "situation": "お昼ごはんに誘う時に使います。",
+        "audio_file": "audio/do_you_want_to_have_lunch_together_.mp3"
+    },
+    {
+        "phrase_en": "Could you help me, please?",
+        "phrase_ja": "手伝ってもらえますか？",
+        "category": "asking_for_help",
+        "situation": "困っている時に助けを求めます。",
+        "audio_file": "audio/could_you_help_me__please_.mp3"
+    },
+    {
+        "phrase_en": "Sorry, could you say that again?",
+        "phrase_ja": "すみません、もう一度言ってもらえますか？",
+        "category": "asking_for_help",
+        "situation": "相手の言ったことが聞き取れなかった時に使います。",
+        "audio_file": "audio/sorry__could_you_say_that_again_.mp3"
+    },
+    {
+        "phrase_en": "Where is the station?",
+        "phrase_ja": "駅はどこですか？",
+        "category": "asking_for_help",
+        "situation": "場所を尋ねる時に使います。",
+        "audio_file": "audio/where_is_the_station_.mp3"
+    },
+    {
+        "phrase_en": "How much is this?",
+        "phrase_ja": "これはいくらですか？",
+        "category": "shopping",
+        "situation": "お店で値段を尋ねる時に使います。",
+        "audio_file": "audio/how_much_is_this_.mp3"
+    },
+    {
+        "phrase_en": "I'll take this one, please.",
+        "phrase_ja": "これをください。",
+        "category": "shopping",
+        "situation": "買うものを決めた時に使います。",
+        "audio_file": "audio/i_ll_take_this_one__please_.mp3"
+    },
+    {
+        "phrase_en": "The bill, please.",
+        "phrase_ja": "お会計をお願いします。",
+        "category": "eating_out",
+        "situation": "レストランで会計を頼む時に使います。",
+        "audio_file": "audio/the_bill__please_.mp3"
+    },
+    {
+        "phrase_en": "A ticket to Victoria, please.",
+        "phrase_ja": "ビクトリア駅までのチケットを一枚ください。",
+        "category": "transport",
+        "situation": "駅で切符を買う時に使います。",
+        "audio_file": "audio/a_ticket_to_victoria__please_.mp3"
+    },
+    {
+        "phrase_en": "I'm hungry.",
+        "phrase_ja": "お腹がすきました。",
+        "category": "feelings",
+        "situation": "自分の体調や気持ちを伝える時に使います。",
+        "audio_file": "audio/i_m_hungry_.mp3"
+    },
+    {
+        "phrase_en": "Want to play hopscotch?",
+        "phrase_ja": "ケンケンパで遊ぶ？",
+        "category": "making_friends",
+        "situation": "女の子同士で遊びを提案するときに使います。",
+        "audio_file": "audio/want_to_play_hopscotch_.mp3"
+    },
+    {
+        "phrase_en": "Can I join your game?",
+        "phrase_ja": "そのゲームに入っていい？",
+        "category": "making_friends",
+        "situation": "友達が遊んでいるゲームに参加したいとき。",
+        "audio_file": "audio/can_i_join_your_game_.mp3"
+    },
+    {
+        "phrase_en": "Let's skip rope together!",
+        "phrase_ja": "一緒に縄跳びしよう！",
+        "category": "making_friends",
+        "situation": "縄跳びを友達と楽しむときに使います。",
+        "audio_file": "audio/let_s_skip_rope_together_.mp3"
+    },
+    {
+        "phrase_en": "Do you like to chat?",
+        "phrase_ja": "おしゃべり好き？",
+        "category": "making_friends",
+        "situation": "女の子同士で会話を始めるとき。",
+        "audio_file": "audio/do_you_like_to_chat_.mp3"
+    },
+    {
+        "phrase_en": "You're really good at this!",
+        "phrase_ja": "めっちゃ上手だね！",
+        "category": "making_friends",
+        "situation": "友達の遊びやスキルを褒めるとき。",
+        "audio_file": "audio/you_re_really_good_at_this_.mp3"
+    },
+    {
+        "phrase_en": "Shall we play tag?",
+        "phrase_ja": "鬼ごっこする？",
+        "category": "making_friends",
+        "situation": "友達を鬼ごっこに誘うとき：shall）。",
+        "audio_file": "audio/shall_we_play_tag_.mp3"
+    },
+    {
+        "phrase_en": "What's your favourite game?",
+        "phrase_ja": "好きなゲームは何？",
+        "category": "making_friends",
+        "situation": "友達の好きな遊びを尋ねるとき。",
+        "audio_file": "audio/what_s_your_favourite_game_.mp3"
+    },
+    {
+        "phrase_en": "Ta, that was fun!",
+        "phrase_ja": "ありがと、楽しかった！",
+        "category": "making_friends",
+        "situation": "遊んだ後に感謝を伝えるとき：ta）。",
+        "audio_file": "audio/ta__that_was_fun_.mp3"
+    },
+    {
+        "phrase_en": "Can we be mates?",
+        "phrase_ja": "友達になれる？",
+        "category": "making_friends",
+        "situation": "親しい友達になりたいときに：mates）。",
+        "audio_file": "audio/can_we_be_mates_.mp3"
+    },
+    {
+        "phrase_en": "Let's swap stickers!",
+        "phrase_ja": "シール交換しよう！",
+        "category": "making_friends",
+        "situation": "女の子同士でシールを交換するとき。",
+        "audio_file": "audio/let_s_swap_stickers_.mp3"
+    },
+    {
+        "phrase_en": "Brilliant, you won!",
+        "phrase_ja": "すごい、勝ったね！",
+        "category": "making_friends",
+        "situation": "友達がゲームに勝ったときに：brilliant）。",
+        "audio_file": "audio/brilliant__you_won_.mp3"
+    },
+    {
+        "phrase_en": "Can you teach me that game?",
+        "phrase_ja": "そのゲーム教えてくれる？",
+        "category": "making_friends",
+        "situation": "友達の遊びに興味を示すとき。",
+        "audio_file": "audio/can_you_teach_me_that_game_.mp3"
+    },
+    {
+        "phrase_en": "Can I sit next to you?",
+        "phrase_ja": "隣に座っていい？",
+        "category": "making_friends",
+        "situation": "友達と一緒に座りたいとき。",
+        "audio_file": "audio/can_i_sit_next_to_you_.mp3"
+    },
+    {
+        "phrase_en": "What's your name again?",
+        "phrase_ja": "もう一回、名前教えて？",
+        "category": "making_friends",
+        "situation": "友達の名前を聞き直すとき。",
+        "audio_file": "audio/what_s_your_name_again_.mp3"
+    },
+    {
+        "phrase_en": "Can I have a go?",
+        "phrase_ja": "私もやってみていい？",
+        "category": "making_friends",
+        "situation": "友達の遊びに順番を求めるとき：have a go）。",
+        "audio_file": "audio/can_i_have_a_go_.mp3"
+    },
+    {
+        "phrase_en": "Can you help with my homework?",
+        "phrase_ja": "宿題手伝ってくれる？",
+        "category": "in_class",
+        "situation": "クラスメートに宿題の助けを求めるとき。",
+        "audio_file": "audio/can_you_help_with_my_homework_.mp3"
+    },
+    {
+        "phrase_en": "What does this word mean?",
+        "phrase_ja": "この単語どういう意味？",
+        "category": "in_class",
+        "situation": "授業中にわからない単語を尋ねるとき。",
+        "audio_file": "audio/what_does_this_word_mean_.mp3"
+    },
+    {
+        "phrase_en": "Can I work with you?",
+        "phrase_ja": "一緒に作業していい？",
+        "category": "in_class",
+        "situation": "グループ作業で友達と組みたいとき。",
+        "audio_file": "audio/can_i_work_with_you_.mp3"
+    },
+    {
+        "phrase_en": "Miss, can you explain again?",
+        "phrase_ja": "先生、もう一度説明してください。",
+        "category": "in_class",
+        "situation": "先生に説明を求めるとき：Miss）。",
+        "audio_file": "audio/miss__can_you_explain_again_.mp3"
+    },
+    {
+        "phrase_en": "Where's my book?",
+        "phrase_ja": "私の本どこ？",
+        "category": "in_class",
+        "situation": "授業中に本が見つからないとき。",
+        "audio_file": "audio/where_s_my_book_.mp3"
+    },
+    {
+        "phrase_en": "Is this right?",
+        "phrase_ja": "これで合ってる？",
+        "category": "in_class",
+        "situation": "自分の答えを確認したいとき。",
+        "audio_file": "audio/is_this_right_.mp3"
+    },
+    {
+        "phrase_en": "Can I use the rubber, please?",
+        "phrase_ja": "消しゴム使っていい？",
+        "category": "in_class",
+        "situation": "消しゴムを借りたいとき：rubber）。",
+        "audio_file": "audio/can_i_use_the_rubber__please_.mp3"
+    },
+    {
+        "phrase_en": "What’s the homework?",
+        "phrase_ja": "宿題は何？",
+        "category": "in_class",
+        " Eighty": "授業後に宿題を確認するとき。",
+        "audio_file": "audio/what_s_the_homework_.mp3"
+    },
+    {
+        "phrase_en": "I finished my work!",
+        "phrase_ja": "課題終わりました！",
+        "category": "in_class",
+        "situation": "先生に課題の完了を伝えるとき。",
+        "audio_file": "audio/i_finished_my_work_.mp3"
+    },
+    {
+        "phrase_en": "Can we do it together?",
+        "phrase_ja": "一緒にやっていい？",
+        "category": "in_class",
+        "situation": "クラスメートと協力したいとき。",
+        "audio_file": "audio/can_we_do_it_together_.mp3"
+    },
+    {
+        "phrase_en": "How do you spell this?",
+        "phrase_ja": "これどうやって書くの？",
+        "category": "in_class",
+        "situation": "綴りを確認したいとき。",
+        "audio_file": "audio/how_do_you_spell_this_.mp3"
+    },
+    {
+        "phrase_en": "Cheers, that helped!",
+        "phrase_ja": "ありがとう、助かった！",
+        "category": "in_class",
+        "situation": "助けてもらったお礼を言うとき：cheers）。",
+        "audio_file": "audio/cheers__that_helped_.mp3"
+    },
+    {
+        "phrase_en": "My child is struggling with maths.",
+        "phrase_ja": "うちの子が算数で苦労しています。",
+        "category": "parents",
+        "situation": "先生との面談で子の学習状況を伝えるとき。",
+        "audio_file": "audio/my_child_is_struggling_with_maths_.mp3"
+    },
+    {
+        "phrase_en": "How is my child doing?",
+        "phrase_ja": "うちの子、どんな感じですか？",
+        "category": "parents",
+        "situation": "先生に子の様子を尋ねるとき。",
+        "audio_file": "audio/how_is_my_child_doing_.mp3"
+    },
+    {
+        "phrase_en": "When is the school trip?",
+        "phrase_ja": "遠足はいつですか？",
+        "category": "parents",
+        "situation": "学校行事の日程を確認するとき。",
+        "audio_file": "audio/when_is_the_school_trip_.mp3"
+    },
+    {
+        "phrase_en": "Can we discuss my child's progress?",
+        "phrase_ja": "子の進捗について話せますか？",
+        "category": "parents",
+        "situation": "先生との面談を依頼するとき。",
+        "audio_file": "audio/can_we_discuss_my_child_s_progress_.mp3"
+    },
+    {
+        "phrase_en": "Is there a parents' meeting?",
+        "phrase_ja": "保護者会はありますか？",
+        "category": "parents",
+        "situation": "学校行事の有無を確認するとき。",
+        "audio_file": "audio/is_there_a_parents__meeting_.mp3"
+    },
+    {
+        "phrase_en": "My child forgot their lunch.",
+        "phrase_ja": "子がお弁当を忘れました。",
+        "category": "parents",
+        "situation": "学校に子のお弁当忘れを伝えるとき。",
+        "audio_file": "audio/my_child_forgot_their_lunch_.mp3"
+    },
+    {
+        "phrase_en": "Can I volunteer for the event?",
+        "phrase_ja": "行事のボランティアできますか？",
+        "category": "parents",
+        "situation": "学校行事で手伝いを申し出るとき。",
+        "audio_file": "audio/can_i_volunteer_for_the_event_.mp3"
+    },
+    {
+        "phrase_en": "Lovely to meet other parents!",
+        "phrase_ja": "他の保護者に会えて嬉しい！",
+        "category": "parents",
+        "situation": "学校行事で他の保護者に挨拶するとき：lovely）。",
+        "audio_file": "audio/lovely_to_meet_other_parents_.mp3"
+    },
+    {
+        "phrase_en": "Where’s the school hall?",
+        "phrase_ja": "学校のホールはどこ？",
+        "category": "parents",
+        "situation": "学校行事で場所を尋ねるとき。",
+        "audio_file": "audio/where_s_the_school_hall_.mp3"
+    },
+    {
+        "phrase_en": "What time does school finish?",
+        "phrase_ja": "学校は何時に終わりますか？",
+        "category": "parents",
+        "situation": "下校時間を確認するとき。",
+        "audio_file": "audio/what_time_does_school_finish_.mp3"
+    },
+    {
+        "phrase_en": "Can my child join the club?",
+        "phrase_ja": "子がクラブに入れますか？",
+        "category": "parents",
+        "situation": "課外活動について先生に尋ねるとき。",
+        "audio_file": "audio/can_my_child_join_the_club_.mp3"
+    },
+    {
+        "phrase_en": "Ta for the update!",
+        "phrase_ja": "情報ありがとう！",
+        "category": "parents",
+        "situation": "先生からの連絡にお礼を言うとき：ta）。",
+        "audio_file": "audio/ta_for_the_update_.mp3"
+    },
+    {
+        "phrase_en": "Is my child behaving well?",
+        "phrase_ja": "うちの子、ちゃんとしていますか？",
+        "category": "parents",
+        "situation": "子の態度を先生に確認するとき。",
+        "audio_file": "audio/is_my_child_behaving_well_.mp3"
+    },
+    {
+        "phrase_en": "When is the next school event?",
+        "phrase_ja": "次の学校行事はいつ？",
+        "category": "parents",
+        "situation": "行事の予定を尋ねるとき。",
+        "audio_file": "audio/when_is_the_next_school_event_.mp3"
+    },
+    {
+        "phrase_en": "Can you recommend a tutor?",
+        "phrase_ja": "家庭教師を紹介してもらえますか？",
+        "category": "parents",
+        "situation": "子の学習支援を相談するとき。",
+        "audio_file": "audio/can_you_recommend_a_tutor_.mp3"
+    },
+    {
+        "phrase_en": "I’m lost, where’s the office?",
+        "phrase_ja": "迷いました、事務室はどこ？",
+        "category": "parents",
+        "situation": "学校内で道に迷ったとき。",
+        "audio_file": "audio/i_m_lost__where_s_the_office_.mp3"
+    },
+    {
+        "phrase_en": "Can I have a bag, please?",
+        "phrase_ja": "袋に入れてもらえますか？",
+        "category": "shopping",
+        "situation": "お店で袋を依頼するとき。",
+        "audio_file": "audio/can_i_have_a_bag__please_.mp3"
+    },
+    {
+        "phrase_en": "Where’s the nearest shop?",
+        "phrase_ja": "一番近いお店はどこ？",
+        "category": "shopping",
+        "situation": "お店の場所を尋ねるとき。",
+        "audio_file": "audio/where_s_the_nearest_shop_.mp3"
+    },
+    {
+        "phrase_en": "Do you sell snacks?",
+        "phrase_ja": "スナックは売っていますか？",
+        "category": "shopping",
+        "situation": "お店で商品の有無を確認するとき。",
+        "audio_file": "audio/do_you_sell_snacks_.mp3"
+    },
+    {
+        "phrase_en": "Can you make it quick?",
+        "phrase_ja": "急いでもらえますか？",
+        "category": "shopping",
+        "situation": "お店で急いでいるとき：make it quick）。",
+        "audio_file": "audio/can_you_make_it_quick_.mp3"
+    },
+    {
+        "phrase_en": "Is this on sale?",
+        "phrase_ja": "これ、セール中？",
+        "category": "shopping",
+        "situation": "値引きを確認するとき。",
+        "audio_file": "audio/is_this_on_sale_.mp3"
+    },
+    {
+        "phrase_en": "I’d like a receipt, please.",
+        "phrase_ja": "レシートください。",
+        "category": "shopping",
+        "situation": "会計時にレシートを頼むとき。",
+        "audio_file": "audio/i_d_like_a_receipt__please_.mp3"
+    },
+    {
+        "phrase_en": "Where’s the queue?",
+        "phrase_ja": "列はどこ？",
+        "category": "shopping",
+        "situation": "レジの列を探すとき：queue）。",
+        "audio_file": "audio/where_s_the_queue_.mp3"
+    },
+    {
+        "phrase_en": "Can I try this on?",
+        "phrase_ja": "これ、試着していい？",
+        "category": "shopping",
+        "situation": "服を買う前に試着したいとき。",
+        "audio_file": "audio/can_i_try_this_on_.mp3"
+    },
+    {
+        "phrase_en": "I’m tired.",
+        "phrase_ja": "疲れた。",
+        "category": "feelings",
+        "situation": "疲れている気持ちを伝えるとき。",
+        "audio_file": "audio/i_m_tired_.mp3"
+    },
+    {
+        "phrase_en": "I don’t feel well.",
+        "phrase_ja": "気分が悪いです。",
+        "category": "feelings",
+        "situation": "体調不良を伝えるとき。",
+        "audio_file": "audio/i_don_t_feel_well_.mp3"
+    },
+    {
+        "phrase_en": "I’m really excited!",
+        "phrase_ja": "めっちゃワクワクしてる！",
+        "category": "feelings",
+        "situation": "興奮しているとき：really）。",
+        "audio_file": "audio/i_m_really_excited_.mp3"
+    },
+    {
+        "phrase_en": "I’m a bit nervous.",
+        "phrase_ja": "ちょっと緊張してる。",
+        "category": "feelings",
+        "situation": "不安な気持ちを伝えるとき：a bit）。",
+        "audio_file": "audio/i_m_a_bit_nervous_.mp3"
+    },
+    {
+        "phrase_en": "Can you show me the way?",
+        "phrase_ja": "道を教えてくれる？",
+        "category": "asking_for_help",
+        "situation": "道に迷ったときに助けを求めるとき。",
+        "audio_file": "audio/can_you_show_me_the_way_.mp3"
+    },
+    {
+        "phrase_en": "What time is it?",
+        "phrase_ja": "今、何時？",
+        "category": "asking_for_help",
+        "situation": "時間を確認したいとき。",
+        "audio_file": "audio/what_time_is_it_.mp3"
+    },
+    {
+        "phrase_en": "Where’s the bus stop?",
+        "phrase_ja": "バス停はどこ？",
+        "category": "asking_for_help",
+        "situation": "バス停を探すとき。",
+        "audio_file": "audio/where_s_the_bus_stop_.mp3"
+    },
+    {
+        "phrase_en": "Can I have some water, please?",
+        "phrase_ja": "水もらえますか？",
+        "category": "asking_for_help",
+        "situation": "水を頼むとき。",
+        "audio_file": "audio/can_i_have_some_water__please_.mp3"
+    },
+    {
+        "phrase_en": "I lost my bag.",
+        "phrase_ja": "カバンをなくしました。",
+        "category": "asking_for_help",
+        "situation": "持ち物をなくしたとき。",
+        "audio_file": "audio/i_lost_my_bag_.mp3"
+    },
+    {
+        "phrase_en": "Cheers, you’re a star!",
+        "phrase_ja": "ありがとう、最高！",
+        "category": "asking_for_help",
+        "situation": "助けてもらったお礼を言うとき：cheers, star）。",
+        "audio_file": "audio/cheers__you_re_a_star_.mp3"
+    },
+    {
+        "phrase_en": "Can I sit here?",
+        "phrase_ja": "ここに座っていい？",
+        "category": "everyday_life",
+        "situation": "カフェやバスで席を確保したいとき。",
+        "audio_file": "audio/can_i_sit_here_.mp3"
+    },
+    {
+        "phrase_en": "What’s this called?",
+        "phrase_ja": "これ何て言うの？",
+        "category": "everyday_life",
+        "situation": "知らない物の名前を尋ねるとき。",
+        "audio_file": "audio/what_s_this_called_.mp3"
+    },
+    {
+        "phrase_en": "I’m cold.",
+        "phrase_ja": "寒いよ。",
+        "category": "feelings",
+        "situation": "寒さを感じたときに伝える。",
+        "audio_file": "audio/i_m_cold_.mp3"
+    },
+    {
+        "phrase_en": "Can I have a menu, please?",
+        "phrase_ja": "メニューもらえますか？",
+        "category": "eating_out",
+        "situation": "レストランでメニューを頼むとき。",
+        "audio_file": "audio/can_i_have_a_menu__please_.mp3"
+    },
+    {
+        "phrase_en": "Is this seat taken?",
+        "phrase_ja": "この席、空いてる？",
+        "category": "everyday_life",
+        "situation": "公共の場で席を確認するとき。",
+        "audio_file": "audio/is_this_seat_taken_.mp3"
+    },
+    {
+        "phrase_en": "What’s the weather like?",
+        "phrase_ja": "天気はどう？",
+        "category": "everyday_life",
+        "situation": "天気を尋ねるとき。",
+        "audio_file": "audio/what_s_the_weather_like_.mp3"
+    },
+    {
+        "phrase_en": "I need a plaster.",
+        "phrase_ja": "絆創膏が要ります。",
+        "category": "asking_for_help",
+        "situation": "ケガしたときに絆創膏を求める：plaster）。",
+        "audio_file": "audio/i_need_a_plaster_.mp3"
+    },
+    {
+        "phrase_en": "Can you take a photo?",
+        "phrase_ja": "写真撮ってくれる？",
+        "category": "everyday_life",
+        "situation": "観光地などで写真を頼むとき。",
+        "audio_file": "audio/can_you_take_a_photo_.mp3"
+    },
+    {
+        "phrase_en": "I’m happy to be here!",
+        "phrase_ja": "ここに来れて嬉しい！",
+        "category": "feelings",
+        "situation": "楽しい気持ちを伝えるとき。",
+        "audio_file": "audio/i_m_happy_to_be_here_.mp3"
+    },
+    {
+        "phrase_en": "Where’s the loo?",
+        "phrase_ja": "トイレはどこ？",
+        "category": "asking_for_help",
+        "situation": "トイレの場所を尋ねるとき：loo）。",
+        "audio_file": "audio/where_s_the_loo_.mp3"
+    },
+    {
+        "phrase_en": "It's a piece of cake.",
+        "phrase_ja": "朝飯前だよ。",
+        "category": "everyday_life",
+        "situation": "何かがとても簡単だと伝えるときに使います。",
+        "audio_file": "audio/it_s_a_piece_of_cake_.mp3"
+    },
+    {
+        "phrase_en": "It's raining cats and dogs.",
+        "phrase_ja": "土砂降りだね。",
+        "category": "everyday_life",
+        "situation": "とても激しい雨が降っているときに使います。",
+        "audio_file": "audio/it_s_raining_cats_and_dogs_.mp3"
+    },
+    {
+        "phrase_en": "Break a leg!",
+        "phrase_ja": "頑張ってね！",
+        "category": "everyday_life",
+        "situation": "舞台に出る人などへ「幸運を祈る」という意味で使います。",
+        "audio_file": "audio/break_a_leg_.mp3"
+    },
+    {
+        "phrase_en": "Once in a blue moon.",
+        "phrase_ja": "ごくまれに。",
+        "category": "everyday_life",
+        "situation": "何かが非常に珍しいときに使います。",
+        "audio_file": "audio/once_in_a_blue_moon_.mp3"
+    },
+    {
+        "phrase_en": "The ball is in your court.",
+        "phrase_ja": "次は君の番だよ。",
+        "category": "everyday_life",
+        "situation": "次に行動を起こすのは相手の責任だと伝えるときに使います。",
+        "audio_file": "audio/the_ball_is_in_your_court_.mp3"
+    },
+    {
+        "phrase_en": "Let's call it a day.",
+        "phrase_ja": "今日はこの辺で終わりにしよう。",
+        "category": "everyday_life",
+        "situation": "仕事や活動をその日は終わりたいときに使います。",
+        "audio_file": "audio/let_s_call_it_a_day_.mp3"
+    },
+    {
+        "phrase_en": "I'm feeling under the weather.",
+        "phrase_ja": "少し気分がすぐれません。",
+        "category": "everyday_life",
+        "situation": "体調が少し悪いときに使います。",
+        "audio_file": "audio/i_m_feeling_under_the_weather_.mp3"
+    },
+    {
+        "phrase_en": "It's quarter to ten.",
+        "phrase_ja": "9時45分です。",
+        "category": "time_telling",
+        "situation": "「10時15分前」という時間の表現。",
+        "audio_file": "audio/it_s_quarter_to_ten_.mp3"
+    },
+    {
+        "phrase_en": "It's quarter past ten.",
+        "phrase_ja": "10時15分です。",
+        "category": "time_telling",
+        "situation": "「10時15分過ぎ」という時間の表現。",
+        "audio_file": "audio/it_s_quarter_past_ten_.mp3"
+    },
+    {
+        "phrase_en": "It's half past ten.",
+        "phrase_ja": "10時半です。",
+        "category": "time_telling",
+        "situation": "「10時30分」という時間の表現。",
+        "audio_file": "audio/it_s_half_past_ten_.mp3"
+    },
+    {
+        "phrase_en": "It's ten o'clock sharp.",
+        "phrase_ja": "10時ちょうどです。",
+        "category": "time_telling",
+        "situation": "正確な時間を強調するとき。",
+        "audio_file": "audio/it_s_ten_o_clock_sharp_.mp3"
+    },
+    {
+        "phrase_en": "Bite the bullet.",
+        "phrase_ja": "歯を食いしばって耐える。",
+        "category": "everyday_life",
+        "situation": "困難な状況に立ち向かう決意をするとき。",
+        "audio_file": "audio/bite_the_bullet_.mp3"
+    },
+    {
+        "phrase_en": "Hit the sack.",
+        "phrase_ja": "寝るよ。",
+        "category": "everyday_life",
+        "situation": "「ベッドに入る」「寝る」という意味のカジュアルな表現。",
+        "audio_file": "audio/hit_the_sack_.mp3"
+    },
+    {
+        "phrase_en": "Spill the beans.",
+        "phrase_ja": "秘密をばらす。",
+        "category": "everyday_life",
+        "situation": "誰かが秘密を漏らしてしまったときに使います。",
+        "audio_file": "audio/spill_the_beans_.mp3"
+    },
+    {
+        "phrase_en": "Break the ice.",
+        "phrase_ja": "場を和ませる。",
+        "category": "everyday_life",
+        "situation": "初対面の人たちの間の緊張をほぐすとき。",
+        "audio_file": "audio/break_the_ice_.mp3"
+    },
+    {
+        "phrase_en": "It cost an arm and a leg.",
+        "phrase_ja": "ものすごく高かった。",
+        "category": "everyday_life",
+        "situation": "何かが非常に高価だったと表現するとき。",
+        "audio_file": "audio/it_cost_an_arm_and_a_leg_.mp3"
+    },
+    {
+        "phrase_en": "Get cold feet.",
+        "phrase_ja": "怖気づく。",
+        "category": "everyday_life",
+        "situation": "直前になって不安や恐怖でやめたくなるとき。",
+        "audio_file": "audio/get_cold_feet_.mp3"
+    },
+    {
+        "phrase_en": "He's on the ball.",
+        "phrase_ja": "彼は仕事ができる。",
+        "category": "everyday_life",
+        "situation": "誰かが状況をよく理解し、素早く対応できることを褒めるとき。",
+        "audio_file": "audio/he_s_on_the_ball_.mp3"
+    },
+    {
+        "phrase_en": "I'm just pulling your leg.",
+        "phrase_ja": "からかってるだけだよ。",
+        "category": "everyday_life",
+        "situation": "冗談を言っていると明かすとき。",
+        "audio_file": "audio/i_m_just_pulling_your_leg_.mp3"
+    },
+    {
+        "phrase_en": "We don't see eye to eye.",
+        "phrase_ja": "私たちは意見が合わない。",
+        "category": "everyday_life",
+        "situation": "誰かと意見が完全に異なるとき。",
+        "audio_file": "audio/we_don_t_see_eye_to_eye_.mp3"
+    },
+    {
+        "phrase_en": "That'll happen when pigs fly.",
+        "phrase_ja": "そんなことありえないよ。",
+        "category": "everyday_life",
+        "situation": "絶対に起こり得ないと思うことを表現するとき。",
+        "audio_file": "audio/that_ll_happen_when_pigs_fly_.mp3"
+    },
+    {
+        "phrase_en": "Speak of the devil!",
+        "phrase_ja": "噂をすれば影だね。",
+        "category": "everyday_life",
+        "situation": "噂していた人がちょうど現れたときに使います。",
+        "audio_file": "audio/speak_of_the_devil_.mp3"
+    },
+    {
+        "phrase_en": "It was a blessing in disguise.",
+        "phrase_ja": "不幸中の幸いだった。",
+        "category": "everyday_life",
+        "situation": "最初は悪いことだと思ったことが、結果的に良いことだったとわかったとき。",
+        "audio_file": "audio/it_was_a_blessing_in_disguise_.mp3"
+    },
+    {
+        "phrase_en": "Don't cut corners.",
+        "phrase_ja": "手を抜かないで。",
+        "category": "everyday_life",
+        "situation": "品質を犠牲にして時間やお金を節約しないように言うとき。",
+        "audio_file": "audio/don_t_cut_corners_.mp3"
+    },
+    {
+        "phrase_en": "Things are getting out of hand.",
+        "phrase_ja": "手に負えなくなってきた。",
+        "category": "everyday_life",
+        "situation": "状況がコントロール不能になってきたときに使います。",
+        "audio_file": "audio/things_are_getting_out_of_hand_.mp3"
+    },
+    {
+        "phrase_en": "Hang in there.",
+        "phrase_ja": "頑張って。",
+        "category": "everyday_life",
+        "situation": "困難な状況にいる人を励ますときに使います。",
+        "audio_file": "audio/hang_in_there_.mp3"
+    },
+    {
+        "phrase_en": "This is breaking news.",
+        "phrase_ja": "ニュース速報です。",
+        "category": "news_broadcast",
+        "situation": "重要なニュースが飛び込んできたときに使われます。",
+        "audio_file": "audio/this_is_breaking_news_.mp3"
+    },
+    {
+        "phrase_en": "We're going live to our correspondent.",
+        "phrase_ja": "現場の記者につなぎます。",
+        "category": "news_broadcast",
+        "situation": "スタジオから現場中継に切り替えるとき。",
+        "audio_file": "audio/we_re_going_live_to_our_correspondent_.mp3"
+    },
+    {
+        "phrase_en": "The government has announced...",
+        "phrase_ja": "政府は…と発表しました。",
+        "category": "news_broadcast",
+        "situation": "政府の公式発表を報道するとき。",
+        "audio_file": "audio/the_government_has_announced___.mp3"
+    },
+    {
+        "phrase_en": "The stock market closed lower today.",
+        "phrase_ja": "本日の株式市場は値下がりして引けました。",
+        "category": "news_broadcast",
+        "situation": "経済ニュースで株価の終値を伝えるとき。",
+        "audio_file": "audio/the_stock_market_closed_lower_today_.mp3"
+    },
+    {
+        "phrase_en": "An investigation is underway.",
+        "phrase_ja": "調査が進行中です。",
+        "category": "news_broadcast",
+        "situation": "事件や事故の原因調査が始まったことを伝えるとき。",
+        "audio_file": "audio/an_investigation_is_underway_.mp3"
+    },
+    {
+        "phrase_en": "The suspect remains at large.",
+        "phrase_ja": "容疑者は依然として逃走中です。",
+        "category": "news_broadcast",
+        "situation": "警察が容疑者をまだ逮捕できていない状況。",
+        "audio_file": "audio/the_suspect_remains_at_large_.mp3"
+    },
+    {
+        "phrase_en": "According to a recent survey...",
+        "phrase_ja": "最近の調査によると…。",
+        "category": "news_broadcast",
+        "situation": "世論調査や研究の結果を引用するとき。",
+        "audio_file": "audio/according_to_a_recent_survey___.mp3"
+    },
+    {
+        "phrase_en": "The death toll has risen.",
+        "phrase_ja": "死者数が増加しました。",
+        "category": "news_broadcast",
+        "situation": "災害や事故による死者数の更新を伝えるとき。",
+        "audio_file": "audio/the_death_toll_has_risen_.mp3"
+    },
+    {
+        "phrase_en": "Stay tuned for more updates.",
+        "phrase_ja": "引き続き最新情報にご注目ください。",
+        "category": "news_broadcast",
+        "situation": "ニュース番組の終わりに使われます。",
+        "audio_file": "audio/stay_tuned_for_more_updates_.mp3"
+    },
+    {
+        "phrase_en": "We'll be right back.",
+        "phrase_ja": "CMのあと、すぐ戻ります。",
+        "category": "news_broadcast",
+        "situation": "コマーシャルに入る前に使われます。",
+        "audio_file": "audio/we_ll_be_right_back_.mp3"
+    },
+    {
+        "phrase_en": "In other news...",
+        "phrase_ja": "その他のニュースです。",
+        "category": "news_broadcast",
+        "situation": "話題を変えて別のニュースを伝えるとき。",
+        "audio_file": "audio/in_other_news___.mp3"
+    },
+    {
+        "phrase_en": "This has been a developing story.",
+        "phrase_ja": "続報が入り次第お伝えします。",
+        "category": "news_broadcast",
+        "situation": "まだ状況が変化しているニュースについて。",
+        "audio_file": "audio/this_has_been_a_developing_story_.mp3"
+    },
+    {
+        "phrase_en": "We're expecting scattered showers.",
+        "phrase_ja": "ところにより、にわか雨が予想されます。",
+        "category": "weather_forecast",
+        "situation": "天気予報で使われる表現。",
+        "audio_file": "audio/we_re_expecting_scattered_showers_.mp3"
+    },
+    {
+        "phrase_en": "There's a high chance of rain tomorrow.",
+        "phrase_ja": "明日は雨の可能性が高いです。",
+        "category": "weather_forecast",
+        "situation": "降水確率が高いことを伝えるとき。",
+        "audio_file": "audio/there_s_a_high_chance_of_rain_tomorrow_.mp3"
+    },
+    {
+        "phrase_en": "The temperature will drop to 5 degrees.",
+        "phrase_ja": "気温は5度まで下がるでしょう。",
+        "category": "weather_forecast",
+        "situation": "気温の低下を予報するとき。",
+        "audio_file": "audio/the_temperature_will_drop_to_5_degrees_.mp3"
+    },
+    {
+        "phrase_en": "It's going to be a sunny day.",
+        "phrase_ja": "晴れの一日になるでしょう。",
+        "category": "weather_forecast",
+        "situation": "晴天を予報するとき。",
+        "audio_file": "audio/it_s_going_to_be_a_sunny_day_.mp3"
+    },
+    {
+        "phrase_en": "A cold front is moving in.",
+        "phrase_ja": "寒冷前線が接近中です。",
+        "category": "weather_forecast",
+        "situation": "気象状況を説明するとき。",
+        "audio_file": "audio/a_cold_front_is_moving_in_.mp3"
+    },
+    {
+        "phrase_en": "Expect strong winds and heavy rain.",
+        "phrase_ja": "強風と大雨にご注意ください。",
+        "category": "weather_forecast",
+        "situation": "悪天候を警告するとき。",
+        "audio_file": "audio/expect_strong_winds_and_heavy_rain_.mp3"
+    },
+    {
+        "phrase_en": "The weather will clear up by the afternoon.",
+        "phrase_ja": "天気は午後には回復するでしょう。",
+        "category": "weather_forecast",
+        "situation": "天候の回復を予報するとき。",
+        "audio_file": "audio/the_weather_will_clear_up_by_the_afternoon_.mp3"
+    },
+    {
+        "phrase_en": "It's a bit chilly, so wrap up warm.",
+        "phrase_ja": "少し肌寒いので、暖かくしてください。",
+        "category": "weather_forecast",
+        "situation": "服装についてアドバイスするとき。",
+        "audio_file": "audio/it_s_a_bit_chilly__so_wrap_up_warm_.mp3"
+    },
+    {
+        "phrase_en": "The forecast calls for a heatwave.",
+        "phrase_ja": "予報では猛暑が予想されています。",
+        "category": "weather_forecast",
+        "situation": "厳しい暑さを予報するとき。",
+        "audio_file": "audio/the_forecast_calls_for_a_heatwave_.mp3"
+    },
+    {
+        "phrase_en": "There's a fog warning in effect.",
+        "phrase_ja": "濃霧注意報が発令中です。",
+        "category": "weather_forecast",
+        "situation": "霧による視界不良を警告するとき。",
+        "audio_file": "audio/there_s_a_fog_warning_in_effect_.mp3"
+    },
+    {
+        "phrase_en": "Does this bus go to the museum?",
+        "phrase_ja": "このバスは博物館に行きますか？",
+        "category": "transport",
+        "situation": "バスの行き先を確認するとき。",
+        "audio_file": "audio/does_this_bus_go_to_the_museum_.mp3"
+    },
+    {
+        "phrase_en": "A return ticket to Oxford, please.",
+        "phrase_ja": "オックスフォードまでの往復チケットをください。",
+        "category": "transport",
+        "situation": "往復切符を買うとき：return ticket）。",
+        "audio_file": "audio/a_return_ticket_to_oxford__please_.mp3"
+    },
+    {
+        "phrase_en": "Which platform for the 10:30 train?",
+        "phrase_ja": "10時半の電車は何番線ですか？",
+        "category": "transport",
+        "situation": "電車のホームを尋ねるとき。",
+        "audio_file": "audio/which_platform_for_the_10_30_train_.mp3"
+    },
+    {
+        "phrase_en": "How long does it take to get there?",
+        "phrase_ja": "そこまでどのくらいかかりますか？",
+        "category": "transport",
+        "situation": "所要時間を尋ねるとき。",
+        "audio_file": "audio/how_long_does_it_take_to_get_there_.mp3"
+    },
+    {
+        "phrase_en": "Can you tell me when to get off?",
+        "phrase_ja": "降りる時に教えてもらえますか？",
+        "category": "transport",
+        "situation": "バスで降車地を運転手に頼むとき。",
+        "audio_file": "audio/can_you_tell_me_when_to_get_off_.mp3"
+    },
+    {
+        "phrase_en": "Please stop at the next corner.",
+        "phrase_ja": "次の角で停めてください。",
+        "category": "transport",
+        "situation": "タクシーで降車場所を伝えるとき。",
+        "audio_file": "audio/please_stop_at_the_next_corner_.mp3"
+    },
+    {
+        "phrase_en": "Is there a direct train?",
+        "phrase_ja": "直通の電車はありますか？",
+        "category": "transport",
+        "situation": "乗り換えなしで行けるか確認するとき。",
+        "audio_file": "audio/is_there_a_direct_train_.mp3"
+    },
+    {
+        "phrase_en": "I'm knackered.",
+        "phrase_ja": "もうクタクタだよ。",
+        "category": "feelings",
+        "situation": "とても疲れているときに使うイギリスの俗語：knackered）。",
+        "audio_file": "audio/i_m_knackered_.mp3"
+    },
+    {
+        "phrase_en": "I'm dead tired.",
+        "phrase_ja": "死ぬほど疲れた。",
+        "category": "feelings",
+        "situation": "極度に疲れていることを強調するとき。",
+        "audio_file": "audio/i_m_dead_tired_.mp3"
+    },
+    {
+        "phrase_en": "I'm chuffed to bits.",
+        "phrase_ja": "すごく嬉しいよ。",
+        "category": "feelings",
+        "situation": "とても喜んでいるときに使うイギリスの俗語：chuffed）。",
+        "audio_file": "audio/i_m_chuffed_to_bits_.mp3"
+    },
+    {
+        "phrase_en": "I'm gutted.",
+        "phrase_ja": "がっかりだよ。",
+        "category": "feelings",
+        "situation": "ひどくがっかりしたり、落ち込んだりしたときに使うイギリスの俗語：gutted）。",
+        "audio_file": "audio/i_m_gutted_.mp3"
+    },
+    {
+        "phrase_en": "I'm over the moon.",
+        "phrase_ja": "天にも昇る気分だよ。",
+        "category": "feelings",
+        "situation": "非常に幸せで興奮しているときに使います。",
+        "audio_file": "audio/i_m_over_the_moon_.mp3"
+    },
+    {
+        "phrase_en": "I'm a bit down in the dumps.",
+        "phrase_ja": "ちょっと落ち込んでるんだ。",
+        "category": "feelings",
+        "situation": "悲しい気分や、ふさぎ込んでいるときに使います。",
+        "audio_file": "audio/i_m_a_bit_down_in_the_dumps_.mp3"
+    },
+    {
+        "phrase_en": "Can I have your name, darling?",
+        "phrase_ja": "お名前を教えてくれるかな？",
+        "category": "entertainment",
+        "situation": "オーディションなどで、親しみを込めて名前を尋ねるとき。",
+        "audio_file": "audio/can_i_have_your_name__darling_.mp3"
+    },
+    {
+        "phrase_en": "Please give it up for our next act!",
+        "phrase_ja": "次の出演者に大きな拍手を！",
+        "category": "entertainment",
+        "situation": "ショーなどで次のパフォーマーを紹介するとき。",
+        "audio_file": "audio/please_give_it_up_for_our_next_act_.mp3"
+    },
+    {
+        "phrase_en": "Her Majesty's a pretty nice girl.",
+        "phrase_ja": "女王陛下はとても素敵な女の子だ。",
+        "category": "culture",
+        "situation": "ビートルズの歌詞より。イギリス的な表現。",
+        "audio_file": "audio/her_majesty_s_a_pretty_nice_girl_.mp3"
+    },
+    {
+        "phrase_en": "Lovely Rita, meter maid.",
+        "phrase_ja": "素敵なリタ、駐車違反取締員さん。",
+        "category": "culture",
+        "situation": "ビートルズの歌詞より。「Lovely」はイギリスでよく使われる形容詞。",
+        "audio_file": "audio/lovely_rita__meter_maid_.mp3"
+    },
+    {
+        "phrase_en": "The banker never wears a mac.",
+        "phrase_ja": "銀行家はマック（レインコート）を着ない。",
+        "category": "culture",
+        "situation": "ビートルズの歌詞より。「mac」はイギリス英語でレインコートのこと。",
+        "audio_file": "audio/the_banker_never_wears_a_mac_.mp3"
+    },
+    {
+        "phrase_en": "One is not amused.",
+        "phrase_ja": "余は面白くない。",
+        "category": "culture",
+        "situation": "退屈や不満を、少し気取って（ポッシュに）表現するとき。女王が使うような言い方。",
+        "audio_file": "audio/one_is_not_amused_.mp3"
+    },
+    {
+        "phrase_en": "It's not my cup of tea.",
+        "phrase_ja": "それは私の好みではありません。",
+        "category": "everyday_life",
+        "situation": "何かが好きではない、または興味がないと丁寧に言うとき。",
+        "audio_file": "audio/it_s_not_my_cup_of_tea_.mp3"
+    },
+    {
+        "phrase_en": "Don't judge a book by its cover.",
+        "phrase_ja": "見かけで判断しないで。",
+        "category": "everyday_life",
+        "situation": "外見だけで人や物事の本質を決めつけないように言うとき。",
+        "audio_file": "audio/don_t_judge_a_book_by_its_cover_.mp3"
+    },
+    {
+        "phrase_en": "Kill two birds with one stone.",
+        "phrase_ja": "一石二鳥。",
+        "category": "everyday_life",
+        "situation": "一つの行動で二つの目的を達成すること。",
+        "audio_file": "audio/kill_two_birds_with_one_stone_.mp3"
+    },
+    {
+        "phrase_en": "The early bird catches the worm.",
+        "phrase_ja": "早起きは三文の徳。",
+        "category": "everyday_life",
+        "situation": "早く行動する人が利益を得るということ。",
+        "audio_file": "audio/the_early_bird_catches_the_worm_.mp3"
+    },
+    {
+        "phrase_en": "Actions speak louder than words.",
+        "phrase_ja": "行動は言葉よりも雄弁。",
+        "category": "everyday_life",
+        "situation": "口で言うよりも、実際に行うことの方が重要だということ。",
+        "audio_file": "audio/actions_speak_louder_than_words_.mp3"
+    },
+    {
+        "phrase_en": "It's a storm in a teacup.",
+        "phrase_ja": "大したことないのに大騒ぎ。",
+        "category": "everyday_life",
+        "situation": "些細なことについて大げさに騒ぐこと（イギリス英語）。",
+        "audio_file": "audio/it_s_a_storm_in_a_teacup_.mp3"
+    },
+    {
+        "phrase_en": "Bob's your uncle.",
+        "phrase_ja": "ほら、簡単でしょ。",
+        "category": "everyday_life",
+        "situation": "手順を説明した後、それがとても簡単だと示すときに使うイギリス英語。",
+        "audio_file": "audio/bob_s_your_uncle_.mp3"
+    },
+    {
+        "phrase_en": "That's the bee's knees.",
+        "phrase_ja": "それは最高だね。",
+        "category": "everyday_life",
+        "situation": "何かが非常に素晴らしいと表現する古い言い方。",
+        "audio_file": "audio/that_s_the_bee_s_knees_.mp3"
+    },
+    {
+        "phrase_en": "It's all gone pear-shaped.",
+        "phrase_ja": "めちゃくちゃになった。",
+        "category": "everyday_life",
+        "situation": "計画などが完全に失敗したときに使うイギリス英語。",
+        "audio_file": "audio/it_s_all_gone_pear_shaped_.mp3"
+    },
+    {
+        "phrase_en": "I'm at my wit's end.",
+        "phrase_ja": "途方に暮れています。",
+        "category": "everyday_life",
+        "situation": "どうしていいか全く分からず、困り果てている状態。",
+        "audio_file": "audio/i_m_at_my_wit_s_end_.mp3"
+    },
+    {
+        "phrase_en": "Let sleeping dogs lie.",
+        "phrase_ja": "触らぬ神に祟りなし。",
+        "category": "everyday_life",
+        "situation": "問題を引き起こす可能性のある過去のことには触れない方が良いということ。",
+        "audio_file": "audio/let_sleeping_dogs_lie_.mp3"
+    },
+    {
+        "phrase_en": "Take it with a pinch of salt.",
+        "phrase_ja": "話半分に聞いておいて。",
+        "category": "everyday_life",
+        "situation": "聞いた情報が完全には正確でないかもしれないと疑ってかかるべきだということ。",
+        "audio_file": "audio/take_it_with_a_pinch_of_salt_.mp3"
+    },
+    {
+        "phrase_en": "A penny for your thoughts.",
+        "phrase_ja": "何を考えているの？",
+        "category": "everyday_life",
+        "situation": "静かに考え込んでいる人に、何を考えているか尋ねるとき。",
+        "audio_file": "audio/a_penny_for_your_thoughts_.mp3"
+    },
+    {
+        "phrase_en": "Heard it on the grapevine.",
+        "phrase_ja": "噂で聞いたよ。",
+        "category": "everyday_life",
+        "situation": "非公式な噂や口コミで情報を得たときに使います。",
+        "audio_file": "audio/heard_it_on_the_grapevine_.mp3"
+    },
+    {
+        "phrase_en": "It's the best thing since sliced bread.",
+        "phrase_ja": "画期的なものだね。",
+        "category": "everyday_life",
+        "situation": "非常に優れた発明やアイデアを褒めるとき。",
+        "audio_file": "audio/it_s_the_best_thing_since_sliced_bread_.mp3"
+    },
+    {
+        "phrase_en": "A table for two, please.",
+        "phrase_ja": "2名席をお願いします。",
+        "category": "eating_out",
+        "situation": "レストランで席を頼むとき。",
+        "audio_file": "audio/a_table_for_two__please_.mp3"
+    },
+    {
+        "phrase_en": "Are you ready to order?",
+        "phrase_ja": "ご注文はお決まりですか？",
+        "category": "eating_out",
+        "situation": "店員がお客さんに注文を尋ねるとき。",
+        "audio_file": "audio/are_you_ready_to_order_.mp3"
+    },
+    {
+        "phrase_en": "I'll have the same.",
+        "phrase_ja": "同じものをください。",
+        "category": "eating_out",
+        "situation": "他の人と同じものを注文するとき。",
+        "audio_file": "audio/i_ll_have_the_same_.mp3"
+    },
+    {
+        "phrase_en": "Keep the change.",
+        "phrase_ja": "おつりは取っておいてください。",
+        "category": "eating_out",
+        "situation": "チップとしておつりを渡すとき。",
+        "audio_file": "audio/keep_the_change_.mp3"
+    },
+    {
+        "phrase_en": "I'm just browsing, thanks.",
+        "phrase_ja": "見ているだけです、ありがとう。",
+        "category": "shopping",
+        "situation": "店員に声をかけられたが、特に買う目的がないとき。",
+        "audio_file": "audio/i_m_just_browsing__thanks_.mp3"
+    },
+    {
+        "phrase_en": "Do you have this in a smaller size?",
+        "phrase_ja": "これの小さいサイズはありますか？",
+        "category": "shopping",
+        "situation": "服などのサイズ違いを探しているとき。",
+        "audio_file": "audio/do_you_have_this_in_a_smaller_size_.mp3"
+    },
+    {
+        "phrase_en": "Can I pay by card?",
+        "phrase_ja": "カードで払えますか？",
+        "category": "shopping",
+        "situation": "支払い方法を確認するとき。",
+        "audio_file": "audio/can_i_pay_by_card_.mp3"
+    },
+    {
+        "phrase_en": "It's a bargain!",
+        "phrase_ja": "お買い得だ！",
+        "category": "shopping",
+        "situation": "商品が非常に安いと感じたとき。",
+        "audio_file": "audio/it_s_a_bargain_.mp3"
+    },
+    {
+        "phrase_en": "This is a rip-off.",
+        "phrase_ja": "これはぼったくりだ。",
+        "category": "shopping",
+        "situation": "値段が不当に高いと感じたとき。",
+        "audio_file": "audio/this_is_a_rip_off_.mp3"
+    },
+    {
+        "phrase_en": "I'm on cloud nine.",
+        "phrase_ja": "最高の気分だよ。",
+        "category": "feelings",
+        "situation": "非常に幸せで、有頂天になっている状態。",
+        "audio_file": "audio/i_m_on_cloud_nine_.mp3"
+    },
+    {
+        "phrase_en": "I'm feeling a bit blue.",
+        "phrase_ja": "少し憂鬱な気分なんだ。",
+        "category": "feelings",
+        "situation": "理由もなく少し悲しい、または落ち込んでいるとき。",
+        "audio_file": "audio/i_m_feeling_a_bit_blue_.mp3"
+    },
+    {
+        "phrase_en": "I'm shaking like a leaf.",
+        "phrase_ja": "（木の葉のように）ガタガタ震えている。",
+        "category": "feelings",
+        "situation": "恐怖や緊張で体が震えている様子。",
+        "audio_file": "audio/i_m_shaking_like_a_leaf_.mp3"
+    },
+    {
+        "phrase_en": "My blood is boiling.",
+        "phrase_ja": "はらわたが煮えくり返る思いだ。",
+        "category": "feelings",
+        "situation": "非常に腹が立っている状態。",
+        "audio_file": "audio/my_blood_is_boiling_.mp3"
+    },
+    {
+        "phrase_en": "Fancy a cuppa?",
+        "phrase_ja": "お茶でもどう？",
+        "category": "culture",
+        "situation": "「一杯のお茶（cup of tea）」を気軽に誘うイギリス的な表現。",
+        "audio_file": "audio/fancy_a_cuppa_.mp3"
+    },
+    {
+        "phrase_en": "Mind the gap.",
+        "phrase_ja": "隙間にご注意ください。",
+        "category": "culture",
+        "situation": "ロンドンの地下鉄で、電車とホームの隙間への注意を促す有名なアナウンス。",
+        "audio_file": "audio/mind_the_gap_.mp3"
+    },
+    {
+        "phrase_en": "Don't get your knickers in a twist.",
+        "phrase_ja": "落ち着いて、イライラしないで。",
+        "category": "culture",
+        "situation": "些細なことで腹を立てたり、心配しすぎたりしている人に対するイギリス的な表現。",
+        "audio_file": "audio/don_t_get_your_knickers_in_a_twist_.mp3"
+    },
+    {
+        "phrase_en": "I'm absolutely gobsmacked.",
+        "phrase_ja": "完全に唖然としたよ。",
+        "category": "culture",
+        "situation": "非常に驚いて言葉も出ない様子を表すイギリスの俗語。",
+        "audio_file": "audio/i_m_absolutely_gobsmacked_.mp3"
+    },
+    {
+        "phrase_en": "You're having a laugh!",
+        "phrase_ja": "冗談でしょ！",
+        "category": "culture",
+        "situation": "信じられないようなことや、ばかげたことを聞いたときに使うイギリス的な表現。",
+        "audio_file": "audio/you_re_having_a_laugh_.mp3"
+    },
+    {
+        "phrase_en": "The proof is in the pudding.",
+        "phrase_ja": "論より証拠。",
+        "category": "culture",
+        "situation": "何かの価値や真偽は、実際に試してみなければ分からないということ。",
+        "audio_file": "audio/the_proof_is_in_the_pudding_.mp3"
+    },
+    {
+        "phrase_en": "And now for something completely different.",
+        "phrase_ja": "さて、お次は全く違う話題です。",
+        "category": "entertainment",
+        "situation": "モンティ・パイソンの有名な決め台詞。話題を転換するときに使われる。",
+        "audio_file": "audio/and_now_for_something_completely_different_.mp3"
+    },
+    {
+        "phrase_en": "I have a cunning plan.",
+        "phrase_ja": "俺には巧妙な計画がある。",
+        "category": "entertainment",
+        "situation": "イギリスのコメディ「ブラックアダー」の有名な決め台詞。",
+        "audio_file": "audio/i_have_a_cunning_plan_.mp3"
+    },
+    {
+        "phrase_en": "Don't mention the war!",
+        "phrase_ja": "戦争の話はするな！",
+        "category": "entertainment",
+        "situation": "イギリスのコメディ「フォルティ・タワーズ」の有名な台詞。触れてはいけない話題を示すときに使われる。",
+        "audio_file": "audio/don_t_mention_the_war_.mp3"
+    },
+    {
+        "phrase_en": "What's the Wi-Fi password?",
+        "phrase_ja": "Wi-Fiのパスワードは何ですか？",
+        "category": "everyday_life",
+        "situation": "カフェやホテルなどでインターネットに接続したいとき。",
+        "audio_file": "audio/what_s_the_wi_fi_password_.mp3"
+    },
+    {
+        "phrase_en": "Could you charge my phone?",
+        "phrase_ja": "携帯を充電してもらえますか？",
+        "category": "asking_for_help",
+        "situation": "スマートフォンのバッテリーが切れたとき。",
+        "audio_file": "audio/could_you_charge_my_phone_.mp3"
+    },
+    {
+        "phrase_en": "I've locked myself out.",
+        "phrase_ja": "（鍵を中に忘れて）締め出されました。",
+        "category": "asking_for_help",
+        "situation": "家や車に入れなくなったとき。",
+        "audio_file": "audio/i_ve_locked_myself_out_.mp3"
+    },
+    {
+        "phrase_en": "Long time no see.",
+        "phrase_ja": "久しぶり。",
+        "category": "greetings",
+        "situation": "長い間会っていなかった人に会ったときの挨拶。",
+        "audio_file": "audio/long_time_no_see_.mp3"
+    },
+    {
+        "phrase_en": "Take care.",
+        "phrase_ja": "気をつけてね。",
+        "category": "greetings",
+        "situation": "別れ際に相手を気遣う言葉。",
+        "audio_file": "audio/take_care_.mp3"
+    },
+    {
+        "phrase_en": "What do you do for a living?",
+        "phrase_ja": "お仕事は何をされていますか？",
+        "category": "introductions",
+        "situation": "相手の職業を尋ねる丁寧な表現。",
+        "audio_file": "audio/what_do_you_do_for_a_living_.mp3"
+    },
+    {
+        "phrase_en": "Could you speak a little slower?",
+        "phrase_ja": "もう少しゆっくり話していただけますか？",
+        "category": "asking_for_help",
+        "situation": "相手の英語が速くて聞き取れないとき。",
+        "audio_file": "audio/could_you_speak_a_little_slower_.mp3"
+    },
+    {
+        "phrase_en": "I'm just looking.",
+        "phrase_ja": "見ているだけです。",
+        "category": "shopping",
+        "situation": "店員に声をかけられたが、特に買う目的がないとき。 (I'm just browsing と同じ意味)",
+        "audio_file": "audio/i_m_just_looking_.mp3"
+    },
+    {
+        "phrase_en": "It's on me.",
+        "phrase_ja": "私のおごりです。",
+        "category": "eating_out",
+        "situation": "食事や飲み物の代金を自分が支払うと申し出るとき。",
+        "audio_file": "audio/it_s_on_me_.mp3"
+    },
+    {
+        "phrase_en": "Let's split the bill.",
+        "phrase_ja": "割り勘にしよう。",
+        "category": "eating_out",
+        "situation": "会計を均等に分けたいとき。",
+        "audio_file": "audio/let_s_split_the_bill_.mp3"
+    },
+    {
+        "phrase_en": "To be honest...",
+        "phrase_ja": "正直に言うと…。",
+        "category": "everyday_life",
+        "situation": "本音を話す前に前置きとして使います。",
+        "audio_file": "audio/to_be_honest___.mp3"
+    },
+    {
+        "phrase_en": "As far as I know...",
+        "phrase_ja": "私の知る限りでは…。",
+        "category": "everyday_life",
+        "situation": "情報が不確かかもしれないと断りを入れるとき。",
+        "audio_file": "audio/as_far_as_i_know___.mp3"
+    },
+    {
+        "phrase_en": "Correct me if I'm wrong, but...",
+        "phrase_ja": "間違っていたら訂正してほしいのですが…。",
+        "category": "everyday_life",
+        "situation": "自分の意見に自信がないときに、丁寧に話を切り出す表現。",
+        "audio_file": "audio/correct_me_if_i_m_wrong__but___.mp3"
+    },
+    {
+        "phrase_en": "Time flies.",
+        "phrase_ja": "光陰矢の如し。",
+        "category": "proverbs",
+        "situation": "時間が速く過ぎることを表現します。",
+        "audio_file": "audio/time_flies_.mp3"
+    },
+    {
+        "phrase_en": "Practice makes perfect.",
+        "phrase_ja": "習うより慣れろ。",
+        "category": "proverbs",
+        "situation": "練習を重ねることで完璧になるということ。",
+        "audio_file": "audio/practice_makes_perfect_.mp3"
+    },
+    {
+        "phrase_en": "Two heads are better than one.",
+        "phrase_ja": "三人寄れば文殊の知恵。",
+        "category": "proverbs",
+        "situation": "一人で考えるより複数人で考えた方が良いアイデアが生まれること。",
+        "audio_file": "audio/two_heads_are_better_than_one_.mp3"
+    },
+    {
+        "phrase_en": "The pen is mightier than the sword.",
+        "phrase_ja": "ペンは剣よりも強し。",
+        "category": "proverbs",
+        "situation": "言論や思想の力は武力よりも影響力が大きいということ。",
+        "audio_file": "audio/the_pen_is_mightier_than_the_sword_.mp3"
+    },
+    {
+        "phrase_en": "When in Rome, do as the Romans do.",
+        "phrase_ja": "郷に入っては郷に従え。",
+        "category": "proverbs",
+        "situation": "その土地の習慣ややり方に従うべきだということ。",
+        "audio_file": "audio/when_in_rome__do_as_the_romans_do_.mp3"
+    },
+    {
+        "phrase_en": "No pain, no gain.",
+        "phrase_ja": "痛みなくして得るものなし。",
+        "category": "proverbs",
+        "situation": "努力や苦労なしに成功は得られないということ。",
+        "audio_file": "audio/no_pain__no_gain_.mp3"
+    },
+    {
+        "phrase_en": "Fortune favors the bold.",
+        "phrase_ja": "幸運は勇者に味方する。",
+        "category": "proverbs",
+        "situation": "大胆に行動する人が成功を掴むということ。",
+        "audio_file": "audio/fortune_favors_the_bold_.mp3"
+    },
+    {
+        "phrase_en": "A picture is worth a thousand words.",
+        "phrase_ja": "百聞は一見に如かず。",
+        "category": "proverbs",
+        "situation": "一枚の絵は多くの言葉よりも多くのことを伝えるということ。",
+        "audio_file": "audio/a_picture_is_worth_a_thousand_words_.mp3"
+    },
+    {
+        "phrase_en": "Birds of a feather flock together.",
+        "phrase_ja": "類は友を呼ぶ。",
+        "category": "proverbs",
+        "situation": "似た者同士は自然と集まるということ。",
+        "audio_file": "audio/birds_of_a_feather_flock_together_.mp3"
+    },
+    {
+        "phrase_en": "Don't count your chickens before they hatch.",
+        "phrase_ja": "捕らぬ狸の皮算用。",
+        "category": "proverbs",
+        "situation": "確実になる前に成功を期待してはいけないということ。",
+        "audio_file": "audio/don_t_count_your_chickens_before_they_hatch_.mp3"
+    },
+    {
+        "phrase_en": "Easy come, easy go.",
+        "phrase_ja": "悪銭身につかず。",
+        "category": "proverbs",
+        "situation": "簡単に手に入れたものは、簡単になくなってしまうということ。",
+        "audio_file": "audio/easy_come__easy_go_.mp3"
+    },
+    {
+        "phrase_en": "Every cloud has a silver lining.",
+        "phrase_ja": "どんな悪い状況にも良い面はある。",
+        "category": "proverbs",
+        "situation": "希望を失わないように励ます言葉。",
+        "audio_file": "audio/every_cloud_has_a_silver_lining_.mp3"
+    },
+    {
+        "phrase_en": "Hope for the best, prepare for the worst.",
+        "phrase_ja": "最善を期待し、最悪に備えよ。",
+        "category": "proverbs",
+        "situation": "楽観的でありつつも、万が一の事態に備えるべきだということ。",
+        "audio_file": "audio/hope_for_the_best__prepare_for_the_worst_.mp3"
+    },
+    {
+        "phrase_en": "If it ain't broke, don't fix it.",
+        "phrase_ja": "壊れていないなら直すな。",
+        "category": "proverbs",
+        "situation": "問題がないのに余計な変更を加えるべきではないということ。",
+        "audio_file": "audio/if_it_ain_t_broke__don_t_fix_it_.mp3"
+    },
+    {
+        "phrase_en": "Laughter is the best medicine.",
+        "phrase_ja": "笑いは最良の薬。",
+        "category": "proverbs",
+        "situation": "笑うことが心身の健康に良いということ。",
+        "audio_file": "audio/laughter_is_the_best_medicine_.mp3"
+    },
+    {
+        "phrase_en": "Look before you leap.",
+        "phrase_ja": "転ばぬ先の杖。",
+        "category": "proverbs",
+        "situation": "行動する前によく考えるべきだということ。",
+        "audio_file": "audio/look_before_you_leap_.mp3"
+    },
+    {
+        "phrase_en": "Still waters run deep.",
+        "phrase_ja": "能ある鷹は爪を隠す。",
+        "category": "proverbs",
+        "situation": "物静かな人ほど、内面に深い考えや感情を秘めているということ。",
+        "audio_file": "audio/still_waters_run_deep_.mp3"
+    },
+    {
+        "phrase_en": "The squeaky wheel gets the grease.",
+        "phrase_ja": "鳴く子は育つ。",
+        "category": "proverbs",
+        "situation": "声を大にして要求する人が、最も注意や助けを得られるということ。",
+        "audio_file": "audio/the_squeaky_wheel_gets_the_grease_.mp3"
+    },
+    {
+        "phrase_en": "There's no place like home.",
+        "phrase_ja": "我が家に勝る所なし。",
+        "category": "proverbs",
+        "situation": "自分の家が一番心地よい場所だということ。",
+        "audio_file": "audio/there_s_no_place_like_home_.mp3"
+    },
+    {
+        "phrase_en": "You can't make an omelet without breaking eggs.",
+        "phrase_ja": "何かを得るには犠牲が伴う。",
+        "category": "proverbs",
+        "situation": "目的を達成するためには、ある程度の犠牲や困難は避けられないということ。",
+        "audio_file": "audio/you_can_t_make_an_omelet_without_breaking_eggs_.mp3"
+    },
+    {
+        "phrase_en": "All's well that ends well.",
+        "phrase_ja": "終わりよければすべてよし。",
+        "category": "proverbs",
+        "situation": "途中に困難があっても、最終的に良い結果になれば問題ないということ。",
+        "audio_file": "audio/all_s_well_that_ends_well_.mp3"
+    },
+    {
+        "phrase_en": "Better late than never.",
+        "phrase_ja": "遅れてもやらないよりはまし。",
+        "category": "proverbs",
+        "situation": "遅くなっても、何もしないよりは行動する方が良いということ。",
+        "audio_file": "audio/better_late_than_never_.mp3"
+    },
+    {
+        "phrase_en": "Don't put all your eggs in one basket.",
+        "phrase_ja": "一つのことにすべてを賭けるな。",
+        "category": "proverbs",
+        "situation": "リスクを分散させるべきだということ。",
+        "audio_file": "audio/don_t_put_all_your_eggs_in_one_basket_.mp3"
+    },
+    {
+        "phrase_en": "Honesty is the best policy.",
+        "phrase_ja": "正直は最善の策。",
+        "category": "proverbs",
+        "situation": "正直であることが、長期的には最も良い結果をもたらすということ。",
+        "audio_file": "audio/honesty_is_the_best_policy_.mp3"
+    },
+    {
+        "phrase_en": "Ignorance is bliss.",
+        "phrase_ja": "知らぬが仏。",
+        "category": "proverbs",
+        "situation": "知らない方が幸せなこともあるということ。",
+        "audio_file": "audio/ignorance_is_bliss_.mp3"
+    },
+    {
+        "phrase_en": "Necessity is the mother of invention.",
+        "phrase_ja": "必要は発明の母。",
+        "category": "proverbs",
+        "situation": "何かが必要に迫られると、それを解決するための新しいアイデアが生まれること。",
+        "audio_file": "audio/necessity_is_the_mother_of_invention_.mp3"
+    },
+    {
+        "phrase_en": "Out of sight, out of mind.",
+        "phrase_ja": "去る者は日々に疎し。",
+        "category": "proverbs",
+        "situation": "目の前にないと、その存在を忘れがちになるということ。",
+        "audio_file": "audio/out_of_sight__out_of_mind_.mp3"
+    },
+    {
+        "phrase_en": "The grass is always greener on the other side.",
+        "phrase_ja": "隣の芝生は青い。",
+        "category": "proverbs",
+        "situation": "他人の状況は自分のものより良く見えるものだということ。",
+        "audio_file": "audio/the_grass_is_always_greener_on_the_other_side_.mp3"
+    },
+    {
+        "phrase_en": "Where there's a will, there's a way.",
+        "phrase_ja": "意志あるところに道は開ける。",
+        "category": "proverbs",
+        "situation": "強い意志があれば、どんな困難も乗り越えられるということ。",
+        "audio_file": "audio/where_there_s_a_will__there_s_a_way_.mp3"
+    }
+]

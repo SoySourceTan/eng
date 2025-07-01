@@ -99,15 +99,21 @@ $(document).ready(function() {
         Iconify.scan();
 
         // 問題が生成されたら一度だけ自動再生
-        speakWord(correctAnswerEn, { lang: 'en-GB' });
+        speakWord(correctAnswerEn, {
+            // JSONから読み込んだ音声ファイルパスを渡す
+            audioFile: question.audio_file, 
+            lang: 'en-GB'
+        });
     }
 
     // --- イベントハンドラ ---
     function bindEvents() {
         // 音声再生ボタン
         $('#quizContainer').on('click', '#playQuestionSound', function() {
-            const correctAnswer = questions[currentQuestionIndex].phrase_en;
-            speakWord(correctAnswer, { lang: 'en-GB' });
+            const questionData = questions[currentQuestionIndex];
+            const correctAnswer = questionData.phrase_en;
+            // ここでも音声ファイルパスを渡す
+            speakWord(correctAnswer, { audioFile: questionData.audio_file, lang: 'en-GB' }); 
         });
 
         // ヒントボタン
@@ -260,7 +266,8 @@ $(document).ready(function() {
     // 「ゲームを始める」ボタンがクリックされたらクイズを開始
     startGameButton.on('click', function() {
         // --- データ読み込みとゲーム開始 ---
-        fetch(`phrase.json?v=${new Date().getTime()}`)
+        // 読み込むファイルを phrase_with_audio.json に変更
+        fetch(`phrase_with_audio.json?v=${new Date().getTime()}`) 
             .then(res => res.json())
             .then(data => {
                 // データのバリデーションを強化

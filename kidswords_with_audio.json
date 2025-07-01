@@ -1,0 +1,2957 @@
+[
+    {
+        "word": "red",
+        "meaning": "赤",
+        "ruby": "<ruby>赤<rt>あか</rt></ruby>",
+        "category": "color",
+        "icon": "twemoji:red-circle",
+        "color": "red",
+        "background": "bg-color",
+        "audio_file": "audio/red.mp3"
+    },
+    {
+        "word": "blue",
+        "meaning": "青",
+        "ruby": "<ruby>青<rt>あお</rt></ruby>",
+        "category": "color",
+        "icon": "twemoji:blue-circle",
+        "color": "blue",
+        "background": "bg-color",
+        "audio_file": "audio/blue.mp3"
+    },
+    {
+        "word": "yellow",
+        "meaning": "黄",
+        "ruby": "<ruby>黄<rt>き</rt></ruby>",
+        "category": "color",
+        "icon": "twemoji:yellow-circle",
+        "color": "#cccc00",
+        "background": "bg-color",
+        "audio_file": "audio/yellow.mp3"
+    },
+    {
+        "word": "green",
+        "meaning": "緑",
+        "ruby": "<ruby>緑<rt>みどり</rt></ruby>",
+        "category": "color",
+        "icon": "twemoji:green-circle",
+        "color": "green",
+        "background": "bg-color",
+        "audio_file": "audio/green.mp3"
+    },
+    {
+        "word": "black",
+        "meaning": "黒",
+        "ruby": "<ruby>黒<rt>くろ</rt></ruby>",
+        "category": "color",
+        "icon": "twemoji:black-circle",
+        "color": "black",
+        "background": "bg-color",
+        "audio_file": "audio/black.mp3"
+    },
+    {
+        "word": "white",
+        "meaning": "白",
+        "ruby": "<ruby>白<rt>しろ</rt></ruby>",
+        "category": "color",
+        "icon": "twemoji:white-circle",
+        "color": "#cccccc",
+        "background": "bg-color",
+        "audio_file": "audio/white.mp3"
+    },
+    {
+        "word": "purple",
+        "meaning": "紫",
+        "ruby": "<ruby>紫<rt>むらさき</rt></ruby>",
+        "category": "color",
+        "icon": "twemoji:purple-circle",
+        "color": "purple",
+        "background": "bg-color",
+        "audio_file": "audio/purple.mp3"
+    },
+    {
+        "word": "orange",
+        "meaning": "オレンジ",
+        "ruby": "オレンジ",
+        "category": "color",
+        "icon": "twemoji:orange-circle",
+        "color": "orange",
+        "background": "bg-color",
+        "audio_file": "audio/orange.mp3"
+    },
+    {
+        "word": "pink",
+        "meaning": "ピンク",
+        "ruby": "ピンク",
+        "category": "color",
+        "icon": "openmoji:pink-heart",
+        "color": "pink",
+        "background": "bg-color",
+        "audio_file": "audio/pink.mp3"
+    },
+    {
+        "word": "brown",
+        "meaning": "茶",
+        "ruby": "<ruby>茶<rt>ちゃ</rt></ruby>",
+        "category": "color",
+        "icon": "twemoji:brown-circle",
+        "color": "brown",
+        "background": "bg-color",
+        "audio_file": "audio/brown.mp3"
+    },
+    {
+        "word": "grey",
+        "meaning": "灰",
+        "ruby": "<ruby>灰<rt>はい</rt></ruby>",
+        "category": "color",
+        "icon": "twemoji:white-circle",
+        "color": "grey",
+        "background": "bg-color",
+        "audio_file": "audio/grey.mp3"
+    },
+    {
+        "word": "gold",
+        "meaning": "金",
+        "ruby": "<ruby>金<rt>きん</rt></ruby>",
+        "category": "color",
+        "icon": "cryptocurrency-color:gold",
+        "color": "gold",
+        "background": "bg-color",
+        "audio_file": "audio/gold.mp3"
+    },
+    {
+        "word": "carrot",
+        "meaning": "にんじん",
+        "ruby": "にんじん",
+        "category": "vegetable",
+        "icon": "twemoji:carrot",
+        "background": "bg-vegetable",
+        "audio_file": "audio/carrot.mp3"
+    },
+    {
+        "word": "potato",
+        "meaning": "じゃがいも",
+        "ruby": "じゃがいも",
+        "category": "vegetable",
+        "icon": "twemoji:potato",
+        "background": "bg-vegetable",
+        "audio_file": "audio/potato.mp3"
+    },
+    {
+        "word": "tomato",
+        "meaning": "トマト",
+        "ruby": "トマト",
+        "category": "vegetable",
+        "icon": "twemoji:tomato",
+        "background": "bg-vegetable",
+        "audio_file": "audio/tomato.mp3"
+    },
+    {
+        "word": "cucumber",
+        "meaning": "きゅうり",
+        "ruby": "きゅうり",
+        "category": "vegetable",
+        "icon": "twemoji:cucumber",
+        "background": "bg-vegetable",
+        "audio_file": "audio/cucumber.mp3"
+    },
+    {
+        "word": "onion",
+        "meaning": "たまねぎ",
+        "ruby": "たまねぎ",
+        "category": "vegetable",
+        "icon": "twemoji:onion",
+        "background": "bg-vegetable",
+        "audio_file": "audio/onion.mp3"
+    },
+    {
+        "word": "broccoli",
+        "meaning": "ブロッコリー",
+        "ruby": "ブロッコリー",
+        "category": "vegetable",
+        "icon": "twemoji:broccoli",
+        "background": "bg-vegetable",
+        "audio_file": "audio/broccoli.mp3"
+    },
+    {
+        "word": "pea",
+        "meaning": "えんどう",
+        "ruby": "えんどう",
+        "category": "vegetable",
+        "icon": "noto:pea-pod",
+        "background": "bg-vegetable",
+        "audio_file": "audio/pea.mp3"
+    },
+    {
+        "word": "lettuce",
+        "meaning": "レタス",
+        "ruby": "レタス",
+        "category": "vegetable",
+        "icon": "twemoji:leafy-green",
+        "background": "bg-vegetable",
+        "audio_file": "audio/lettuce.mp3"
+    },
+    {
+        "word": "aubergine",
+        "meaning": "なす",
+        "ruby": "なす",
+        "category": "vegetable",
+        "icon": "twemoji:eggplant",
+        "background": "bg-vegetable",
+        "audio_file": "audio/aubergine.mp3"
+    },
+    {
+        "word": "courgette",
+        "meaning": "ズッキーニ",
+        "ruby": "ズッキーニ",
+        "category": "vegetable",
+        "icon": "twemoji:cucumber",
+        "background": "bg-vegetable",
+        "audio_file": "audio/courgette.mp3"
+    },
+    {
+        "word": "cabbage",
+        "meaning": "キャベツ",
+        "ruby": "キャベツ",
+        "category": "vegetable",
+        "icon": "twemoji:leafy-green",
+        "background": "bg-vegetable",
+        "audio_file": "audio/cabbage.mp3"
+    },
+    {
+        "word": "sweetcorn",
+        "meaning": "とうもろこし",
+        "ruby": "とうもろこし",
+        "category": "vegetable",
+        "icon": "twemoji:ear-of-corn",
+        "background": "bg-vegetable",
+        "audio_file": "audio/sweetcorn.mp3"
+    },
+    {
+        "word": "daikon",
+        "meaning": "大根",
+        "ruby": "<ruby>大根<rt>だいこん</rt></ruby>",
+        "category": "vegetable",
+        "icon": "tdesign:radish",
+        "background": "bg-vegetable",
+        "audio_file": "audio/daikon.mp3"
+    },
+    {
+        "word": "spinach",
+        "meaning": "ほうれん草",
+        "ruby": "<ruby>ほうれん草<rt>ほうれんそう</rt></ruby>",
+        "category": "vegetable",
+        "icon": "twemoji:leafy-green",
+        "background": "bg-vegetable",
+        "audio_file": "audio/spinach.mp3"
+    },
+    {
+        "word": "lotus root",
+        "meaning": "れんこん",
+        "ruby": "れんこん",
+        "category": "vegetable",
+        "icon": "noto:ginger-root",
+        "background": "bg-vegetable",
+        "audio_file": "audio/lotus_root.mp3"
+    },
+    {
+        "word": "sweet potato",
+        "meaning": "さつまいも",
+        "ruby": "さつまいも",
+        "category": "vegetable",
+        "icon": "twemoji:potato",
+        "background": "bg-vegetable",
+        "audio_file": "audio/sweet_potato.mp3"
+    },
+    {
+        "word": "green pepper",
+        "meaning": "ピーマン",
+        "ruby": "ピーマン",
+        "category": "vegetable",
+        "icon": "twemoji:bell-pepper",
+        "background": "bg-vegetable",
+        "audio_file": "audio/green_pepper.mp3"
+    },
+    {
+        "word": "pumpkin",
+        "meaning": "かぼちゃ",
+        "ruby": "かぼちゃ",
+        "category": "vegetable",
+        "icon": "twemoji:jack-o-lantern",
+        "background": "bg-vegetable",
+        "audio_file": "audio/pumpkin.mp3"
+    },
+    {
+        "word": "apple",
+        "meaning": "りんご",
+        "ruby": "リンゴ",
+        "category": "fruit",
+        "icon": "twemoji:red-apple",
+        "background": "bg-fruit",
+        "audio_file": "audio/apple.mp3"
+    },
+    {
+        "word": "banana",
+        "meaning": "バナナ",
+        "ruby": "バナナ",
+        "category": "fruit",
+        "icon": "twemoji:banana",
+        "background": "bg-fruit",
+        "audio_file": "audio/banana.mp3"
+    },
+    {
+        "word": "grape",
+        "meaning": "ぶどう",
+        "ruby": "ぶどう",
+        "category": "fruit",
+        "icon": "twemoji:grapes",
+        "background": "bg-fruit",
+        "audio_file": "audio/grape.mp3"
+    },
+    {
+        "word": "strawberry",
+        "meaning": "いちご",
+        "ruby": "いちご",
+        "category": "fruit",
+        "icon": "twemoji:strawberry",
+        "background": "bg-fruit",
+        "audio_file": "audio/strawberry.mp3"
+    },
+    {
+        "word": "lemon",
+        "meaning": "レモン",
+        "ruby": "レモン",
+        "category": "fruit",
+        "icon": "twemoji:lemon",
+        "background": "bg-fruit",
+        "audio_file": "audio/lemon.mp3"
+    },
+    {
+        "word": "peach",
+        "meaning": "もも",
+        "ruby": "もも",
+        "category": "fruit",
+        "icon": "twemoji:peach",
+        "background": "bg-fruit",
+        "audio_file": "audio/peach.mp3"
+    },
+    {
+        "word": "pear",
+        "meaning": "なし",
+        "ruby": "なし",
+        "category": "fruit",
+        "icon": "twemoji:pear",
+        "background": "bg-fruit",
+        "audio_file": "audio/pear.mp3"
+    },
+    {
+        "word": "mango",
+        "meaning": "マンゴー",
+        "ruby": "マンゴー",
+        "category": "fruit",
+        "icon": "twemoji:mango",
+        "background": "bg-fruit",
+        "audio_file": "audio/mango.mp3"
+    },
+    {
+        "word": "raspberry",
+        "meaning": "ラズベリー",
+        "ruby": "ラズベリー",
+        "category": "fruit",
+        "icon": "openmoji:raspberry-pi",
+        "background": "bg-fruit",
+        "audio_file": "audio/raspberry.mp3"
+    },
+    {
+        "word": "plum",
+        "meaning": "プラム",
+        "ruby": "プラム",
+        "category": "fruit",
+        "icon": "game-icons:plum",
+        "background": "bg-fruit",
+        "audio_file": "audio/plum.mp3"
+    },
+    {
+        "word": "kiwi",
+        "meaning": "キウイ",
+        "ruby": "キウイ",
+        "category": "fruit",
+        "icon": "twemoji:kiwi-fruit",
+        "background": "bg-fruit",
+        "audio_file": "audio/kiwi.mp3"
+    },
+    {
+        "word": "blackberry",
+        "meaning": "ブラックベリー",
+        "ruby": "ブラックベリー",
+        "category": "fruit",
+        "icon": "cib:raspberry-pi",
+        "background": "bg-fruit",
+        "audio_file": "audio/blackberry.mp3"
+    },
+    {
+        "word": "mikan",
+        "meaning": "みかん",
+        "ruby": "みかん",
+        "category": "fruit",
+        "icon": "twemoji:tangerine",
+        "background": "bg-fruit",
+        "audio_file": "audio/mikan.mp3"
+    },
+    {
+        "word": "persimmon",
+        "meaning": "かき",
+        "ruby": "かき",
+        "category": "fruit",
+        "icon": "streamline-block:drink-food-fruit",
+        "background": "bg-fruit",
+        "audio_file": "audio/persimmon.mp3"
+    },
+    {
+        "word": "melon",
+        "meaning": "メロン",
+        "ruby": "メロン",
+        "category": "fruit",
+        "icon": "twemoji:melon",
+        "background": "bg-fruit",
+        "audio_file": "audio/melon.mp3"
+    },
+    {
+        "word": "watermelon",
+        "meaning": "すいか",
+        "ruby": "すいか",
+        "category": "fruit",
+        "icon": "twemoji:watermelon",
+        "background": "bg-fruit",
+        "audio_file": "audio/watermelon.mp3"
+    },
+    {
+        "word": "cherry",
+        "meaning": "さくらんぼ",
+        "ruby": "さくらんぼ",
+        "category": "fruit",
+        "icon": "twemoji:cherries",
+        "background": "bg-fruit",
+        "audio_file": "audio/cherry.mp3"
+    },
+    {
+        "word": "pineapple",
+        "meaning": "パイナップル",
+        "ruby": "パイナップル",
+        "category": "fruit",
+        "icon": "twemoji:pineapple",
+        "background": "bg-fruit",
+        "audio_file": "audio/pineapple.mp3"
+    },
+    {
+        "word": "circle",
+        "meaning": "円",
+        "ruby": "<ruby>円<rt>えん</rt></ruby>",
+        "category": "shape",
+        "icon": "twemoji:red-circle",
+        "background": "bg-shape",
+        "audio_file": "audio/circle.mp3"
+    },
+    {
+        "word": "square",
+        "meaning": "四角",
+        "ruby": "<ruby>四角<rt>しかく</rt></ruby>",
+        "category": "shape",
+        "icon": "twemoji:red-square",
+        "background": "bg-shape",
+        "audio_file": "audio/square.mp3"
+    },
+    {
+        "word": "triangle",
+        "meaning": "三角",
+        "ruby": "<ruby>三角<rt>さんかく</rt></ruby>",
+        "category": "shape",
+        "icon": "mdi:triangle-outline",
+        "background": "bg-shape",
+        "audio_file": "audio/triangle.mp3"
+    },
+    {
+        "word": "star",
+        "meaning": "星",
+        "ruby": "<ruby>星<rt>ほし</rt></ruby>",
+        "category": "shape",
+        "icon": "twemoji:star",
+        "background": "bg-shape",
+        "audio_file": "audio/star.mp3"
+    },
+    {
+        "word": "heart",
+        "meaning": "ハート",
+        "ruby": "ハート",
+        "category": "shape",
+        "icon": "twemoji:red-heart",
+        "background": "bg-shape",
+        "audio_file": "audio/heart.mp3"
+    },
+    {
+        "word": "rectangle",
+        "meaning": "長方形",
+        "ruby": "<ruby>長方形<rt>ちょうほうけい</rt></ruby>",
+        "category": "shape",
+        "icon": "icon-park-twotone:rectangle",
+        "background": "bg-shape",
+        "audio_file": "audio/rectangle.mp3"
+    },
+    {
+        "word": "oval",
+        "meaning": "楕円",
+        "ruby": "<ruby>楕円<rt>だえん</rt></ruby>",
+        "category": "shape",
+        "icon": "tabler:oval-vertical",
+        "background": "bg-shape",
+        "audio_file": "audio/oval.mp3"
+    },
+    {
+        "word": "pentagon",
+        "meaning": "五角形",
+        "ruby": "<ruby>五角形<rt>ごかくけい</rt></ruby>",
+        "category": "shape",
+        "icon": "streamline-color:pentagon",
+        "background": "bg-shape",
+        "audio_file": "audio/pentagon.mp3"
+    },
+    {
+        "word": "hexagon",
+        "meaning": "六角形",
+        "ruby": "<ruby>六角形<rt>ろっかくけい</rt></ruby>",
+        "category": "shape",
+        "icon": "openmoji:blue-hexagon",
+        "background": "bg-shape",
+        "audio_file": "audio/hexagon.mp3"
+    },
+    {
+        "word": "diamond",
+        "meaning": "ダイヤモンド",
+        "ruby": "ダイヤモンド",
+        "category": "shape",
+        "icon": "twemoji:gem-stone",
+        "background": "bg-shape",
+        "audio_file": "audio/diamond.mp3"
+    },
+    {
+        "word": "head",
+        "meaning": "頭",
+        "ruby": "<ruby>頭<rt>あたま</rt></ruby>",
+        "category": "body",
+        "icon": "twemoji:bust-in-silhouette",
+        "background": "bg-body",
+        "audio_file": "audio/head.mp3"
+    },
+    {
+        "word": "eye",
+        "meaning": "目",
+        "ruby": "<ruby>目<rt>め</rt></ruby>",
+        "category": "body",
+        "icon": "twemoji:eye",
+        "background": "bg-body",
+        "audio_file": "audio/eye.mp3"
+    },
+    {
+        "word": "nose",
+        "meaning": "鼻",
+        "ruby": "<ruby>鼻<rt>はな</rt></ruby>",
+        "category": "body",
+        "icon": "twemoji:nose",
+        "background": "bg-body",
+        "audio_file": "audio/nose.mp3"
+    },
+    {
+        "word": "mouth",
+        "meaning": "口",
+        "ruby": "<ruby>口<rt>くち</rt></ruby>",
+        "category": "body",
+        "icon": "twemoji:mouth",
+        "background": "bg-body",
+        "audio_file": "audio/mouth.mp3"
+    },
+    {
+        "word": "ear",
+        "meaning": "耳",
+        "ruby": "<ruby>耳<rt>みみ</rt></ruby>",
+        "category": "body",
+        "icon": "twemoji:ear",
+        "background": "bg-body",
+        "audio_file": "audio/ear.mp3"
+    },
+    {
+        "word": "arm",
+        "meaning": "腕",
+        "ruby": "<ruby>腕<rt>うで</rt></ruby>",
+        "category": "body",
+        "icon": "twemoji:flexed-biceps",
+        "background": "bg-body",
+        "audio_file": "audio/arm.mp3"
+    },
+    {
+        "word": "leg",
+        "meaning": "足",
+        "ruby": "<ruby>足<rt>あし</rt></ruby>",
+        "category": "body",
+        "icon": "twemoji:leg",
+        "background": "bg-body",
+        "audio_file": "audio/leg.mp3"
+    },
+    {
+        "word": "foot",
+        "meaning": "足（裏）",
+        "ruby": "<ruby>足<rt>あし</rt>（裏）<rt>うら</rt></ruby>",
+        "category": "body",
+        "icon": "twemoji:foot",
+        "background": "bg-body",
+        "audio_file": "audio/foot.mp3"
+    },
+    {
+        "word": "finger",
+        "meaning": "指",
+        "ruby": "<ruby>指<rt>ゆび</rt></ruby>",
+        "category": "body",
+        "icon": "twemoji:backhand-index-pointing-up",
+        "background": "bg-body",
+        "audio_file": "audio/finger.mp3"
+    },
+    {
+        "word": "shoulder",
+        "meaning": "肩",
+        "ruby": "<ruby>肩<rt>かた</rt></ruby>",
+        "category": "body",
+        "icon": "twemoji:person-shrugging",
+        "background": "bg-body",
+        "audio_file": "audio/shoulder.mp3"
+    },
+    {
+        "word": "knee",
+        "meaning": "ひざ",
+        "ruby": "ひざ",
+        "category": "body",
+        "icon": "twemoji:leg",
+        "background": "bg-body",
+        "audio_file": "audio/knee.mp3"
+    },
+    {
+        "word": "pencil",
+        "meaning": "鉛筆",
+        "ruby": "<ruby>鉛筆<rt>えんぴつ</rt></ruby>",
+        "category": "object",
+        "icon": "twemoji:pencil",
+        "background": "bg-object",
+        "audio_file": "audio/pencil.mp3"
+    },
+    {
+        "word": "book",
+        "meaning": "本",
+        "ruby": "<ruby>本<rt>ほん</rt></ruby>",
+        "category": "object",
+        "icon": "twemoji:books",
+        "background": "bg-object",
+        "audio_file": "audio/book.mp3"
+    },
+    {
+        "word": "chair",
+        "meaning": "椅子",
+        "ruby": "<ruby>椅子<rt>いす</rt></ruby>",
+        "category": "object",
+        "icon": "twemoji:chair",
+        "background": "bg-object",
+        "audio_file": "audio/chair.mp3"
+    },
+    {
+        "word": "ruler",
+        "meaning": "定規",
+        "ruby": "<ruby>定規<rt>じょうぎ</rt></ruby>",
+        "category": "object",
+        "icon": "twemoji:straight-ruler",
+        "background": "bg-object",
+        "audio_file": "audio/ruler.mp3"
+    },
+    {
+        "word": "paper",
+        "meaning": "紙",
+        "ruby": "<ruby>紙<rt>かみ</rt></ruby>",
+        "category": "object",
+        "icon": "twemoji:page-with-curl",
+        "background": "bg-object",
+        "audio_file": "audio/paper.mp3"
+    },
+    {
+        "word": "clock",
+        "meaning": "時計",
+        "ruby": "<ruby>時計<rt>とけい</rt></ruby>",
+        "category": "object",
+        "icon": "twemoji:alarm-clock",
+        "background": "bg-object",
+        "audio_file": "audio/clock.mp3"
+    },
+    {
+        "word": "rubbish bin",
+        "meaning": "ごみ箱",
+        "ruby": "<ruby>ごみ箱<rt>ごみばこ</rt></ruby>",
+        "category": "object",
+        "icon": "twemoji:wastebasket",
+        "background": "bg-object",
+        "audio_file": "audio/rubbish_bin.mp3"
+    },
+    {
+        "word": "glue",
+        "meaning": "のり",
+        "ruby": "のり",
+        "category": "object",
+        "icon": "streamline-freehand-color:design-tool-liquid-glue",
+        "background": "bg-object",
+        "audio_file": "audio/glue.mp3"
+    },
+    {
+        "word": "scissors",
+        "meaning": "はさみ",
+        "ruby": "はさみ",
+        "category": "object",
+        "icon": "twemoji:scissors",
+        "background": "bg-object",
+        "audio_file": "audio/scissors.mp3"
+    },
+    {
+        "word": "board",
+        "meaning": "黒板",
+        "ruby": "<ruby>黒板<rt>こくばん</rt></ruby>",
+        "category": "object",
+        "icon": "mingcute:black-board-fill",
+        "background": "bg-object",
+        "audio_file": "audio/board.mp3"
+    },
+    {
+        "word": "pound",
+        "meaning": "ポンド（通貨）-GB",
+        "ruby": "ポンド（<ruby>通貨<rt>つうか</rt></ruby>）",
+        "category": "object",
+        "icon": "twemoji:pound-banknote",
+        "background": "bg-object",
+        "audio_file": "audio/pound.mp3"
+    },
+    {
+        "word": "doller",
+        "meaning": "ドル（通貨）-US",
+        "ruby": "ドル（<ruby>通貨<rt>つうか</rt></ruby>）",
+        "category": "object",
+        "icon": "solar:dollar-outline",
+        "background": "bg-object",
+        "audio_file": "audio/doller.mp3"
+    },
+    {
+        "word": "phone",
+        "meaning": "電話",
+        "ruby": "<ruby>電話<rt>でんわ</rt></ruby>",
+        "category": "object",
+        "icon": "twemoji:mobile-phone",
+        "background": "bg-object",
+        "audio_file": "audio/phone.mp3"
+    },
+    {
+        "word": "wallet",
+        "meaning": "財布",
+        "ruby": "<ruby>財布<rt>さいふ</rt></ruby>",
+        "category": "object",
+        "icon": "fxemoji:pinkwallet",
+        "background": "bg-object",
+        "audio_file": "audio/wallet.mp3"
+    },
+    {
+        "word": "uniform",
+        "meaning": "制服",
+        "ruby": "<ruby>制服<rt>せいふく</rt></ruby>",
+        "category": "object",
+        "icon": "twemoji:t-shirt",
+        "background": "bg-object",
+        "audio_file": "audio/uniform.mp3"
+    },
+    {
+        "word": "dog",
+        "meaning": "犬",
+        "ruby": "<ruby>犬<rt>いぬ</rt></ruby>",
+        "category": "animal",
+        "icon": "twemoji:dog",
+        "background": "bg-animal",
+        "audio_file": "audio/dog.mp3"
+    },
+    {
+        "word": "cat",
+        "meaning": "猫",
+        "ruby": "<ruby>猫<rt>ねこ</rt></ruby>",
+        "category": "animal",
+        "icon": "twemoji:cat",
+        "background": "bg-animal",
+        "audio_file": "audio/cat.mp3"
+    },
+    {
+        "word": "bird",
+        "meaning": "鳥",
+        "ruby": "<ruby>鳥<rt>とり</rt></ruby>",
+        "category": "animal",
+        "icon": "twemoji:bird",
+        "background": "bg-animal",
+        "audio_file": "audio/bird.mp3"
+    },
+    {
+        "word": "fish",
+        "meaning": "魚",
+        "ruby": "<ruby>魚<rt>さかな</rt></ruby>",
+        "category": "animal",
+        "icon": "twemoji:fish",
+        "background": "bg-animal",
+        "audio_file": "audio/fish.mp3"
+    },
+    {
+        "word": "rabbit",
+        "meaning": "うさぎ",
+        "ruby": "うさぎ",
+        "category": "animal",
+        "icon": "twemoji:rabbit",
+        "background": "bg-animal",
+        "audio_file": "audio/rabbit.mp3"
+    },
+    {
+        "word": "horse",
+        "meaning": "馬",
+        "ruby": "<ruby>馬<rt>うま</rt></ruby>",
+        "category": "animal",
+        "icon": "twemoji:horse",
+        "background": "bg-animal",
+        "audio_file": "audio/horse.mp3"
+    },
+    {
+        "word": "sheep",
+        "meaning": "羊",
+        "ruby": "<ruby>羊<rt>ひつじ</rt></ruby>",
+        "category": "animal",
+        "icon": "fxemoji:sheep",
+        "background": "bg-animal",
+        "audio_file": "audio/sheep.mp3"
+    },
+    {
+        "word": "cow",
+        "meaning": "牛",
+        "ruby": "<ruby>牛<rt>うし</rt></ruby>",
+        "category": "animal",
+        "icon": "twemoji:cow",
+        "background": "bg-animal",
+        "audio_file": "audio/cow.mp3"
+    },
+    {
+        "word": "pig",
+        "meaning": "豚",
+        "ruby": "<ruby>豚<rt>ぶた</rt></ruby>",
+        "category": "animal",
+        "icon": "twemoji:pig",
+        "background": "bg-animal",
+        "audio_file": "audio/pig.mp3"
+    },
+    {
+        "word": "fox",
+        "meaning": "きつね",
+        "ruby": "きつね",
+        "category": "animal",
+        "icon": "twemoji:fox",
+        "background": "bg-animal",
+        "audio_file": "audio/fox.mp3"
+    },
+    {
+        "word": "deer",
+        "meaning": "鹿",
+        "ruby": "<ruby>鹿<rt>しか</rt></ruby>",
+        "category": "animal",
+        "icon": "twemoji:deer",
+        "background": "bg-animal",
+        "audio_file": "audio/deer.mp3"
+    },
+    {
+        "word": "squirrel",
+        "meaning": "りす",
+        "ruby": "りす",
+        "category": "animal",
+        "icon": "lucide:squirrel",
+        "background": "bg-animal",
+        "audio_file": "audio/squirrel.mp3"
+    },
+    {
+        "word": "sun",
+        "meaning": "太陽",
+        "ruby": "<ruby>太陽<rt>たいよう</rt></ruby>",
+        "category": "weather",
+        "icon": "twemoji:sun",
+        "background": "bg-weather",
+        "audio_file": "audio/sun.mp3"
+    },
+    {
+        "word": "cloud",
+        "meaning": "雲",
+        "ruby": "<ruby>雲<rt>くも</rt></ruby>",
+        "category": "weather",
+        "icon": "twemoji:cloud",
+        "background": "bg-weather",
+        "audio_file": "audio/cloud.mp3"
+    },
+    {
+        "word": "rain",
+        "meaning": "雨",
+        "ruby": "<ruby>雨<rt>あめ</rt></ruby>",
+        "category": "weather",
+        "icon": "twemoji:cloud-with-rain",
+        "background": "bg-weather",
+        "audio_file": "audio/rain.mp3"
+    },
+    {
+        "word": "wind",
+        "meaning": "風",
+        "ruby": "<ruby>風<rt>かぜ</rt></ruby>",
+        "category": "weather",
+        "icon": "twemoji:wind-face",
+        "background": "bg-weather",
+        "audio_file": "audio/wind.mp3"
+    },
+    {
+        "word": "snow",
+        "meaning": "雪",
+        "ruby": "<ruby>雪<rt>ゆき</rt></ruby>",
+        "category": "weather",
+        "icon": "twemoji:snowflake",
+        "background": "bg-weather",
+        "audio_file": "audio/snow.mp3"
+    },
+    {
+        "word": "fog",
+        "meaning": "霧",
+        "ruby": "<ruby>霧<rt>きり</rt></ruby>",
+        "category": "weather",
+        "icon": "twemoji:fog",
+        "background": "bg-weather",
+        "audio_file": "audio/fog.mp3"
+    },
+    {
+        "word": "storm",
+        "meaning": "嵐",
+        "ruby": "<ruby>嵐<rt>あらし</rt></ruby>",
+        "category": "weather",
+        "icon": "twemoji:cloud-with-lightning",
+        "background": "bg-weather",
+        "audio_file": "audio/storm.mp3"
+    },
+    {
+        "word": "rainbow",
+        "meaning": "虹",
+        "ruby": "<ruby>虹<rt>にじ</rt></ruby>",
+        "category": "weather",
+        "icon": "twemoji:rainbow",
+        "background": "bg-weather",
+        "audio_file": "audio/rainbow.mp3"
+    },
+    {
+        "word": "sunshine",
+        "meaning": "日差し",
+        "ruby": "<ruby>日差<rt>ひざ</rt>し</ruby>",
+        "category": "weather",
+        "icon": "twemoji:sun",
+        "background": "bg-weather",
+        "audio_file": "audio/sunshine.mp3"
+    },
+    {
+        "word": "mist",
+        "meaning": "もや",
+        "ruby": "もや",
+        "category": "weather",
+        "icon": "twemoji:fog",
+        "background": "bg-weather",
+        "audio_file": "audio/mist.mp3"
+    },
+    {
+        "word": "thunder",
+        "meaning": "雷",
+        "ruby": "<ruby>雷<rt>かみなり</rt></ruby>",
+        "category": "weather",
+        "icon": "twemoji:cloud-with-lightning",
+        "background": "bg-weather",
+        "audio_file": "audio/thunder.mp3"
+    },
+    {
+        "word": "one",
+        "meaning": "一",
+        "ruby": "<ruby>一<rt>いち</rt></ruby>",
+        "category": "number",
+        "icon": "twemoji:keycap-1",
+        "background": "bg-number",
+        "audio_file": "audio/one.mp3"
+    },
+    {
+        "word": "two",
+        "meaning": "二",
+        "ruby": "<ruby>二<rt>に</rt></ruby>",
+        "category": "number",
+        "icon": "twemoji:keycap-2",
+        "background": "bg-number",
+        "audio_file": "audio/two.mp3"
+    },
+    {
+        "word": "three",
+        "meaning": "三",
+        "ruby": "<ruby>三<rt>さん</rt></ruby>",
+        "category": "number",
+        "icon": "twemoji:keycap-3",
+        "background": "bg-number",
+        "audio_file": "audio/three.mp3"
+    },
+    {
+        "word": "four",
+        "meaning": "四",
+        "ruby": "<ruby>四<rt>よん</rt></ruby>",
+        "category": "number",
+        "icon": "twemoji:keycap-4",
+        "background": "bg-number",
+        "audio_file": "audio/four.mp3"
+    },
+    {
+        "word": "five",
+        "meaning": "五",
+        "ruby": "<ruby>五<rt>ご</rt></ruby>",
+        "category": "number",
+        "icon": "twemoji:keycap-5",
+        "background": "bg-number",
+        "audio_file": "audio/five.mp3"
+    },
+    {
+        "word": "six",
+        "meaning": "六",
+        "ruby": "<ruby>六<rt>ろく</rt></ruby>",
+        "category": "number",
+        "icon": "twemoji:keycap-6",
+        "background": "bg-number",
+        "audio_file": "audio/six.mp3"
+    },
+    {
+        "word": "seven",
+        "meaning": "七",
+        "ruby": "<ruby>七<rt>なな</rt></ruby>",
+        "category": "number",
+        "icon": "twemoji:keycap-7",
+        "background": "bg-number",
+        "audio_file": "audio/seven.mp3"
+    },
+    {
+        "word": "eight",
+        "meaning": "八",
+        "ruby": "<ruby>八<rt>はち</rt></ruby>",
+        "category": "number",
+        "icon": "twemoji:keycap-8",
+        "background": "bg-number",
+        "audio_file": "audio/eight.mp3"
+    },
+    {
+        "word": "nine",
+        "meaning": "九",
+        "ruby": "<ruby>九<rt>きゅう</rt></ruby>",
+        "category": "number",
+        "icon": "twemoji:keycap-9",
+        "background": "bg-number",
+        "audio_file": "audio/nine.mp3"
+    },
+    {
+        "word": "ten",
+        "meaning": "十",
+        "ruby": "<ruby>十<rt>じゅう</rt></ruby>",
+        "category": "number",
+        "icon": "twemoji:keycap-10",
+        "background": "bg-number",
+        "audio_file": "audio/ten.mp3"
+    },
+    {
+        "word": "eleven",
+        "meaning": "十一",
+        "ruby": "<ruby>十一<rt>じゅういち</rt></ruby>",
+        "category": "number",
+        "icon": "fluent:math-symbols-48-filled",
+        "background": "bg-number",
+        "audio_file": "audio/eleven.mp3"
+    },
+    {
+        "word": "twelve",
+        "meaning": "十二",
+        "ruby": "<ruby>十二<rt>じゅうに</rt></ruby>",
+        "category": "number",
+        "icon": "fluent:math-symbols-48-filled",
+        "background": "bg-number",
+        "audio_file": "audio/twelve.mp3"
+    },
+    {
+        "word": "dozen",
+        "meaning": "ダース",
+        "ruby": "ダース",
+        "category": "number",
+        "icon": "fluent:math-symbols-48-filled",
+        "background": "bg-number",
+        "audio_file": "audio/dozen.mp3"
+    },
+    {
+        "word": "hundred",
+        "meaning": "百",
+        "ruby": "<ruby>百<rt>ひゃく</rt></ruby>",
+        "category": "number",
+        "icon": "fluent:math-symbols-48-filled",
+        "background": "bg-number",
+        "audio_file": "audio/hundred.mp3"
+    },
+    {
+        "word": "thousand",
+        "meaning": "千",
+        "ruby": "<ruby>千<rt>せん</rt></ruby>",
+        "category": "number",
+        "icon": "fluent:math-symbols-48-filled",
+        "background": "bg-number",
+        "audio_file": "audio/thousand.mp3"
+    },
+    {
+        "word": "million",
+        "meaning": "百万",
+        "ruby": "<ruby>百万<rt>ひゃくまん</rt></ruby>",
+        "category": "number",
+        "icon": "fluent:math-symbols-48-filled",
+        "background": "bg-number",
+        "audio_file": "audio/million.mp3"
+    },
+    {
+        "word": "billion",
+        "meaning": "十億",
+        "ruby": "<ruby>十億<rt>じゅうおく</rt></ruby>",
+        "category": "number",
+        "icon": "fluent:math-symbols-48-filled",
+        "background": "bg-number",
+        "audio_file": "audio/billion.mp3"
+    },
+    {
+        "word": "home",
+        "meaning": "家",
+        "ruby": "<ruby>家<rt>いえ</rt></ruby>",
+        "category": "place",
+        "icon": "twemoji:house",
+        "background": "bg-place",
+        "audio_file": "audio/home.mp3"
+    },
+    {
+        "word": "school",
+        "meaning": "学校",
+        "ruby": "<ruby>学校<rt>がっこう</rt></ruby>",
+        "category": "place",
+        "icon": "twemoji:school",
+        "background": "bg-place",
+        "audio_file": "audio/school.mp3"
+    },
+    {
+        "word": "park",
+        "meaning": "公園",
+        "ruby": "<ruby>公園<rt>こうえん</rt></ruby>",
+        "category": "place",
+        "icon": "emojione:national-park",
+        "background": "bg-place",
+        "audio_file": "audio/park.mp3"
+    },
+    {
+        "word": "shop",
+        "meaning": "お店",
+        "ruby": "<ruby>お店<rt>おみせ</rt></ruby>",
+        "category": "place",
+        "icon": "twemoji:convenience-store",
+        "background": "bg-place",
+        "audio_file": "audio/shop.mp3"
+    },
+    {
+        "word": "zoo",
+        "meaning": "動物園",
+        "ruby": "<ruby>動物園<rt>どうぶつえん</rt></ruby>",
+        "category": "place",
+        "icon": "twemoji:elephant",
+        "background": "bg-place",
+        "audio_file": "audio/zoo.mp3"
+    },
+    {
+        "word": "beach",
+        "meaning": "ビーチ",
+        "ruby": "ビーチ",
+        "category": "place",
+        "icon": "twemoji:beach-with-umbrella",
+        "background": "bg-place",
+        "audio_file": "audio/beach.mp3"
+    },
+    {
+        "word": "library",
+        "meaning": "図書館",
+        "ruby": "<ruby>図書館<rt>としょかん</rt></ruby>",
+        "category": "place",
+        "icon": "twemoji:books",
+        "background": "bg-place",
+        "audio_file": "audio/library.mp3"
+    },
+    {
+        "word": "hospital",
+        "meaning": "病院",
+        "ruby": "<ruby>病院<rt>びょういん</rt></ruby>",
+        "category": "place",
+        "icon": "twemoji:hospital",
+        "background": "bg-place",
+        "audio_file": "audio/hospital.mp3"
+    },
+    {
+        "word": "station",
+        "meaning": "駅",
+        "ruby": "<ruby>駅<rt>えき</rt></ruby>",
+        "category": "place",
+        "icon": "twemoji:station",
+        "background": "bg-place",
+        "audio_file": "audio/station.mp3"
+    },
+    {
+        "word": "museum",
+        "meaning": "博物館",
+        "ruby": "<ruby>博物館<rt>はくぶつかん</rt></ruby>",
+        "category": "place",
+        "icon": "twemoji:classical-building",
+        "background": "bg-place",
+        "audio_file": "audio/museum.mp3"
+    },
+    {
+        "word": "garden",
+        "meaning": "庭",
+        "ruby": "<ruby>庭<rt>にわ</rt></ruby>",
+        "category": "place",
+        "icon": "streamline-emojis:house-with-garden",
+        "background": "bg-place",
+        "audio_file": "audio/garden.mp3"
+    },
+    {
+        "word": "playground",
+        "meaning": "遊び場",
+        "ruby": "<ruby>遊<rt>あそ</rt>び<ruby>場<rt>ば</rt></ruby>",
+        "category": "place",
+        "icon": "twemoji:playground-slide",
+        "background": "bg-place",
+        "audio_file": "audio/playground.mp3"
+    },
+    {
+        "word": "supermarket",
+        "meaning": "スーパーマーケット",
+        "ruby": "スーパーマーケット",
+        "category": "place",
+        "icon": "twemoji:convenience-store",
+        "background": "bg-place",
+        "audio_file": "audio/supermarket.mp3"
+    },
+    {
+        "word": "post office",
+        "meaning": "郵便局",
+        "ruby": "<ruby>郵便局<rt>ゆうびんきょく</rt></ruby>",
+        "category": "place",
+        "icon": "twemoji:post-office",
+        "background": "bg-place",
+        "audio_file": "audio/post_office.mp3"
+    },
+    {
+        "word": "bus stop",
+        "meaning": "バス停",
+        "ruby": "バス<ruby>停<rt>てい</rt></ruby>",
+        "category": "place",
+        "icon": "twemoji:bus-stop",
+        "background": "bg-place",
+        "audio_file": "audio/bus_stop.mp3"
+    },
+    {
+        "word": "bank",
+        "meaning": "銀行",
+        "ruby": "<ruby>銀行<rt>ぎんこう</rt></ruby>",
+        "category": "place",
+        "icon": "twemoji:bank",
+        "background": "bg-place",
+        "audio_file": "audio/bank.mp3"
+    },
+    {
+        "word": "market",
+        "meaning": "市場",
+        "ruby": "<ruby>市場<rt>いちば</rt></ruby>",
+        "category": "place",
+        "icon": "twemoji:shopping-bags",
+        "background": "bg-place",
+        "audio_file": "audio/market.mp3"
+    },
+    {
+        "word": "cafe",
+        "meaning": "カフェ",
+        "ruby": "カフェ",
+        "category": "place",
+        "icon": "ph:coffee-duotone",
+        "background": "bg-place",
+        "audio_file": "audio/cafe.mp3"
+    },
+    {
+        "word": "run",
+        "meaning": "走る",
+        "ruby": "<ruby>走<rt>はし</rt>る</ruby>",
+        "category": "action",
+        "icon": "twemoji:running-shoe",
+        "background": "bg-action",
+        "audio_file": "audio/run.mp3"
+    },
+    {
+        "word": "jump",
+        "meaning": "跳ぶ",
+        "ruby": "<ruby>跳<rt>と</rt>ぶ</ruby>",
+        "category": "action",
+        "icon": "twemoji:person-running",
+        "background": "bg-action",
+        "audio_file": "audio/jump.mp3"
+    },
+    {
+        "word": "sing",
+        "meaning": "歌う",
+        "ruby": "<ruby>歌<rt>うた</rt>う</ruby>",
+        "category": "action",
+        "icon": "twemoji:musical-note",
+        "background": "bg-action",
+        "audio_file": "audio/sing.mp3"
+    },
+    {
+        "word": "dance",
+        "meaning": "踊る",
+        "ruby": "<ruby>踊<rt>おど</rt>る</ruby>",
+        "category": "action",
+        "icon": "noto:woman-dancing",
+        "background": "bg-action",
+        "audio_file": "audio/dance.mp3"
+    },
+    {
+        "word": "swim",
+        "meaning": "泳ぐ",
+        "ruby": "<ruby>泳<rt>およ</rt>ぐ</ruby>",
+        "category": "action",
+        "icon": "noto:man-swimming",
+        "background": "bg-action",
+        "audio_file": "audio/swim.mp3"
+    },
+    {
+        "word": "read",
+        "meaning": "読む",
+        "ruby": "<ruby>読<rt>よ</rt>む</ruby>",
+        "category": "action",
+        "icon": "twemoji:open-book",
+        "background": "bg-action",
+        "audio_file": "audio/read.mp3"
+    },
+    {
+        "word": "write",
+        "meaning": "書く",
+        "ruby": "<ruby>書<rt>か</rt>く</ruby>",
+        "category": "action",
+        "icon": "twemoji:pencil",
+        "background": "bg-action",
+        "audio_file": "audio/write.mp3"
+    },
+    {
+        "word": "draw",
+        "meaning": "描く",
+        "ruby": "<ruby>描<rt>えが</rt>く</ruby>",
+        "category": "action",
+        "icon": "twemoji:paintbrush",
+        "background": "bg-action",
+        "audio_file": "audio/draw.mp3"
+    },
+    {
+        "word": "eat",
+        "meaning": "食べる",
+        "ruby": "<ruby>食<rt>た</rt>べる</ruby>",
+        "category": "action",
+        "icon": "twemoji:fork-and-knife",
+        "background": "bg-action",
+        "audio_file": "audio/eat.mp3"
+    },
+    {
+        "word": "drink",
+        "meaning": "飲む",
+        "ruby": "<ruby>飲<rt>の</rt>む</ruby>",
+        "category": "action",
+        "icon": "twemoji:cup-with-straw",
+        "background": "bg-action",
+        "audio_file": "audio/drink.mp3"
+    },
+    {
+        "word": "sleep",
+        "meaning": "寝る",
+        "ruby": "<ruby>寝<rt>ね</rt>る</ruby>",
+        "category": "action",
+        "icon": "twemoji:bed",
+        "background": "bg-action",
+        "audio_file": "audio/sleep.mp3"
+    },
+    {
+        "word": "play",
+        "meaning": "遊ぶ",
+        "ruby": "<ruby>遊<rt>あそ</rt>ぶ</ruby>",
+        "category": "action",
+        "icon": "twemoji:video-game",
+        "background": "bg-action",
+        "audio_file": "audio/play.mp3"
+    },
+    {
+        "word": "report",
+        "meaning": "報告する",
+        "ruby": "<ruby>報告<rt>ほうこく</rt>する</ruby>",
+        "category": "action",
+        "icon": "twemoji:megaphone",
+        "background": "bg-action",
+        "audio_file": "audio/report.mp3"
+    },
+    {
+        "word": "decide",
+        "meaning": "決める",
+        "ruby": "<ruby>決<rt>き</rt>める</ruby>",
+        "category": "action",
+        "icon": "twemoji:check-mark-button",
+        "background": "bg-action",
+        "audio_file": "audio/decide.mp3"
+    },
+    {
+        "word": "learn",
+        "meaning": "学ぶ",
+        "ruby": "<ruby>学<rt>まな</rt>ぶ</ruby>",
+        "category": "action",
+        "icon": "twemoji:open-book",
+        "background": "bg-action",
+        "audio_file": "audio/learn.mp3"
+    },
+    {
+        "word": "say",
+        "meaning": "言う",
+        "ruby": "<ruby>言<rt>い</rt>う</ruby>",
+        "category": "action",
+        "icon": "twemoji:speech-balloon",
+        "background": "bg-action",
+        "audio_file": "audio/say.mp3"
+    },
+    {
+        "word": "morning",
+        "meaning": "朝",
+        "ruby": "<ruby>朝<rt>あさ</rt></ruby>",
+        "category": "time",
+        "icon": "twemoji:sunrise",
+        "background": "bg-time",
+        "audio_file": "audio/morning.mp3"
+    },
+    {
+        "word": "afternoon",
+        "meaning": "午後",
+        "ruby": "<ruby>午後<rt>ごご</rt></ruby>",
+        "category": "time",
+        "icon": "twemoji:sun",
+        "background": "bg-time",
+        "audio_file": "audio/afternoon.mp3"
+    },
+    {
+        "word": "evening",
+        "meaning": "夕方",
+        "ruby": "<ruby>夕方<rt>ゆうがた</rt></ruby>",
+        "category": "time",
+        "icon": "twemoji:sunset",
+        "background": "bg-time",
+        "audio_file": "audio/evening.mp3"
+    },
+    {
+        "word": "night",
+        "meaning": "夜",
+        "ruby": "<ruby>夜<rt>よる</rt></ruby>",
+        "category": "time",
+        "icon": "twemoji:night-with-stars",
+        "background": "bg-time",
+        "audio_file": "audio/night.mp3"
+    },
+    {
+        "word": "today",
+        "meaning": "今日",
+        "ruby": "<ruby>今日<rt>きょう</rt></ruby>",
+        "category": "time",
+        "icon": "twemoji:calendar",
+        "background": "bg-time",
+        "audio_file": "audio/today.mp3"
+    },
+    {
+        "word": "tomorrow",
+        "meaning": "明日",
+        "ruby": "<ruby>明日<rt>あした</rt></ruby>",
+        "category": "time",
+        "icon": "twemoji:calendar",
+        "background": "bg-time",
+        "audio_file": "audio/tomorrow.mp3"
+    },
+    {
+        "word": "yesterday",
+        "meaning": "昨日",
+        "ruby": "<ruby>昨日<rt>きのう</rt></ruby>",
+        "category": "time",
+        "icon": "twemoji:calendar",
+        "background": "bg-time",
+        "audio_file": "audio/yesterday.mp3"
+    },
+    {
+        "word": "week",
+        "meaning": "週",
+        "ruby": "<ruby>週<rt>しゅう</rt></ruby>",
+        "category": "time",
+        "icon": "twemoji:calendar",
+        "background": "bg-time",
+        "audio_file": "audio/week.mp3"
+    },
+    {
+        "word": "month",
+        "meaning": "月",
+        "ruby": "<ruby>月<rt>つき</rt></ruby>",
+        "category": "time",
+        "icon": "twemoji:calendar",
+        "background": "bg-time",
+        "audio_file": "audio/month.mp3"
+    },
+    {
+        "word": "year",
+        "meaning": "年",
+        "ruby": "<ruby>年<rt>ねん</rt></ruby>",
+        "category": "time",
+        "icon": "twemoji:calendar",
+        "background": "bg-time",
+        "audio_file": "audio/year.mp3"
+    },
+    {
+        "word": "day",
+        "meaning": "日",
+        "ruby": "<ruby>日<rt>ひ</rt></ruby>",
+        "category": "time",
+        "icon": "twemoji:calendar",
+        "background": "bg-time",
+        "audio_file": "audio/day.mp3"
+    },
+    {
+        "word": "time",
+        "meaning": "時間",
+        "ruby": "<ruby>時間<rt>じかん</rt></ruby>",
+        "category": "time",
+        "icon": "twemoji:watch",
+        "background": "bg-time",
+        "audio_file": "audio/time.mp3"
+    },
+    {
+        "word": "Monday",
+        "meaning": "月曜日",
+        "ruby": "<ruby>月曜日<rt>げつようび</rt></ruby>",
+        "category": "time",
+        "icon": "twemoji:briefcase",
+        "background": "bg-time",
+        "audio_file": "audio/monday.mp3"
+    },
+    {
+        "word": "Tuesday",
+        "meaning": "火曜日",
+        "ruby": "<ruby>火曜日<rt>かようび</rt></ruby>",
+        "category": "time",
+        "icon": "twemoji:fire",
+        "background": "bg-time",
+        "audio_file": "audio/tuesday.mp3"
+    },
+    {
+        "word": "Wednesday",
+        "meaning": "水曜日",
+        "ruby": "<ruby>水曜日<rt>すいようび</rt></ruby>",
+        "category": "time",
+        "icon": "twemoji:droplet",
+        "background": "bg-time",
+        "audio_file": "audio/wednesday.mp3"
+    },
+    {
+        "word": "Thursday",
+        "meaning": "木曜日",
+        "ruby": "<ruby>木曜日<rt>もくようび</rt></ruby>",
+        "category": "time",
+        "icon": "twemoji:deciduous-tree",
+        "background": "bg-time",
+        "audio_file": "audio/thursday.mp3"
+    },
+    {
+        "word": "Friday",
+        "meaning": "金曜日",
+        "ruby": "<ruby>金曜日<rt>きんようび</rt></ruby>",
+        "category": "time",
+        "icon": "twemoji:money-bag",
+        "background": "bg-time",
+        "audio_file": "audio/friday.mp3"
+    },
+    {
+        "word": "Saturday",
+        "meaning": "土曜日",
+        "ruby": "<ruby>土曜日<rt>どようび</rt></ruby>",
+        "category": "time",
+        "icon": "twemoji:partying-face",
+        "background": "bg-time",
+        "audio_file": "audio/saturday.mp3"
+    },
+    {
+        "word": "Sunday",
+        "meaning": "日曜日",
+        "ruby": "<ruby>日曜日<rt>にちようび</rt></ruby>",
+        "category": "time",
+        "icon": "twemoji:sun",
+        "background": "bg-time",
+        "audio_file": "audio/sunday.mp3"
+    },
+    {
+        "word": "January",
+        "meaning": "1月",
+        "ruby": "1<ruby>月<rt>がつ</rt></ruby>",
+        "category": "time",
+        "icon": "twemoji:snowflake",
+        "background": "bg-time",
+        "audio_file": "audio/january.mp3"
+    },
+    {
+        "word": "February",
+        "meaning": "2月",
+        "ruby": "2<ruby>月<rt>がつ</rt></ruby>",
+        "category": "time",
+        "icon": "twemoji:snowflake",
+        "background": "bg-time",
+        "audio_file": "audio/february.mp3"
+    },
+    {
+        "word": "March",
+        "meaning": "3月",
+        "ruby": "3<ruby>月<rt>がつ</rt></ruby>",
+        "category": "time",
+        "icon": "streamline-emojis:four-leaf-clover",
+        "background": "bg-time",
+        "audio_file": "audio/march.mp3"
+    },
+    {
+        "word": "April",
+        "meaning": "4月",
+        "ruby": "4<ruby>月<rt>がつ</rt></ruby>",
+        "category": "time",
+        "icon": "twemoji:cherry-blossom",
+        "background": "bg-time",
+        "audio_file": "audio/april.mp3"
+    },
+    {
+        "word": "May",
+        "meaning": "5月",
+        "ruby": "5<ruby>月<rt>がつ</rt></ruby>",
+        "category": "time",
+        "icon": "twemoji:seedling",
+        "background": "bg-time",
+        "audio_file": "audio/may.mp3"
+    },
+    {
+        "word": "June",
+        "meaning": "6月",
+        "ruby": "6<ruby>月<rt>がつ</rt></ruby>",
+        "category": "time",
+        "icon": "twemoji:sunflower",
+        "background": "bg-time",
+        "audio_file": "audio/june.mp3"
+    },
+    {
+        "word": "July",
+        "meaning": "7月",
+        "ruby": "7<ruby>月<rt>がつ</rt></ruby>",
+        "category": "time",
+        "icon": "twemoji:sun",
+        "background": "bg-time",
+        "audio_file": "audio/july.mp3"
+    },
+    {
+        "word": "August",
+        "meaning": "8月",
+        "ruby": "8<ruby>月<rt>がつ</rt></ruby>",
+        "category": "time",
+        "icon": "twemoji:beach-with-umbrella",
+        "background": "bg-time",
+        "audio_file": "audio/august.mp3"
+    },
+    {
+        "word": "September",
+        "meaning": "9月",
+        "ruby": "9<ruby>月<rt>がつ</rt></ruby>",
+        "category": "time",
+        "icon": "twemoji:fallen-leaf",
+        "background": "bg-time",
+        "audio_file": "audio/september.mp3"
+    },
+    {
+        "word": "October",
+        "meaning": "10月",
+        "ruby": "10<ruby>月<rt>がつ</rt></ruby>",
+        "category": "time",
+        "icon": "twemoji:maple-leaf",
+        "background": "bg-time",
+        "audio_file": "audio/october.mp3"
+    },
+    {
+        "word": "November",
+        "meaning": "11月",
+        "ruby": "11<ruby>月<rt>がつ</rt></ruby>",
+        "category": "time",
+        "icon": "twemoji:wind-face",
+        "background": "bg-time",
+        "audio_file": "audio/november.mp3"
+    },
+    {
+        "word": "December",
+        "meaning": "12月",
+        "ruby": "12<ruby>月<rt>がつ</rt></ruby>",
+        "category": "time",
+        "icon": "twemoji:snowman",
+        "background": "bg-time",
+        "audio_file": "audio/december.mp3"
+    },
+    {
+        "word": "teacher",
+        "meaning": "先生",
+        "ruby": "<ruby>先生<rt>せんせい</rt></ruby>",
+        "category": "school",
+        "icon": "twemoji:teacher",
+        "background": "bg-school",
+        "audio_file": "audio/teacher.mp3"
+    },
+    {
+        "word": "student",
+        "meaning": "生徒",
+        "ruby": "<ruby>生徒<rt>せいと</rt></ruby>",
+        "category": "school",
+        "icon": "twemoji:student",
+        "background": "bg-school",
+        "audio_file": "audio/student.mp3"
+    },
+    {
+        "word": "classroom",
+        "meaning": "教室",
+        "ruby": "<ruby>教室<rt>きょうしつ</rt></ruby>",
+        "category": "school",
+        "icon": "twemoji:school",
+        "background": "bg-school",
+        "audio_file": "audio/classroom.mp3"
+    },
+    {
+        "word": "lesson",
+        "meaning": "授業",
+        "ruby": "<ruby>授業<rt>じゅぎょう</rt></ruby>",
+        "category": "school",
+        "icon": "twemoji:books",
+        "background": "bg-school",
+        "audio_file": "audio/lesson.mp3"
+    },
+    {
+        "word": "homework",
+        "meaning": "宿題",
+        "ruby": "<ruby>宿題<rt>しゅくだい</rt></ruby>",
+        "category": "school",
+        "icon": "twemoji:notebook",
+        "background": "bg-school",
+        "audio_file": "audio/homework.mp3"
+    },
+    {
+        "word": "exam",
+        "meaning": "試験",
+        "ruby": "<ruby>試験<rt>しけん</rt></ruby>",
+        "category": "school",
+        "icon": "twemoji:clipboard",
+        "background": "bg-school",
+        "audio_file": "audio/exam.mp3"
+    },
+    {
+        "word": "study",
+        "meaning": "勉強",
+        "ruby": "<ruby>勉強<rt>べんきょう</rt></ruby>",
+        "category": "school",
+        "icon": "twemoji:open-book",
+        "background": "bg-school",
+        "audio_file": "audio/study.mp3"
+    },
+    {
+        "word": "friend",
+        "meaning": "友達",
+        "ruby": "<ruby>友達<rt>ともだち</rt></ruby>",
+        "category": "school",
+        "icon": "twemoji:people-holding-hands",
+        "background": "bg-school",
+        "audio_file": "audio/friend.mp3"
+    },
+    {
+        "word": "game",
+        "meaning": "ゲーム",
+        "ruby": "ゲーム",
+        "category": "school",
+        "icon": "twemoji:video-game",
+        "background": "bg-school",
+        "audio_file": "audio/game.mp3"
+    },
+    {
+        "word": "music",
+        "meaning": "音楽",
+        "ruby": "<ruby>音楽<rt>おんがく</rt></ruby>",
+        "category": "school",
+        "icon": "twemoji:musical-note",
+        "background": "bg-school",
+        "audio_file": "audio/music.mp3"
+    },
+    {
+        "word": "art",
+        "meaning": "美術",
+        "ruby": "<ruby>美術<rt>びじゅつ</rt></ruby>",
+        "category": "school",
+        "icon": "twemoji:artist-palette",
+        "background": "bg-school",
+        "audio_file": "audio/art.mp3"
+    },
+    {
+        "word": "sport",
+        "meaning": "スポーツ",
+        "ruby": "スポーツ",
+        "category": "school",
+        "icon": "twemoji:soccer-ball",
+        "background": "bg-school",
+        "audio_file": "audio/sport.mp3"
+    },
+    {
+        "word": "happy",
+        "meaning": "幸せ",
+        "ruby": "<ruby>幸せ<rt>しあわせ</rt></ruby>",
+        "category": "emotion",
+        "icon": "twemoji:smiling-face",
+        "background": "bg-emotion",
+        "audio_file": "audio/happy.mp3"
+    },
+    {
+        "word": "sad",
+        "meaning": "悲しい",
+        "ruby": "<ruby>悲<rt>かな</rt>しい</ruby>",
+        "category": "emotion",
+        "icon": "twemoji:crying-face",
+        "background": "bg-emotion",
+        "audio_file": "audio/sad.mp3"
+    },
+    {
+        "word": "angry",
+        "meaning": "怒った",
+        "ruby": "<ruby>怒<rt>おこ</rt>った</ruby>",
+        "category": "emotion",
+        "icon": "twemoji:angry-face",
+        "background": "bg-emotion",
+        "audio_file": "audio/angry.mp3"
+    },
+    {
+        "word": "scared",
+        "meaning": "怖い",
+        "ruby": "<ruby>怖<rt>こわ</rt>い</ruby>",
+        "category": "emotion",
+        "icon": "twemoji:fearful-face",
+        "background": "bg-emotion",
+        "audio_file": "audio/scared.mp3"
+    },
+    {
+        "word": "excited",
+        "meaning": "興奮",
+        "ruby": "<ruby>興奮<rt>こうふん</rt></ruby>",
+        "category": "emotion",
+        "icon": "twemoji:star-struck",
+        "background": "bg-emotion",
+        "audio_file": "audio/excited.mp3"
+    },
+    {
+        "word": "tired",
+        "meaning": "疲れた",
+        "ruby": "<ruby>疲<rt>つか</rt>れた</ruby>",
+        "category": "emotion",
+        "icon": "twemoji:sleepy-face",
+        "background": "bg-emotion",
+        "audio_file": "audio/tired.mp3"
+    },
+    {
+        "word": "bored",
+        "meaning": "退屈",
+        "ruby": "<ruby>退屈<rt>たいくつ</rt></ruby>",
+        "category": "emotion",
+        "icon": "twemoji:neutral-face",
+        "background": "bg-emotion",
+        "audio_file": "audio/bored.mp3"
+    },
+    {
+        "word": "surprised",
+        "meaning": "驚く",
+        "ruby": "<ruby>驚<rt>おどろ</rt>く</ruby>",
+        "category": "emotion",
+        "icon": "game-icons:surprised",
+        "background": "bg-emotion",
+        "audio_file": "audio/surprised.mp3"
+    },
+    {
+        "word": "shy",
+        "meaning": "恥ずかしい",
+        "ruby": "<ruby>恥<rt>は</rt>ずかしい</ruby>",
+        "category": "emotion",
+        "icon": "twemoji:flushed-face",
+        "background": "bg-emotion",
+        "audio_file": "audio/shy.mp3"
+    },
+    {
+        "word": "proud",
+        "meaning": "誇り",
+        "ruby": "<ruby>誇<rt>ほこ</rt>り</ruby>",
+        "category": "emotion",
+        "icon": "twemoji:trophy",
+        "background": "bg-emotion",
+        "audio_file": "audio/proud.mp3"
+    },
+    {
+        "word": "tuna",
+        "meaning": "マグロ",
+        "ruby": "<ruby>鮪<rt>まぐろ</rt></ruby>",
+        "category": "fish",
+        "icon": "twemoji:tropical-fish",
+        "background": "bg-fish",
+        "audio_file": "audio/tuna.mp3"
+    },
+    {
+        "word": "salmon",
+        "meaning": "サーモン",
+        "ruby": "サーモン",
+        "category": "fish",
+        "icon": "twemoji:fish",
+        "background": "bg-fish",
+        "audio_file": "audio/salmon.mp3"
+    },
+    {
+        "word": "mackerel",
+        "meaning": "サバ",
+        "ruby": "サバ",
+        "category": "fish",
+        "icon": "twemoji:fish",
+        "background": "bg-fish",
+        "audio_file": "audio/mackerel.mp3"
+    },
+    {
+        "word": "sardine",
+        "meaning": "イワシ",
+        "ruby": "イワシ",
+        "category": "fish",
+        "icon": "twemoji:fish",
+        "background": "bg-fish",
+        "audio_file": "audio/sardine.mp3"
+    },
+    {
+        "word": "cod",
+        "meaning": "タラ",
+        "ruby": "タラ",
+        "category": "fish",
+        "icon": "twemoji:fish",
+        "background": "bg-fish",
+        "audio_file": "audio/cod.mp3"
+    },
+    {
+        "word": "trout",
+        "meaning": "マス",
+        "ruby": "マス",
+        "category": "fish",
+        "icon": "twemoji:fish",
+        "background": "bg-fish",
+        "audio_file": "audio/trout.mp3"
+    },
+    {
+        "word": "snapper",
+        "meaning": "鯛",
+        "ruby": "<ruby>鯛<rt>たい</rt></ruby>",
+        "category": "fish",
+        "icon": "twemoji:tropical-fish",
+        "background": "bg-fish",
+        "audio_file": "audio/snapper.mp3"
+    },
+    {
+        "word": "herring",
+        "meaning": "ニシン",
+        "ruby": "ニシン",
+        "category": "fish",
+        "icon": "twemoji:fish",
+        "background": "bg-fish",
+        "audio_file": "audio/herring.mp3"
+    },
+    {
+        "word": "anchovy",
+        "meaning": "アンチョビ",
+        "ruby": "アンチョビ",
+        "category": "fish",
+        "icon": "twemoji:fish",
+        "background": "bg-fish",
+        "audio_file": "audio/anchovy.mp3"
+    },
+    {
+        "word": "flounder",
+        "meaning": "ヒラメ",
+        "ruby": "ヒラメ",
+        "category": "fish",
+        "icon": "twemoji:fish",
+        "background": "bg-fish",
+        "audio_file": "audio/flounder.mp3"
+    },
+    {
+        "word": "eel",
+        "meaning": "うなぎ",
+        "ruby": "うなぎ",
+        "category": "fish",
+        "icon": "twemoji:fish",
+        "background": "bg-fish",
+        "audio_file": "audio/eel.mp3"
+    },
+    {
+        "word": "shrimp",
+        "meaning": "エビ",
+        "ruby": "エビ",
+        "category": "fish",
+        "icon": "twemoji:shrimp",
+        "background": "bg-fish",
+        "audio_file": "audio/shrimp.mp3"
+    },
+    {
+        "word": "chicken",
+        "meaning": "鶏肉",
+        "ruby": "<ruby>鶏肉<rt>けいにく</rt></ruby>",
+        "category": "meat",
+        "icon": "twemoji:poultry-leg",
+        "background": "bg-meat",
+        "audio_file": "audio/chicken.mp3"
+    },
+    {
+        "word": "beef",
+        "meaning": "牛肉",
+        "ruby": "<ruby>牛肉<rt>ぎゅうにく</rt></ruby>",
+        "category": "meat",
+        "icon": "twemoji:cut-of-meat",
+        "background": "bg-meat",
+        "audio_file": "audio/beef.mp3"
+    },
+    {
+        "word": "pork",
+        "meaning": "豚肉",
+        "ruby": "<ruby>豚肉<rt>ぶたにく</rt></ruby>",
+        "category": "meat",
+        "icon": "twemoji:bacon",
+        "background": "bg-meat",
+        "audio_file": "audio/pork.mp3"
+    },
+    {
+        "word": "lamb",
+        "meaning": "羊肉",
+        "ruby": "<ruby>羊肉<rt>ようにく</rt></ruby>",
+        "category": "meat",
+        "icon": "twemoji:cut-of-meat",
+        "background": "bg-meat",
+        "audio_file": "audio/lamb.mp3"
+    },
+    {
+        "word": "turkey",
+        "meaning": "七面鳥",
+        "ruby": "<ruby>七面鳥<rt>しちめんちょう</rt></ruby>",
+        "category": "meat",
+        "icon": "twemoji:poultry-leg",
+        "background": "bg-meat",
+        "audio_file": "audio/turkey.mp3"
+    },
+    {
+        "word": "duck",
+        "meaning": "鴨",
+        "ruby": "<ruby>鴨<rt>かも</rt></ruby>",
+        "category": "meat",
+        "icon": "twemoji:poultry-leg",
+        "background": "bg-meat",
+        "audio_file": "audio/duck.mp3"
+    },
+    {
+        "word": "venison",
+        "meaning": "鹿肉",
+        "ruby": "<ruby>鹿肉<rt>しかにく</rt></ruby>",
+        "category": "meat",
+        "icon": "twemoji:cut-of-meat",
+        "background": "bg-meat",
+        "audio_file": "audio/venison.mp3"
+    },
+    {
+        "word": "soybean",
+        "meaning": "大豆",
+        "ruby": "<ruby>大豆<rt>だいず</rt></ruby>",
+        "category": "soy",
+        "icon": "twemoji:seedling",
+        "background": "bg-soy",
+        "audio_file": "audio/soybean.mp3"
+    },
+    {
+        "word": "tofu",
+        "meaning": "豆腐",
+        "ruby": "<ruby>豆腐<rt>とうふ</rt></ruby>",
+        "category": "soy",
+        "icon": "ph:cube-thin",
+        "background": "bg-soy",
+        "audio_file": "audio/tofu.mp3"
+    },
+    {
+        "word": "miso",
+        "meaning": "みそ",
+        "ruby": "みそ",
+        "category": "soy",
+        "icon": "emojione:honey-pot",
+        "background": "bg-soy",
+        "audio_file": "audio/miso.mp3"
+    },
+    {
+        "word": "natto",
+        "meaning": "納豆",
+        "ruby": "<ruby>納豆<rt>なっとう</rt></ruby>",
+        "category": "soy",
+        "icon": "fluent-emoji-flat:beans",
+        "background": "bg-soy",
+        "audio_file": "audio/natto.mp3"
+    },
+    {
+        "word": "soy sauce",
+        "meaning": "醤油",
+        "ruby": "<ruby>醤油<rt>しょうゆ</rt></ruby>",
+        "category": "soy",
+        "icon": "twemoji:bottle-with-popping-cork",
+        "background": "bg-soy",
+        "audio_file": "audio/soy_sauce.mp3"
+    },
+    {
+        "word": "edamame",
+        "meaning": "枝豆",
+        "ruby": "<ruby>枝豆<rt>えだまめ</rt></ruby>",
+        "category": "soy",
+        "icon": "twemoji:beans",
+        "background": "bg-soy",
+        "audio_file": "audio/edamame.mp3"
+    },
+    {
+        "word": "tempeh",
+        "meaning": "テンペ",
+        "ruby": "テンペ",
+        "category": "soy",
+        "icon": "noto:bowl-with-spoon",
+        "background": "bg-soy",
+        "audio_file": "audio/tempeh.mp3"
+    },
+    {
+        "word": "soy milk",
+        "meaning": "豆乳",
+        "ruby": "<ruby>豆乳<rt>とうにゅう</rt></ruby>",
+        "category": "soy",
+        "icon": "twemoji:glass-of-milk",
+        "background": "bg-soy",
+        "audio_file": "audio/soy_milk.mp3"
+    },
+    {
+        "word": "soy oil",
+        "meaning": "大豆油",
+        "ruby": "<ruby>大豆油<rt>だいずゆ</rt></ruby>",
+        "category": "soy",
+        "icon": "ri:oil-line",
+        "background": "bg-soy",
+        "audio_file": "audio/soy_oil.mp3"
+    },
+    {
+        "word": "soy flour",
+        "meaning": "大豆粉",
+        "ruby": "<ruby>大豆粉<rt>だいずこ</rt></ruby>",
+        "category": "soy",
+        "icon": "game-icons:powder",
+        "background": "bg-soy",
+        "audio_file": "audio/soy_flour.mp3"
+    },
+    {
+        "word": "soy paste",
+        "meaning": "大豆ペースト",
+        "ruby": "<ruby>大豆<rt>だいず</rt>ペースト</ruby>",
+        "category": "soy",
+        "icon": "emojione:potato",
+        "background": "bg-soy",
+        "audio_file": "audio/soy_paste.mp3"
+    },
+    {
+        "word": "soy cheese",
+        "meaning": "大豆チーズ",
+        "ruby": "<ruby>大豆<rt>だいず</rt>チーズ</ruby>",
+        "category": "soy",
+        "icon": "twemoji:cheese-wedge",
+        "background": "bg-soy",
+        "audio_file": "audio/soy_cheese.mp3"
+    },
+    {
+        "word": "government",
+        "meaning": "政府",
+        "ruby": "<ruby>政府<rt>せいふ</rt></ruby>",
+        "category": "society",
+        "icon": "twemoji:classical-building",
+        "background": "bg-society",
+        "audio_file": "audio/government.mp3"
+    },
+    {
+        "word": "community",
+        "meaning": "地域社会",
+        "ruby": "<ruby>地域社会<rt>ちいきしゃかい</rt></ruby>",
+        "category": "society",
+        "icon": "twemoji:people-holding-hands",
+        "background": "bg-society",
+        "audio_file": "audio/community.mp3"
+    },
+    {
+        "word": "news",
+        "meaning": "ニュース",
+        "ruby": "ニュース",
+        "category": "society",
+        "icon": "twemoji:newspaper",
+        "background": "bg-society",
+        "audio_file": "audio/news.mp3"
+    },
+    {
+        "word": "charity",
+        "meaning": "慈善",
+        "ruby": "<ruby>慈善<rt>じぜん</rt></ruby>",
+        "category": "society",
+        "icon": "twemoji:red-heart",
+        "background": "bg-society",
+        "audio_file": "audio/charity.mp3"
+    },
+    {
+        "word": "event",
+        "meaning": "イベント",
+        "ruby": "イベント",
+        "category": "society",
+        "icon": "twemoji:partying-face",
+        "background": "bg-society",
+        "audio_file": "audio/event.mp3"
+    },
+    {
+        "word": "environment",
+        "meaning": "環境",
+        "ruby": "<ruby>環境<rt>かんきょう</rt></ruby>",
+        "category": "society",
+        "icon": "twemoji:globe-showing-americas",
+        "background": "bg-society",
+        "audio_file": "audio/environment.mp3"
+    },
+    {
+        "word": "climate",
+        "meaning": "気候",
+        "ruby": "<ruby>気候<rt>きこう</rt></ruby>",
+        "category": "society",
+        "icon": "twemoji:thermometer",
+        "background": "bg-society",
+        "audio_file": "audio/climate.mp3"
+    },
+    {
+        "word": "pollution",
+        "meaning": "公害",
+        "ruby": "<ruby>公害<rt>こうがい</rt></ruby>",
+        "category": "society",
+        "icon": "twemoji:factory",
+        "background": "bg-society",
+        "audio_file": "audio/pollution.mp3"
+    },
+    {
+        "word": "election",
+        "meaning": "選挙",
+        "ruby": "<ruby>選挙<rt>せんきょ</rt></ruby>",
+        "category": "society",
+        "icon": "game-icons:vote",
+        "background": "bg-society",
+        "audio_file": "audio/election.mp3"
+    },
+    {
+        "word": "law",
+        "meaning": "法律",
+        "ruby": "<ruby>法律<rt>ほうりつ</rt></ruby>",
+        "category": "society",
+        "icon": "twemoji:balance-scale",
+        "background": "bg-society",
+        "audio_file": "audio/law.mp3"
+    },
+    {
+        "word": "tea",
+        "meaning": "お茶",
+        "ruby": "<ruby>お茶<rt>おちゃ</rt></ruby>",
+        "category": "culture",
+        "icon": "twemoji:teacup-without-handle",
+        "background": "bg-culture",
+        "audio_file": "audio/tea.mp3"
+    },
+    {
+        "word": "pub",
+        "meaning": "パブ",
+        "ruby": "パブ",
+        "category": "culture",
+        "icon": "twemoji:beer-mug",
+        "background": "bg-culture",
+        "audio_file": "audio/pub.mp3"
+    },
+    {
+        "word": "chips",
+        "meaning": "フライドポテト",
+        "ruby": "フライドポテト",
+        "category": "culture",
+        "icon": "twemoji:french-fries",
+        "background": "bg-culture",
+        "audio_file": "audio/chips.mp3"
+    },
+    {
+        "word": "biscuit",
+        "meaning": "ビスケット",
+        "ruby": "ビスケット",
+        "category": "culture",
+        "icon": "twemoji:cookie",
+        "background": "bg-culture",
+        "audio_file": "audio/biscuit.mp3"
+    },
+    {
+        "word": "pudding",
+        "meaning": "プディング",
+        "ruby": "プディング",
+        "category": "culture",
+        "icon": "twemoji:custard",
+        "background": "bg-culture",
+        "audio_file": "audio/pudding.mp3"
+    },
+    {
+        "word": "cricket",
+        "meaning": "クリケット",
+        "ruby": "クリケット",
+        "category": "culture",
+        "icon": "twemoji:cricket-game",
+        "background": "bg-culture",
+        "audio_file": "audio/cricket.mp3"
+    },
+    {
+        "word": "queue",
+        "meaning": "列",
+        "ruby": "<ruby>列<rt>れつ</rt></ruby>",
+        "category": "culture",
+        "icon": "twemoji:people-holding-hands",
+        "background": "bg-culture",
+        "audio_file": "audio/queue.mp3"
+    },
+    {
+        "word": "flat",
+        "meaning": "アパート",
+        "ruby": "アパート",
+        "category": "culture",
+        "icon": "twemoji:house",
+        "background": "bg-culture",
+        "audio_file": "audio/flat.mp3"
+    },
+    {
+        "word": "lorry",
+        "meaning": "トラック",
+        "ruby": "トラック",
+        "category": "culture",
+        "icon": "noto:articulated-lorry",
+        "background": "bg-culture",
+        "audio_file": "audio/lorry.mp3"
+    },
+    {
+        "word": "truck",
+        "meaning": "トラック",
+        "ruby": "トラック",
+        "category": "culture",
+        "icon": "twemoji:delivery-truck",
+        "background": "bg-culture",
+        "audio_file": "audio/truck.mp3"
+    },
+    {
+        "word": "thank you",
+        "meaning": "ありがとう",
+        "ruby": "ありがとう",
+        "category": "culture",
+        "icon": "arcticons:fossify-thankyou",
+        "background": "bg-culture",
+        "audio_file": "audio/thank_you.mp3"
+    },
+    {
+        "word": "sorry",
+        "meaning": "ごめんなさい",
+        "ruby": "ごめんなさい",
+        "category": "culture",
+        "icon": "twemoji:folded-hands",
+        "background": "bg-culture",
+        "audio_file": "audio/sorry.mp3"
+    },
+    {
+        "word": "socket",
+        "meaning": "コンセント",
+        "ruby": "コンセント",
+        "category": "household",
+        "icon": "mdi:power-socket-jp",
+        "background": "bg-household",
+        "audio_file": "audio/socket.mp3"
+    },
+    {
+        "word": "window",
+        "meaning": "窓",
+        "ruby": "<ruby>窓<rt>まど</rt></ruby>",
+        "category": "household",
+        "icon": "twemoji:window",
+        "background": "bg-household",
+        "audio_file": "audio/window.mp3"
+    },
+    {
+        "word": "door",
+        "meaning": "ドア",
+        "ruby": "ドア",
+        "category": "household",
+        "icon": "twemoji:door",
+        "background": "bg-household",
+        "audio_file": "audio/door.mp3"
+    },
+    {
+        "word": "light",
+        "meaning": "電灯",
+        "ruby": "<ruby>電灯<rt>でんとう</rt></ruby>",
+        "category": "household",
+        "icon": "twemoji:light-bulb",
+        "background": "bg-household",
+        "audio_file": "audio/light.mp3"
+    },
+    {
+        "word": "plug",
+        "meaning": "プラグ",
+        "ruby": "プラグ",
+        "category": "household",
+        "icon": "twemoji:electric-plug",
+        "background": "bg-household",
+        "audio_file": "audio/plug.mp3"
+    },
+    {
+        "word": "tap",
+        "meaning": "蛇口",
+        "ruby": "<ruby>蛇口<rt>じゃぐち</rt></ruby>",
+        "category": "household",
+        "icon": "marketeq:water-tap",
+        "background": "bg-household",
+        "audio_file": "audio/tap.mp3"
+    },
+    {
+        "word": "kettle",
+        "meaning": "やかん",
+        "ruby": "やかん",
+        "category": "household",
+        "icon": "twemoji:teapot",
+        "background": "bg-household",
+        "audio_file": "audio/kettle.mp3"
+    },
+    {
+        "word": "radiator",
+        "meaning": "暖房",
+        "ruby": "<ruby>暖房<rt>だんぼうき</rt></ruby>",
+        "category": "household",
+        "icon": "mdi:radiator",
+        "background": "bg-household",
+        "audio_file": "audio/radiator.mp3"
+    },
+    {
+        "word": "fireplace",
+        "meaning": "暖炉",
+        "ruby": "<ruby>暖炉<rt>だんろ</rt></ruby>",
+        "category": "household",
+        "icon": "mdi:fireplace",
+        "background": "bg-household",
+        "audio_file": "audio/fireplace.mp3"
+    },
+    {
+        "word": "trolley",
+        "meaning": "ショッピングカート",
+        "ruby": "ショッピングカート",
+        "category": "shopping",
+        "icon": "twemoji:shopping-cart",
+        "background": "bg-shopping",
+        "audio_file": "audio/trolley.mp3"
+    },
+    {
+        "word": "register",
+        "meaning": "レジ",
+        "ruby": "レジ",
+        "category": "shopping",
+        "icon": "fa6-solid:cash-register",
+        "background": "bg-shopping",
+        "audio_file": "audio/register.mp3"
+    },
+    {
+        "word": "receipt",
+        "meaning": "レシート",
+        "ruby": "レシート",
+        "category": "shopping",
+        "icon": "twemoji:receipt",
+        "background": "bg-shopping",
+        "audio_file": "audio/receipt.mp3"
+    },
+    {
+        "word": "pence",
+        "meaning": "ペンス",
+        "ruby": "ペンス",
+        "category": "shopping",
+        "icon": "twemoji:coin",
+        "background": "bg-shopping",
+        "audio_file": "audio/pence.mp3"
+    },
+    {
+        "word": "basket",
+        "meaning": "買い物かご",
+        "ruby": "<ruby>買<rt>か</rt>い<ruby>物<rt>もの</rt>かご</ruby>",
+        "category": "shopping",
+        "icon": "twemoji:shopping-bags",
+        "background": "bg-shopping",
+        "audio_file": "audio/basket.mp3"
+    },
+    {
+        "word": "checkout",
+        "meaning": "会計",
+        "ruby": "<ruby>会計<rt>かいけい</rt></ruby>",
+        "category": "shopping",
+        "icon": "twemoji:shopping-cart",
+        "background": "bg-shopping",
+        "audio_file": "audio/checkout.mp3"
+    },
+    {
+        "word": "bag",
+        "meaning": "袋",
+        "ruby": "<ruby>袋<rt>ふくろ</rt></ruby>",
+        "category": "shopping",
+        "icon": "twemoji:shopping-bags",
+        "background": "bg-shopping",
+        "audio_file": "audio/bag.mp3"
+    },
+    {
+        "word": "coin",
+        "meaning": "硬貨",
+        "ruby": "<ruby>硬貨<rt>こうか</rt></ruby>",
+        "category": "shopping",
+        "icon": "twemoji:coin",
+        "background": "bg-shopping",
+        "audio_file": "audio/coin.mp3"
+    },
+    {
+        "word": "directions",
+        "meaning": "道順",
+        "ruby": "<ruby>道順<rt>みちじゅん</rt></ruby>",
+        "category": "asking",
+        "icon": "twemoji:compass",
+        "background": "bg-asking",
+        "audio_file": "audio/directions.mp3"
+    },
+    {
+        "word": "excuse me",
+        "meaning": "すみません",
+        "ruby": "すみません",
+        "category": "asking",
+        "icon": "twemoji:folded-hands",
+        "background": "bg-asking",
+        "audio_file": "audio/excuse_me.mp3"
+    },
+    {
+        "word": "where",
+        "meaning": "どこ",
+        "ruby": "どこ",
+        "category": "asking",
+        "icon": "twemoji:question-mark",
+        "background": "bg-asking",
+        "audio_file": "audio/where.mp3"
+    },
+    {
+        "word": "map",
+        "meaning": "地図",
+        "ruby": "<ruby>地図<rt>ちず</rt></ruby>",
+        "category": "asking",
+        "icon": "twemoji:world-map",
+        "background": "bg-asking",
+        "audio_file": "audio/map.mp3"
+    },
+    {
+        "word": "help",
+        "meaning": "助けて",
+        "ruby": "<ruby>助<rt>たす</rt>けて</ruby>",
+        "category": "asking",
+        "icon": "twemoji:handshake",
+        "background": "bg-asking",
+        "audio_file": "audio/help.mp3"
+    },
+    {
+        "word": "please",
+        "meaning": "お願いします",
+        "ruby": "<ruby>お願<rt>ねが</rt>いします</ruby>",
+        "category": "asking",
+        "icon": "twemoji:folded-hands",
+        "background": "bg-asking",
+        "audio_file": "audio/please.mp3"
+    },
+    {
+        "word": "toilet",
+        "meaning": "トイレ",
+        "ruby": "トイレ",
+        "category": "asking",
+        "icon": "twemoji:toilet",
+        "background": "bg-asking",
+        "audio_file": "audio/toilet.mp3"
+    },
+    {
+        "word": "council",
+        "meaning": "役所、自治体",
+        "ruby": "<ruby>役所<rt>やくしょ</rt>、<ruby>自治体<rt>じちたい</rt></ruby>",
+        "category": "utilities",
+        "icon": "twemoji:classical-building",
+        "background": "bg-utilities",
+        "audio_file": "audio/council.mp3"
+    },
+    {
+        "word": "tax",
+        "meaning": "税金",
+        "ruby": "<ruby>税金<rt>ぜいきん</rt></ruby>",
+        "category": "utilities",
+        "icon": "twemoji:receipt",
+        "background": "bg-utilities",
+        "audio_file": "audio/tax.mp3"
+    },
+    {
+        "word": "bill",
+        "meaning": "請求書",
+        "ruby": "<ruby>請求書<rt>せいきゅうしょ</rt></ruby>",
+        "category": "utilities",
+        "icon": "twemoji:receipt",
+        "background": "bg-utilities",
+        "audio_file": "audio/bill.mp3"
+    },
+    {
+        "word": "water",
+        "meaning": "水",
+        "ruby": "<ruby>水<rt>みず</rt></ruby>",
+        "category": "utilities",
+        "icon": "twemoji:shower",
+        "background": "bg-utilities",
+        "audio_file": "audio/water.mp3"
+    },
+    {
+        "word": "electricity",
+        "meaning": "電気",
+        "ruby": "<ruby>電気<rt>でんき</rt></ruby>",
+        "category": "utilities",
+        "icon": "twemoji:electric-plug",
+        "background": "bg-utilities",
+        "audio_file": "audio/electricity.mp3"
+    },
+    {
+        "word": "gas",
+        "meaning": "ガス",
+        "ruby": "ガス",
+        "category": "utilities",
+        "icon": "twemoji:fire",
+        "background": "bg-utilities",
+        "audio_file": "audio/gas.mp3"
+    },
+    {
+        "word": "contract",
+        "meaning": "契約",
+        "ruby": "<ruby>契約<rt>けいやく</rt></ruby>",
+        "category": "utilities",
+        "icon": "twemoji:page-facing-up",
+        "background": "bg-utilities",
+        "audio_file": "audio/contract.mp3"
+    },
+    {
+        "word": "form",
+        "meaning": "書類",
+        "ruby": "<ruby>書類<rt>しょるい</rt></ruby>",
+        "category": "utilities",
+        "icon": "twemoji:page-facing-up",
+        "background": "bg-utilities",
+        "audio_file": "audio/form.mp3"
+    },
+    {
+        "word": "account",
+        "meaning": "口座",
+        "ruby": "<ruby>口座<rt>こうざ</rt></ruby>",
+        "category": "banking",
+        "icon": "twemoji:bank",
+        "background": "bg-banking",
+        "audio_file": "audio/account.mp3"
+    },
+    {
+        "word": "card",
+        "meaning": "カード",
+        "ruby": "カード",
+        "category": "banking",
+        "icon": "twemoji:credit-card",
+        "background": "bg-banking",
+        "audio_file": "audio/card.mp3"
+    },
+    {
+        "word": "cash",
+        "meaning": "現金",
+        "ruby": "<ruby>現金<rt>げんきん</rt></ruby>",
+        "category": "banking",
+        "icon": "twemoji:money-bag",
+        "background": "bg-banking",
+        "audio_file": "audio/cash.mp3"
+    },
+    {
+        "word": "withdraw",
+        "meaning": "引き出す",
+        "ruby": "<ruby>引<rt>ひ</rt>き<ruby>出<rt>だ</rt>す</ruby>",
+        "category": "banking",
+        "icon": "twemoji:money-with-wings",
+        "background": "bg-banking",
+        "audio_file": "audio/withdraw.mp3"
+    },
+    {
+        "word": "deposit",
+        "meaning": "預ける",
+        "ruby": "<ruby>預<rt>あず</rt>ける</ruby>",
+        "category": "banking",
+        "icon": "twemoji:money-bag",
+        "background": "bg-banking",
+        "audio_file": "audio/deposit.mp3"
+    },
+    {
+        "word": "balance",
+        "meaning": "残高",
+        "ruby": "<ruby>残高<rt>ざんだか</rt></ruby>",
+        "category": "banking",
+        "icon": "twemoji:balance-scale",
+        "background": "bg-banking",
+        "audio_file": "audio/balance.mp3"
+    },
+    {
+        "word": "PIN",
+        "meaning": "ピンの番号",
+        "ruby": "ピンの<ruby>番号<rt>ばんごう</rt></ruby>",
+        "category": "banking",
+        "icon": "twemoji:key",
+        "background": "bg-banking",
+        "audio_file": "audio/pin.mp3"
+    },
+    {
+        "word": "cheque",
+        "meaning": "小切手",
+        "ruby": "<ruby>小切手<rt>こぎって</rt></ruby>",
+        "category": "banking",
+        "icon": "twemoji:receipt",
+        "background": "bg-banking",
+        "audio_file": "audio/cheque.mp3"
+    },
+    {
+        "word": "footpath",
+        "meaning": "歩道",
+        "ruby": "<ruby>歩道<rt>ほどう</rt></ruby>",
+        "category": "roads",
+        "icon": "twemoji:footprints",
+        "background": "bg-roads",
+        "audio_file": "audio/footpath.mp3"
+    },
+    {
+        "word": "zebra crossing",
+        "meaning": "横断歩道",
+        "ruby": "<ruby>横断歩道<rt>おうだんほどう</rt></ruby>",
+        "category": "roads",
+        "icon": "emojione:children-crossing",
+        "background": "bg-roads",
+        "audio_file": "audio/zebra_crossing.mp3"
+    },
+    {
+        "word": "pavement",
+        "meaning": "歩道",
+        "ruby": "<ruby>歩道<rt>ほどう</rt></ruby>",
+        "category": "roads",
+        "icon": "twemoji:footprints",
+        "background": "bg-roads",
+        "audio_file": "audio/pavement.mp3"
+    },
+    {
+        "word": "road",
+        "meaning": "道路",
+        "ruby": "<ruby>道路<rt>どうろ</rt></ruby>",
+        "category": "roads",
+        "icon": "hugeicons:road",
+        "background": "bg-roads",
+        "audio_file": "audio/road.mp3"
+    },
+    {
+        "word": "signal",
+        "meaning": "信号",
+        "ruby": "<ruby>信号<rt>しんごう</rt></ruby>",
+        "category": "roads",
+        "icon": "noto-v1:vertical-traffic-light",
+        "background": "bg-roads",
+        "audio_file": "audio/signal.mp3"
+    },
+    {
+        "word": "roundabout",
+        "meaning": "ロータリー",
+        "ruby": "ロータリー",
+        "category": "roads",
+        "icon": "twemoji:round-pushpin",
+        "background": "bg-roads",
+        "audio_file": "audio/roundabout.mp3"
+    },
+    {
+        "word": "bridge",
+        "meaning": "橋",
+        "ruby": "<ruby>橋<rt>はし</rt></ruby>",
+        "category": "roads",
+        "icon": "twemoji:bridge-at-night",
+        "background": "bg-roads",
+        "audio_file": "audio/bridge.mp3"
+    },
+    {
+        "word": "lane",
+        "meaning": "車線",
+        "ruby": "<ruby>車線<rt>しゃせん</rt></ruby>",
+        "category": "roads",
+        "icon": "game-icons:road",
+        "background": "bg-roads",
+        "audio_file": "audio/lane.mp3"
+    },
+    {
+        "word": "bus",
+        "meaning": "バス",
+        "ruby": "バス",
+        "category": "transport",
+        "icon": "twemoji:bus",
+        "background": "bg-transport",
+        "audio_file": "audio/bus.mp3"
+    },
+    {
+        "word": "tube",
+        "meaning": "地下鉄",
+        "ruby": "<ruby>地下鉄<rt>ちかてつ</rt></ruby>",
+        "category": "transport",
+        "icon": "twemoji:metro",
+        "background": "bg-transport",
+        "audio_file": "audio/tube.mp3"
+    },
+    {
+        "word": "train",
+        "meaning": "電車",
+        "ruby": "<ruby>電車<rt>でんしゃ</rt></ruby>",
+        "category": "transport",
+        "icon": "twemoji:train",
+        "background": "bg-transport",
+        "audio_file": "audio/train.mp3"
+    },
+    {
+        "word": "ticket",
+        "meaning": "チケット",
+        "ruby": "チケット",
+        "category": "transport",
+        "icon": "twemoji:ticket",
+        "background": "bg-transport",
+        "audio_file": "audio/ticket.mp3"
+    },
+    {
+        "word": "cycle",
+        "meaning": "自転車",
+        "ruby": "<ruby>自転車<rt>じてんしゃ</rt></ruby>",
+        "category": "transport",
+        "icon": "twemoji:bicycle",
+        "background": "bg-transport",
+        "audio_file": "audio/cycle.mp3"
+    },
+    {
+        "word": "taxi",
+        "meaning": "タクシー",
+        "ruby": "タクシー",
+        "category": "transport",
+        "icon": "twemoji:taxi",
+        "background": "bg-transport",
+        "audio_file": "audio/taxi.mp3"
+    },
+    {
+        "word": "platform",
+        "meaning": "ホーム",
+        "ruby": "ホーム",
+        "category": "transport",
+        "icon": "twemoji:station",
+        "background": "bg-transport",
+        "audio_file": "audio/platform.mp3"
+    },
+    {
+        "word": "coach",
+        "meaning": "長距離バス",
+        "ruby": "<ruby>長距離<rt>ちょうきょり</rt>バス</ruby>",
+        "category": "transport",
+        "icon": "twemoji:bus",
+        "background": "bg-transport",
+        "audio_file": "audio/coach.mp3"
+    },
+    {
+        "word": "postbox",
+        "meaning": "ポスト",
+        "ruby": "ポスト",
+        "category": "daily_life",
+        "icon": "noto-v1:postbox",
+        "background": "bg-daily_life",
+        "audio_file": "audio/postbox.mp3"
+    },
+    {
+        "word": "bin",
+        "meaning": "ごみ箱",
+        "ruby": "<ruby>ごみ箱<rt>ごみばこ</rt></ruby>",
+        "category": "daily_life",
+        "icon": "twemoji:wastebasket",
+        "background": "bg-daily_life",
+        "audio_file": "audio/bin.mp3"
+    },
+    {
+        "word": "holiday",
+        "meaning": "休暇",
+        "ruby": "<ruby>休暇<rt>きゅうか</rt></ruby>",
+        "category": "daily_life",
+        "icon": "twemoji:beach-with-umbrella",
+        "background": "bg-daily_life",
+        "audio_file": "audio/holiday.mp3"
+    },
+    {
+        "word": "mate",
+        "meaning": "友達",
+        "ruby": "<ruby>友達<rt>ともだち</rt></ruby>",
+        "category": "daily_life",
+        "icon": "twemoji:people-holding-hands",
+        "background": "bg-daily_life",
+        "audio_file": "audio/mate.mp3"
+    },
+    {
+        "word": "headteacher",
+        "meaning": "校長",
+        "ruby": "<ruby>校長<rt>こうちょう</rt></ruby>",
+        "category": "daily_life",
+        "icon": "twemoji:teacher",
+        "background": "bg-daily_life",
+        "audio_file": "audio/headteacher.mp3"
+    },
+    {
+        "word": "breakfast",
+        "meaning": "朝食",
+        "ruby": "<ruby>朝食<rt>ちょうしょく</rt></ruby>",
+        "category": "daily_life",
+        "icon": "twemoji:cooked-rice",
+        "background": "bg-daily_life",
+        "audio_file": "audio/breakfast.mp3"
+    },
+    {
+        "word": "dinner",
+        "meaning": "夕食",
+        "ruby": "<ruby>夕食<rt>ゆうしょく</rt></ruby>",
+        "category": "daily_life",
+        "icon": "twemoji:pot-of-food",
+        "background": "bg-daily_life",
+        "audio_file": "audio/dinner.mp3"
+    }
+]
