@@ -113,15 +113,20 @@ $(document).ready(function() {
         $('#quizContainer').append(`
             <div class="question-card text-center" data-word="${question.word}" data-audio-file="${question.audio_file || ''}">
                 <p class="lead">この単語は何でしょう？</p>
-                <div class="my-3">
+                <div class="my-4 d-flex justify-content-center align-items-center">
+                    <h2 class="display-5 fw-bold mb-0">${question.word}</h2>
+                    <button id="playQuestionSound" class="btn btn-link text-secondary p-0 ms-3" style="font-size: 2.5rem; line-height: 1;" title="音声を聞く">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
                 </div>
-                <div id="hint-area" style="min-height: 7rem;">
+
+                <div id="hint-area" class="d-flex flex-column align-items-center" style="min-height: 5rem;">
                     <span class="vocab-icon iconify" data-icon="${icon}" ${iconStyle} style="font-size: 4rem;"></span>
-                    <h4 class="mt-2" id="questionWord">${question.word}</h4>
                 </div>
+
                 <div class="mt-3">
                     <button id="hintButton" class="btn btn-outline-secondary">
-                        <i class="fas fa-lightbulb me-1"></i> ヒントを見る
+                        <i class="fas fa-lightbulb me-1"></i> ヒントを見る (カテゴリ)
                     </button>
                 </div>
             </div>
@@ -260,23 +265,20 @@ $(document).ready(function() {
                 showFeedback('残念！', feedbackBody);
             }
         });
-        $(document).on('click touchstart', '.vocab-icon', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            const $icon = $(this);
-            const $card = $icon.closest('.question-card');
+        // 新しい音声再生ボタンのイベント
+        $(document).on('click', '#playQuestionSound', function() {
+            const $button = $(this);
+            const $card = $button.closest('.question-card');
             const word = $card.data('word');
             const audioFile = $card.data('audio-file');
 
-            $icon.addClass('speaking vocab-icon-spin');
-            speakWord(word, {
-                audioFile: audioFile,
-                caller: 'vocab-icon',
-                lang: 'en-GB',
-                onEnd: () => $icon.removeClass('speaking vocab-icon-spin'),
-                onError: () => $icon.removeClass('speaking vocab-icon-spin')
-            });
+            if (word) {
+                speakWord(word, {
+                    audioFile: audioFile,
+                    caller: 'quiz-sound-button',
+                    lang: 'en-GB'
+                });
+            }
         });
         $(document).on('click', '#testSpeechButton', function(e) {
             e.preventDefault();
