@@ -146,7 +146,11 @@ $(document).ready(function() {
                 updateLearningStats('phraseQuiz', itemKey, itemData, true);
 
                 // レベルアップ判定
-                if (score > 0 && score % POINTS_FOR_LEVEL_UP === 0) {
+                // 復習モードではない場合のみレベルアップを判定
+                if (!isReviewMode && score > 0 && score % POINTS_FOR_LEVEL_UP === 0) {
+                    level++;
+                    localStorage.setItem(LEVEL_STORAGE_KEY, level);
+                    levelUpOccurred = true;
                     level++;
                     localStorage.setItem(LEVEL_STORAGE_KEY, level);
                     levelUpOccurred = true;
@@ -169,7 +173,8 @@ $(document).ready(function() {
                 if (!incorrectQuestions.some(q => q.phrase_en === questionData.phrase_en)) {
                     incorrectQuestions.push(questionData);
                 }
-                showFeedback('残念！', `正解は...<br><strong>"${correctDisplayAnswer}"</strong><br>でした。`);
+                const feedbackBody = `正解は...<strong>"${correctAnswerEn}"</strong><small class="text-muted"><br>(${correctAnswerJa})</small>でした。`;
+                showFeedback('残念！', feedbackBody);
             }
             updateProgress(true); // 回答したので分母を増やす
         });

@@ -401,4 +401,31 @@ $(document).ready(function() {
     } catch (e) {
         console.error("ナビゲーションのアクティブ化に失敗:", e);
     }
+
+    // --- Font Size Toggle Logic ---
+    const FONT_SIZE_KEY = 'preferredFontSize';
+
+    function applyFontSize(size) {
+        $('html').removeClass('font-size-small font-size-medium font-size-large');
+        if (size) {
+            $('html').addClass(`font-size-${size}`);
+        }
+    }
+
+    // Load and apply saved font size on page load
+    const savedSize = localStorage.getItem(FONT_SIZE_KEY);
+    if (savedSize) {
+        applyFontSize(savedSize);
+        $(`input[name="fontSize"][value="${savedSize}"]`).prop('checked', true);
+    } else {
+        // Default to medium if no setting is saved
+        $('#fs-md').prop('checked', true);
+    }
+
+    // Event listener for font size change
+    $('#fontSizeToggle').on('change', 'input[name="fontSize"]', function() {
+        const newSize = $(this).val();
+        localStorage.setItem(FONT_SIZE_KEY, newSize);
+        applyFontSize(newSize);
+    });
 });
