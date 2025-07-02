@@ -107,21 +107,28 @@ $(document).ready(function() {
         const answers = [correctAnswer, ...wrongAnswers].sort(() => Math.random() - 0.5);
 
         $('#quizContainer').empty();
-        // 単語のアイコンがあればそれを使い、なければカテゴリのデフォルトアイコンを使う
         const icon = question.icon || (window.defaultIcons && window.defaultIcons[question.category]) || 'mdi:help-circle-outline';
         const iconStyle = question.color ? `style="color: ${question.color}"` : '';
-        $('#quizContainer').append(`
+        const categoryName = question.category.charAt(0).toUpperCase() + question.category.slice(1).replace(/_/g, ' ');
+
+        const quizHtml = `
             <div class="question-card text-center" data-word="${question.word}" data-audio-file="${question.audio_file || ''}">
                 <p class="lead">この単語は何でしょう？</p>
-                <div class="my-3">
+                <div class="my-4 d-flex justify-content-center align-items-center">
+                    <h2 class="display-5 fw-bold mb-0">${question.word}</h2>
+                    <button id="playQuestionSound" class="btn btn-link text-secondary p-0 ms-2" style="font-size: 2rem; line-height: 1;">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
                 </div>
-                <div id="hint-area" style="min-height: 7rem;">
-                    <span class="vocab-icon iconify" data-icon="${icon}" ${iconStyle} style="font-size: 4rem;"></span>
-                    <h4 class="mt-2" id="questionWord">${question.word}</h4>
+                <div id="hint-area" class="mb-3" style="display: none;">
+                    <p class="h5 text-info font-monospace">
+                        <span class="iconify me-2" data-icon="${icon}" ${iconStyle}></span>
+                        Category: ${categoryName}
+                    </p>
                 </div>
-                <div class="mt-3">
+                <div>
                     <button id="hintButton" class="btn btn-outline-secondary">
-                        <i class="fas fa-lightbulb me-1"></i> ヒントを見る
+                        <i class="fas fa-lightbulb me-1"></i> ヒント (カテゴリ)
                     </button>
                 </div>
             </div>
@@ -132,16 +139,8 @@ $(document).ready(function() {
                     </div>
                 `).join('')}
             </div>
-            <div class="text-center mt-3" id="nextQuestionContainer" style="display: none;">
-                <button id="nextQuestionButton" class="btn btn-primary">
-                    <i class="fas fa-arrow-right me-2"></i>次へ！
-                </button>
-            </div>
-        `);
-        // 前の問題で表示されたヒントの revealed クラスを削除し、ぼかし状態に戻す
-        $('#hint-area').removeClass('revealed');
-
-        console.log('アイコン生成確認:', $('.vocab-icon').length, $('.vocab-icon').data('word'));
+        `;
+        $('#quizContainer').html(quizHtml);
 
         // ★★★ 重要 ★★★
         // 動的に追加された問題のアイコンをIconifyにスキャンさせる
@@ -166,7 +165,7 @@ $(document).ready(function() {
         // ヒントボタンのイベント
         $(document).on('click', '#hintButton', function() {
             hintUsed = true;
-            $('#hint-area').addClass('revealed');
+            $('#hint-area').slideDown();
             $(this).prop('disabled', true).addClass('disabled');
             showToast('ヒントを使用しました (正解で+1点)', 'info');
         });
@@ -260,54 +259,16 @@ $(document).ready(function() {
             }
         });
 
-        $(document).on('click touchstart', '.vocab-icon', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            const $icon = $(this);
-
-            console.log('アイコンタップ検知');
-            const word = $(this).data('word');
-            console.log('タップされた単語:', word, 'speechEnabled:', window.speechEnabled, 'speechSynthesis:', !!window.speechSynthesis);
-
-            $icon.addClass('speaking vocab-icon-spin');
-            speakWord(word, {
-                caller: 'vocab-icon',
-                lang: 'en-GB',
-                onEnd: () => $icon.removeClass('speaking vocab-icon-spin'),
-                onError: () => {
-                    $icon.removeClass('speaking vocab-icon-spin');
-                }
-            });
-        });
-
-        $(document).on('click touchstart', '.sound-icon', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            const $icon = $(this);
-
-            console.log('音声ボタンタップ');
-            const word = $(this).data('word');
-            console.log('タップされた単語:', word, 'speechEnabled:', window.speechEnabled, 'speechSynthesis:', !!window.speechSynthesis);
-
-            $icon.addClass('speaking');
-            speakWord(word, {
-                audioFile: currentQuestionData.audio_file,
-                caller: 'sound-icon',
-                lang: 'en-GB',
-                onEnd: () => $icon.removeClass('speaking'),
-                onError: () => {
-                    $icon.removeClass('speaking');
-                }
-            });
-        });
-
-        $(document).on('click', '#testSpeechButton', function(e) {
-            e.preventDefault();
-            console.log('音声テストボタンクリック');
-            speakWord('Hello, welcome to the quiz', { caller: 'test-button', lang: 'en-GB' });
-            showToast('音声テストを実行中: en-GB', 'info');
+        // 新しい音声再生ボタンのイベント
+        $(document).on('click', '#playQuestionSound', function() {
+            const questionData = window.words[currentQuestion];
+            if (questionData && questionData.word) {
+                speakWord(questionData.word, {
+                    audioFile: questionData.audio_file,
+                    caller: 'quiz-sound-button',
+                    lang: 'en-GB'
+                });
+            }
         });
 
         $(document).on('click', '#nextQuestionButton', function(e) {
