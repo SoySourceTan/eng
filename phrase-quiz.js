@@ -143,6 +143,7 @@ $(document).ready(function() {
             if (isCorrect) {
                 score++;
                 $card.addClass('correct');
+                playCorrectSound();
                 updateLearningStats('phraseQuiz', itemKey, itemData, true);
 
                 // レベルアップ判定
@@ -151,16 +152,21 @@ $(document).ready(function() {
                     level++;
                     localStorage.setItem(LEVEL_STORAGE_KEY, level);
                     levelUpOccurred = true;
-                    level++;
-                    localStorage.setItem(LEVEL_STORAGE_KEY, level);
-                    levelUpOccurred = true;
-                    playCorrectSound();
                     showFeedback('レベルアップ！🎉', `おめでとうございます！<br>Level ${level} に到達しました！`);
                     // モーダルを閉じた後に 'hidden.bs.modal' イベントで次の問題へ進むので、ここではタイマーをセットしない
                 } else {
-                    // 通常の正解
-                    playCorrectSound();
-                    setTimeout(handleNextQuestion, 1500); // 1.5秒後に次の問題へ
+                    // 通常の正解時もフィードバックモーダルを表示
+                    const situation = questionData.situation;
+                    const feedbackBody = `
+                        <div class="text-center">
+                            <h4 class="text-success">正解！</h4>
+                            <p class="fs-5 fw-bold my-3">"${correctAnswerEn}"</p>
+                            <p class="text-muted">(${correctAnswerJa})</p>
+                            <hr>
+                            <p class="text-start small"><strong>使われる状況：</strong><br>${situation || '解説はありません。'}</p>
+                        </div>
+                    `;
+                    showFeedback('正解です！', feedbackBody);
                 }
             } else {
                 playIncorrectSound();
@@ -173,7 +179,18 @@ $(document).ready(function() {
                 if (!incorrectQuestions.some(q => q.phrase_en === questionData.phrase_en)) {
                     incorrectQuestions.push(questionData);
                 }
-                const feedbackBody = `正解は...<strong>"${correctAnswerEn}"</strong><small class="text-muted"><br>(${correctAnswerJa})</small>でした。`;
+                // 不正解時のフィードバックモーダル
+                const situation = questionData.situation;
+                const yourAnswerText = (difficulty === 'hard') ? selectedAnswer : `"${selectedAnswer}"`;
+                const feedbackBody = `
+                    <div class="text-center">
+                        <p>あなたの回答: <br><span class="text-danger fw-bold">${yourAnswerText}</span></p>
+                        <hr>
+                        <p>正解は...<br><strong class="fs-5">"${correctAnswerEn}"</strong><br><small class="text-muted">(${correctAnswerJa})</small></p>
+                        <hr>
+                        <p class="text-start small"><strong>使われる状況：</strong><br>${situation || '解説はありません。'}</p>
+                    </div>
+                `;
                 showFeedback('残念！', feedbackBody);
             }
             updateProgress(true); // 回答したので分母を増やす
@@ -198,8 +215,8 @@ $(document).ready(function() {
                 // レベルアップ時は完了画面を表示
                 showCompletionScreen(true); // isLevelUp = true
                 levelUpOccurred = false; // フラグをリセット
-            } else if (currentQuestionIndex < questions.length) {
-                // クイズ完了画面が表示されていない場合のみ次の問題へ
+            } else {
+                // それ以外の場合は次の問題へ
                 handleNextQuestion();
             }
         });
