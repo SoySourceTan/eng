@@ -65,6 +65,14 @@
                 <div id="levelText" class="small fw-bold mx-3">Level: 1</div>
                 <div class="d-flex gap-2">
                     <a href="clear-cache.html" class="btn btn-sm btn-outline-warning" title="キャッシュクリア"><i class="fas fa-broom"></i></a>
+                    <div class="btn-group btn-group-sm" id="fontSizeToggle" role="group">
+                        <input type="radio" class="btn-check" name="fontSize" id="fs-sm" value="small">
+                        <label class="btn btn-outline-secondary" for="fs-sm" title="小">小</label>
+                        <input type="radio" class="btn-check" name="fontSize" id="fs-md" value="medium">
+                        <label class="btn btn-outline-secondary" for="fs-md" title="中">中</label>
+                        <input type="radio" class="btn-check" name="fontSize" id="fs-lg" value="large">
+                        <label class="btn btn-outline-secondary" for="fs-lg" title="大">大</label>
+                    </div>
                     <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#settingsModal" title="設定"><i class="fas fa-cog"></i></button>
                     <button class="btn btn-sm btn-outline-secondary" id="resetButton"><i class="fas fa-redo me-1"></i>リセット</button>
                 </div>

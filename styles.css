@@ -422,3 +422,14 @@ body.phrase-quiz-page {
     transform: none;
     transition: opacity 0.3s ease;
 }
+
+/* --- Font Size Toggle --- */
+html.font-size-small {
+    font-size: 87.5%; /* 14px on a 16px base */
+}
+html.font-size-medium {
+    font-size: 100%; /* 16px on a 16px base (Default) */
+}
+html.font-size-large {
+    font-size: 112.5%; /* 18px on a 16px base */
+}
