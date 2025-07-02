@@ -280,12 +280,6 @@ $(document).ready(function() {
                 });
             }
         });
-        $(document).on('click', '#testSpeechButton', function(e) {
-            e.preventDefault();
-            console.log('音声テストボタンクリック');
-            speakWord('Hello, welcome to the quiz', { caller: 'test-button', lang: 'en-GB' });
-            showToast('音声テストを実行中: en-GB', 'info');
-        });
 
         $(document).on('click', '#nextQuestionButton', function(e) {
             e.preventDefault();
