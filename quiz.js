@@ -126,7 +126,7 @@ $(document).ready(function() {
 
                 <div class="mt-3">
                     <button id="hintButton" class="btn btn-outline-secondary">
-                        <i class="fas fa-lightbulb me-1"></i> ヒントを見る (カテゴリ)
+                        <i class="fas fa-lightbulb me-1"></i> ヒントを見る
                     </button>
                 </div>
             </div>
