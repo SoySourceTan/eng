@@ -282,7 +282,7 @@ $(document).ready(function() {
 
     // 両方のJSONファイルを読み込む
     Promise.all([
-        fetch(`kidswords_with_audio.json?v=${new Date().getTime()}`).then(res => res.json()),
+        fetch(`words-audio.json?v=${new Date().getTime()}`).then(res => res.json()),
         fetch(`phrase_with_audio.json?v=${new Date().getTime()}`).then(res => res.json()),
         fetch(`phrasal_verbs_with_audio.json?v=${new Date().getTime()}`).then(res => res.json())
     ]).then(([words, phrases, phrasalVerbs]) => {
