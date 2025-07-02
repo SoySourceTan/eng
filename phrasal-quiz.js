@@ -38,7 +38,7 @@ $(document).ready(function() {
      * @param {function} callback - データ読み込み後に実行するコールバック関数
      */
     function loadData(callback) {
-        fetch(`phrase_with_audio.json?v=${new Date().getTime()}`)
+        fetch(`phrasal_verbs_with_audio.json?v=${new Date().getTime()}`)
             .then(res => res.json())
             .then(data => {
                 if (data && data.length > 0) {
@@ -130,7 +130,10 @@ $(document).ready(function() {
         $('#quizContainer').html(quizHtml);
 
         // 少し待ってから音声を再生
-        setTimeout(() => speakWord(phrase.phrase_en, { lang: 'en-GB' }), 500);
+        setTimeout(() => speakWord(phrase.phrase_en, {
+            audioFile: phrase.audio_file,
+            lang: 'en-GB'
+        }), 500);
     }
 
     /**
@@ -259,9 +262,13 @@ $(document).ready(function() {
 
     // 音声アイコンのクリック
     $(document).on('click', '.sound-icon', function() {
-        const phrase = $(this).data('phrase');
-        if (phrase) {
-            speakWord(phrase, { lang: 'en-GB' });
+        const phraseText = $(this).data('phrase');
+        const currentPhrase = currentPhrases[currentQuestionIndex];
+        if (phraseText && currentPhrase && currentPhrase.phrase_en === phraseText) {
+            speakWord(phraseText, {
+                audioFile: currentPhrase.audio_file,
+                lang: 'en-GB'
+            });
         }
     });
 

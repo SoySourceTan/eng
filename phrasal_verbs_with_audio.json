@@ -1,0 +1,956 @@
+[
+    {
+        "phrase_en": "take off",
+        "phrase_ja": "離陸する、脱ぐ",
+        "category": "action",
+        "situation": "飛行機が飛び立つ時や、服や靴を脱ぐ時に使う。",
+        "example_en": "The plane will take off in ten minutes.",
+        "example_ja": "飛行機は10分後に離陸します。",
+        "audio_file": "audio/take_off.mp3"
+    },
+    {
+        "phrase_en": "take away",
+        "phrase_ja": "持ち帰る、取り去る",
+        "category": "eating_out",
+        "situation": "レストランで食べ物をテイクアウトする時に使う。",
+        "example_en": "I'd like a cheeseburger to take away, please.",
+        "example_ja": "チーズバーガーを一つ、持ち帰りでお願いします。",
+        "audio_file": "audio/take_away.mp3"
+    },
+    {
+        "phrase_en": "look for",
+        "phrase_ja": "～を探す",
+        "category": "daily_life",
+        "situation": "失くしたものや、目的のものを探している時に使う。",
+        "example_en": "I'm looking for my keys.",
+        "example_ja": "私は鍵を探しています。",
+        "audio_file": "audio/look_for.mp3"
+    },
+    {
+        "phrase_en": "pick up",
+        "phrase_ja": "拾う、迎えに行く",
+        "category": "action",
+        "situation": "物を拾ったり、誰かを車で迎えに行く時に使う。",
+        "example_en": "Can you pick up the kids from school?",
+        "example_ja": "学校から子供たちを迎えに行ってくれる？",
+        "audio_file": "audio/pick_up.mp3"
+    },
+    {
+        "phrase_en": "give up",
+        "phrase_ja": "あきらめる、中止する",
+        "category": "emotion",
+        "situation": "何かを続けるのをやめたり、あきらめる時に使う。",
+        "example_en": "She gave up smoking last year.",
+        "example_ja": "彼女は昨年、喫煙をやめた。",
+        "audio_file": "audio/give_up.mp3"
+    },
+    {
+        "phrase_en": "run out",
+        "phrase_ja": "～がなくなる、使い果たす",
+        "category": "daily_life",
+        "situation": "物や時間が足りなくなった時に使う。",
+        "example_en": "We've run out of milk.",
+        "example_ja": "牛乳がなくなった。",
+        "audio_file": "audio/run_out.mp3"
+    },
+    {
+        "phrase_en": "look after",
+        "phrase_ja": "～の世話をする、面倒を見る",
+        "category": "daily_life",
+        "situation": "子供やペット、物を大切に世話する時に使う。",
+        "example_en": "Can you look after my dog while I'm away?",
+        "example_ja": "留守中に私の犬の世話をしてくれる？",
+        "audio_file": "audio/look_after.mp3"
+    },
+    {
+        "phrase_en": "turn up",
+        "phrase_ja": "現れる、音量を上げる",
+        "category": "action",
+        "situation": "人が予期せず現れたり、音量を大きくする時に使う。",
+        "example_en": "He turned up late for the meeting.",
+        "example_ja": "彼は会議に遅れて現れた。",
+        "audio_file": "audio/turn_up.mp3"
+    },
+    {
+        "phrase_en": "sort out",
+        "phrase_ja": "整理する、解決する",
+        "category": "daily_life",
+        "situation": "問題を解決したり、物や情報を整理する時に使う。",
+        "example_en": "We need to sort out the paperwork before the deadline.",
+        "example_ja": "期限までに書類を整理する必要がある。",
+        "audio_file": "audio/sort_out.mp3"
+    },
+    {
+        "phrase_en": "carry on",
+        "phrase_ja": "続ける、持ち運ぶ",
+        "category": "action",
+        "situation": "活動を継続したり、物を運ぶ時に使う。",
+        "example_en": "Let's carry on with the project tomorrow.",
+        "example_ja": "明日、プロジェクトを続けよう。",
+        "audio_file": "audio/carry_on.mp3"
+    },
+    {
+        "phrase_en": "go away",
+        "phrase_ja": "立ち去る、消える",
+        "category": "action",
+        "situation": "人や問題がその場を離れる、または消滅する時に使う。",
+        "example_en": "The pain will go away soon.",
+        "example_ja": "その痛みはすぐに消えるよ。",
+        "audio_file": "audio/go_away.mp3"
+    },
+    {
+        "phrase_en": "get in",
+        "phrase_ja": "入る、到着する",
+        "category": "action",
+        "situation": "車や建物に入る、または電車などが到着する時に使う。",
+        "example_en": "The train gets in at 6 p.m.",
+        "example_ja": "電車は午後6時に到着する。",
+        "audio_file": "audio/get_in.mp3"
+    },
+    {
+        "phrase_en": "get it on",
+        "phrase_ja": "始める、盛り上がる",
+        "category": "action",
+        "situation": "何かを始めたり、パーティーなどで盛り上がる時に使う。",
+        "example_en": "Let's get it on with the music!",
+        "example_ja": "音楽で盛り上がろう！",
+        "audio_file": "audio/get_it_on.mp3"
+    },
+    {
+        "phrase_en": "take up",
+        "phrase_ja": "始める、引き受ける",
+        "category": "action",
+        "situation": "新しい趣味や活動を始める時に使う。",
+        "example_en": "She took up yoga last month.",
+        "example_ja": "彼女は先月、ヨガを始めた。",
+        "audio_file": "audio/take_up.mp3"
+    },
+    {
+        "phrase_en": "get out",
+        "phrase_ja": "出る、逃げる",
+        "category": "action",
+        "situation": "場所から出たり、危険から逃げる時に使う。",
+        "example_en": "We need to get out of here now!",
+        "example_ja": "今すぐここから出なきゃ！",
+        "audio_file": "audio/get_out.mp3"
+    },
+    {
+        "phrase_en": "have on",
+        "phrase_ja": "着ている、持っている",
+        "category": "daily_life",
+        "situation": "服を着ていたり、物を持っている時に使う。",
+        "example_en": "What do you have on today?",
+        "example_ja": "今日、どんな服を着てる？",
+        "audio_file": "audio/have_on.mp3"
+    },
+    {
+        "phrase_en": "go on",
+        "phrase_ja": "続ける、起こる",
+        "category": "action",
+        "situation": "話を続けたり、何かが起こる時に使う。",
+        "example_en": "What's going on over there?",
+        "example_ja": "あそこで何が起こってるの？",
+        "audio_file": "audio/go_on.mp3"
+    },
+    {
+        "phrase_en": "do up",
+        "phrase_ja": "改装する、ボタンを留める",
+        "category": "daily_life",
+        "situation": "家を改装したり、服のボタンを留める時に使う。",
+        "example_en": "They did up their old house.",
+        "example_ja": "彼らは古い家を改装した。",
+        "audio_file": "audio/do_up.mp3"
+    },
+    {
+        "phrase_en": "put off",
+        "phrase_ja": "延期する、嫌がらせる",
+        "category": "action",
+        "situation": "予定を延期したり、誰かを不快にさせる時に使う。",
+        "example_en": "The meeting was put off until next week.",
+        "example_ja": "会議 Meetingは来週まで延期された。",
+        "audio_file": "audio/put_off.mp3"
+    },
+    {
+        "phrase_en": "give in",
+        "phrase_ja": "折れる、譲る",
+        "category": "emotion",
+        "situation": "議論や圧力に屈して譲歩する時に使う。",
+        "example_en": "He gave in to her demands.",
+        "example_ja": "彼は彼女の要求に折れた。",
+        "audio_file": "audio/give_in.mp3"
+    },
+    {
+        "phrase_en": "take over",
+        "phrase_ja": "引き継ぐ、乗っ取る",
+        "category": "action",
+        "situation": "仕事や役割を引き継いだり、支配する時に使う。",
+        "example_en": "She took over the family business.",
+        "example_ja": "彼女は家族の事業を引き継いだ。",
+        "audio_file": "audio/take_over.mp3"
+    },
+    {
+        "phrase_en": "get up",
+        "phrase_ja": "起きる、立ち上がる",
+        "category": "daily_life",
+        "situation": "朝起きたり、座っていた場所から立ち上がる時に使う。",
+        "example_en": "I get up at 7 a.m. every day.",
+        "example_ja": "私は毎日朝7時に起きる。",
+        "audio_file": "audio/get_up.mp3"
+    },
+    {
+        "phrase_en": "have out",
+        "phrase_ja": "議論する、解決する",
+        "category": "action",
+        "situation": "問題や意見の相違を話し合って解決する時に使う。",
+        "example_en": "Let's have it out and clear the air.",
+        "example_ja": "話し合って問題を解決しよう。",
+        "audio_file": "audio/have_out.mp3"
+    },
+    {
+        "phrase_en": "go out",
+        "phrase_ja": "外出する、消える",
+        "category": "daily_life",
+        "situation": "家を出て遊びに行ったり、火や光が消える時に使う。",
+        "example_en": "The fire went out during the night.",
+        "example_ja": "夜中に火が消えた。",
+        "audio_file": "audio/go_out.mp3"
+    },
+    {
+        "phrase_en": "do without",
+        "phrase_ja": "～なしで済ます",
+        "category": "daily_life",
+        "situation": "何かがない状況で我慢したり、対処する時に使う。",
+        "example_en": "We'll have to do without sugar today.",
+        "example_ja": "今日、砂糖なしで済ませなきゃ。",
+        "audio_file": "audio/do_without.mp3"
+    },
+    {
+        "phrase_en": "put on",
+        "phrase_ja": "着る、増やす",
+        "category": "daily_life",
+        "situation": "服を着たり、体重が増える時に使う。",
+        "example_en": "She's put on a few pounds recently.",
+        "example_ja": "彼女は最近少し体重が増えた。",
+        "audio_file": "audio/put_on.mp3"
+    },
+    {
+        "phrase_en": "give out",
+        "phrase_ja": "配る、尽きる",
+        "category": "action",
+        "situation": "物を配ったり、エネルギーや物がなくなる時に使う。",
+        "example_en": "The teacher gave out the worksheets.",
+        "example_ja": "先生はワークシートを配った。",
+        "audio_file": "audio/give_out.mp3"
+    },
+    {
+        "phrase_en": "take in",
+        "phrase_ja": "理解する、受け入れる",
+        "category": "emotion",
+        "situation": "情報を理解したり、人や物を引き取る時に使う。",
+        "example_en": "It took me a while to take in the news.",
+        "example_ja": "そのニュースを理解するのに時間がかかった。",
+        "audio_file": "audio/take_in.mp3"
+    },
+    {
+        "phrase_en": "get over",
+        "phrase_ja": "克服する、立ち直る",
+        "category": "emotion",
+        "situation": "病気や感情的な問題から回復する時に使う。",
+        "example_en": "She got over her cold quickly.",
+        "example_ja": "彼女は風邪からすぐに回復した。",
+        "audio_file": "audio/get_over.mp3"
+    },
+    {
+        "phrase_en": "go off",
+        "phrase_ja": "爆発する、腐る",
+        "category": "action",
+        "situation": "爆弾が爆発したり、食べ物が腐る時に使う。",
+        "example_en": "The milk has gone off.",
+        "example_ja": "牛乳が腐ってしまった。",
+        "audio_file": "audio/go_off.mp3"
+    },
+    {
+        "phrase_en": "do over",
+        "phrase_ja": "やり直す、改装する",
+        "category": "action",
+        "situation": "作業をやり直したり、部屋を改装する時に使う。",
+        "example_en": "We need to do over this room.",
+        "example_ja": "この部屋を改装する必要がある。",
+        "audio_file": "audio/do_over.mp3"
+    },
+    {
+        "phrase_en": "put up",
+        "phrase_ja": "掲げる、泊める",
+        "category": "action",
+        "situation": "ポスターを貼ったり、誰かを泊める時に使う。",
+        "example_en": "Can you put me up for the night?",
+        "example_ja": "今晩、泊めてくれる？",
+        "audio_file": "audio/put_up.mp3"
+    },
+    {
+        "phrase_en": "give back",
+        "phrase_ja": "返す、取り戻す",
+        "category": "action",
+        "situation": "借りた物を返したり、何かを取り戻す時に使う。",
+        "example_en": "Please give me back my book.",
+        "example_ja": "私の本を返してください。",
+        "audio_file": "audio/give_back.mp3"
+    },
+    {
+        "phrase_en": "take back",
+        "phrase_ja": "取り戻す、撤回する",
+        "category": "action",
+        "situation": "物を返却したり、言ったことを撤回する時に使う。",
+        "example_en": "I take back what I said.",
+        "example_ja": "さっき言ったことは撤回するよ。",
+        "audio_file": "audio/take_back.mp3"
+    },
+    {
+        "phrase_en": "get through",
+        "phrase_ja": "やり遂げる、連絡が通じる",
+        "category": "action",
+        "situation": "難しいことを終えたり、電話がつながる時に使う。",
+        "example_en": "I finally got through to the support team.",
+        "example_ja": "やっとサポートチームに連絡が通じた。",
+        "audio_file": "audio/get_through.mp3"
+    },
+    {
+        "phrase_en": "go over",
+        "phrase_ja": "確認する、成功する",
+        "category": "action",
+        "situation": "書類を確認したり、計画がうまくいく時に使う。",
+        "example_en": "The presentation went over well.",
+        "example_ja": "プレゼンはうまくいった。",
+        "audio_file": "audio/go_over.mp3"
+    },
+    {
+        "phrase_en": "do in",
+        "phrase_ja": "疲れ果てる、やっつける",
+        "category": "emotion",
+        "situation": "非常に疲れたり、誰かを倒す時に使う。",
+        "example_en": "That workout really did me in.",
+        "example_ja": "その運動で本当に疲れ果てた。",
+        "audio_file": "audio/do_in.mp3"
+    },
+    {
+        "phrase_en": "put away",
+        "phrase_ja": "片付ける、しまう",
+        "category": "daily_life",
+        "situation": "物を整理して片付けたり、食べ物を食べる時に使う。",
+        "example_en": "Put away your toys, please.",
+        "example_ja": "おもちゃを片付けてください。",
+        "audio_file": "audio/put_away.mp3"
+    },
+    {
+        "phrase_en": "give away",
+        "phrase_ja": "譲る、暴露する",
+        "category": "action",
+        "situation": "物や秘密を他人に渡したり、明かす時に使う。",
+        "example_en": "He gave away the secret.",
+        "example_ja": "彼は秘密を暴露した。",
+        "audio_file": "audio/give_away.mp3"
+    },
+    {
+        "phrase_en": "take out",
+        "phrase_ja": "取り出す、連れ出す",
+        "category": "action",
+        "situation": "物を取り出したり、誰かを外に連れ出す時に使う。",
+        "example_en": "She took her friend out for dinner.",
+        "example_ja": "彼女は友達を夕食に連れ出した。",
+        "audio_file": "audio/take_out.mp3"
+    },
+    {
+        "phrase_en": "get on",
+        "phrase_ja": "乗る、仲良くする",
+        "category": "action",
+        "situation": "バスに乗ったり、人と仲良くする時に使う。",
+        "example_en": "They get on really well.",
+        "example_ja": "彼らは本当に仲が良い。",
+        "audio_file": "audio/get_on.mp3"
+    },
+    {
+        "phrase_en": "go through",
+        "phrase_ja": "経験する、調べる",
+        "category": "emotion",
+        "situation": "困難な経験をしたり、物を詳しく調べる時に使う。",
+        "example_en": "She went through a tough time.",
+        "example_ja": "彼女はつらい時期を経験した。",
+        "audio_file": "audio/go_through.mp3"
+    },
+    {
+        "phrase_en": "do away with",
+        "phrase_ja": "廃止する、取り除く",
+        "category": "action",
+        "situation": "規則や習慣をなくしたり、物を処分する時に使う。",
+        "example_en": "They did away with the old rules.",
+        "example_ja": "彼らは古いルールを廃止した。",
+        "audio_file": "audio/do_away_with.mp3"
+    },
+    {
+        "phrase_en": "put through",
+        "phrase_ja": "電話をつなぐ、経験させる",
+        "category": "action",
+        "situation": "電話を転送したり、誰かに試練を経験させる時に使う。",
+        "example_en": "Can you put me through to the manager?",
+        "example_ja": "マネージャーに電話をつないでくれる？",
+        "audio_file": "audio/put_through.mp3"
+    },
+    {
+        "phrase_en": "give off",
+        "phrase_ja": "放出する、発する",
+        "category": "action",
+        "situation": "匂いや光、熱などを放出する時に使う。",
+        "example_en": "The flowers give off a sweet scent.",
+        "example_ja": "その花は甘い香りを放つ。",
+        "audio_file": "audio/give_off.mp3"
+    },
+    {
+        "phrase_en": "take after",
+        "phrase_ja": "似る、受け継ぐ",
+        "category": "daily_life",
+        "situation": "親や家族に性格や外見が似ている時に使う。",
+        "example_en": "She takes after her mother.",
+        "example_ja": "彼女は母親に似ている。",
+        "audio_file": "audio/take_after.mp3"
+    },
+    {
+        "phrase_en": "get off",
+        "phrase_ja": "降りる、逃れる",
+        "category": "action",
+        "situation": "バスや電車から降りたり、罰を逃れる時に使う。",
+        "example_en": "He got off with a warning.",
+        "example_ja": "彼は警告だけで済んだ。",
+        "audio_file": "audio/get_off.mp3"
+    },
+    {
+        "phrase_en": "go back",
+        "phrase_ja": "戻る、遡る",
+        "category": "action",
+        "situation": "場所や時間的に戻る時に使う。",
+        "example_en": "I went back to my hometown.",
+        "example_ja": "私は故郷に戻った。",
+        "audio_file": "audio/go_back.mp3"
+    },
+    {
+        "phrase_en": "put back",
+        "phrase_ja": "元に戻す、延期する",
+        "category": "action",
+        "situation": "物を元の場所に戻したり、予定を延期する時に使う。",
+        "example_en": "Put the book back on the shelf.",
+        "example_ja": "本を棚に戻して。",
+        "audio_file": "audio/put_back.mp3"
+    },
+    {
+        "phrase_en": "give over",
+        "phrase_ja": "やめる、引き渡す",
+        "category": "action",
+        "situation": "行動をやめたり、物を他人に渡す時に使う。",
+        "example_en": "Give over arguing, please.",
+        "example_ja": "議論するのはやめてください。",
+        "audio_file": "audio/give_over.mp3"
+    },
+    {
+        "phrase_en": "take on",
+        "phrase_ja": "引き受ける、雇う",
+        "category": "action",
+        "situation": "仕事や責任を引き受けたり、誰かを雇う時に使う。",
+        "example_en": "They took on a new assistant.",
+        "example_ja": "彼らは新しいアシスタントを雇った。",
+        "audio_file": "audio/take_on.mp3"
+    },
+    {
+        "phrase_en": "get around",
+        "phrase_ja": "移動する、広まる",
+        "category": "action",
+        "situation": "町を移動したり、情報が広まる時に使う。",
+        "example_en": "News gets around quickly here.",
+        "example_ja": "ここではニュースがすぐに広まる。",
+        "audio_file": "audio/get_around.mp3"
+    },
+    {
+        "phrase_en": "have over",
+        "phrase_ja": "招く、招待する",
+        "category": "daily_life",
+        "situation": "自宅に人を招く時に使う。",
+        "example_en": "We had some friends over for dinner.",
+        "example_ja": "夕食に友達を招いた。",
+        "audio_file": "audio/have_over.mp3"
+    },
+    {
+        "phrase_en": "go along",
+        "phrase_ja": "進む、一緒に行く",
+        "category": "action",
+        "situation": "計画が進んだり、誰かと一緒に行く時に使う。",
+        "example_en": "I'll go along with your plan.",
+        "example_ja": "あなたの計画に賛成します。",
+        "audio_file": "audio/go_along.mp3"
+    },
+    {
+        "phrase_en": "do well",
+        "phrase_ja": "うまくいく、成功する",
+        "category": "action",
+        "situation": "何かが順調に進む時に使う。",
+        "example_en": "She's doing well in her new job.",
+        "example_ja": "彼女は新しい仕事でうまくいっている。",
+        "audio_file": "audio/do_well.mp3"
+    },
+    {
+        "phrase_en": "put out",
+        "phrase_ja": "消す、出す",
+        "category": "action",
+        "situation": "火を消したり、製品を出す時に使う。",
+        "example_en": "Please put out your cigarette.",
+        "example_ja": "タバコを消してください。",
+        "audio_file": "audio/put_out.mp3"
+    },
+    {
+        "phrase_en": "give up on",
+        "phrase_ja": "見限る、あきらめる",
+        "category": "emotion",
+        "situation": "人や物事を見限ったり、あきらめる時に使う。",
+        "example_en": "Don't give up on your dreams.",
+        "example_ja": "夢をあきらめないで。",
+        "audio_file": "audio/give_up_on.mp3"
+    },
+    {
+        "phrase_en": "take down",
+        "phrase_ja": "取り除く、書き留める",
+        "category": "action",
+        "situation": "物を下ろしたり、メモを取る時に使う。",
+        "example_en": "Take down the decorations after the party.",
+        "example_ja": "パーティーの後に飾りを取り除いて。",
+        "audio_file": "audio/take_down.mp3"
+    },
+    {
+        "phrase_en": "get back",
+        "phrase_ja": "戻る、取り戻す",
+        "category": "action",
+        "situation": "場所に戻ったり、失った物を取り戻す時に使う。",
+        "example_en": "I got back home late last night.",
+        "example_ja": "昨夜、遅くに家に帰った。",
+        "audio_file": "audio/get_back.mp3"
+    },
+    {
+        "phrase_en": "have off",
+        "phrase_ja": "休む、取り外す",
+        "category": "daily_life",
+        "situation": "仕事や学校を休んだり、物を外す時に使う。",
+        "example_en": "I'm having the day off tomorrow.",
+        "example_ja": "明日、休みを取るよ。",
+        "audio_file": "audio/have_off.mp3"
+    },
+    {
+        "phrase_en": "go round",
+        "phrase_ja": "回る、十分にある",
+        "category": "daily_life",
+        "situation": "物や人が循環したり、十分にある時に使う。",
+        "example_en": "Is there enough food to go round?",
+        "example_ja": "食べ物は全員に十分ある？",
+        "audio_file": "audio/go_round.mp3"
+    },
+    {
+        "phrase_en": "do down",
+        "phrase_ja": "批判する、騙す",
+        "category": "emotion",
+        "situation": "誰かを批判したり、騙す時に使う。",
+        "example_en": "Don't do yourself down; you're talented!",
+        "example_ja": "自分を卑下しないで、あなたは才能があるよ！",
+        "audio_file": "audio/do_down.mp3"
+    },
+    {
+        "phrase_en": "put in",
+        "phrase_ja": "入れる、申し込む",
+        "category": "action",
+        "situation": "努力や時間を投入したり、申請する時に使う。",
+        "example_en": "She put in a lot of effort.",
+        "example_ja": "彼女は多くの努力を注いだ。",
+        "audio_file": "audio/put_in.mp3"
+    },
+    {
+        "phrase_en": "give over to",
+        "phrase_ja": "専念する、譲る",
+        "category": "action",
+        "situation": "時間や努力をあることに専念したり、譲る時に使う。",
+        "example_en": "He gave himself over to his work.",
+        "example_ja": "彼は仕事に専念した。",
+        "audio_file": "audio/give_over_to.mp3"
+    },
+    {
+        "phrase_en": "take apart",
+        "phrase_ja": "分解する、批判する",
+        "category": "action",
+        "situation": "機械を分解したり、議論で打ち負かす時に使う。",
+        "example_en": "He took the argument apart.",
+        "example_ja": "彼はその議論を完全に論破した。",
+        "audio_file": "audio/take_apart.mp3"
+    },
+    {
+        "phrase_en": "get down",
+        "phrase_ja": "落ち込む、降りる",
+        "category": "emotion",
+        "situation": "気分が落ち込んだり、乗り物から降りる時に使う。",
+        "example_en": "This weather is getting me down.",
+        "example_ja": "この天気で気分が落ち込んでいる。",
+        "audio_file": "audio/get_down.mp3"
+    },
+    {
+        "phrase_en": "have at",
+        "phrase_ja": "挑戦する、攻撃する",
+        "category": "action",
+        "situation": "何かに挑戦したり、攻撃する時に使う。",
+        "example_en": "Let's have at it and finish this!",
+        "example_ja": "これに挑戦して終わらせよう！",
+        "audio_file": "audio/have_at.mp3"
+    },
+    {
+        "phrase_en": "go for",
+        "phrase_ja": "目指す、選ぶ",
+        "category": "action",
+        "situation": "目標に向かったり、何かを選ぶ時に使う。",
+        "example_en": "I'm going for the top prize.",
+        "example_ja": "最高の賞を目指している。",
+        "audio_file": "audio/go_for.mp3"
+    },
+    {
+        "phrase_en": "do out",
+        "phrase_ja": "飾る、掃除する",
+        "category": "daily_life",
+        "situation": "部屋を飾ったり、徹底的に掃除する時に使う。",
+        "example_en": "We did out the living room for Christmas.",
+        "example_ja": "クリスマスのためにリビングを飾った。",
+        "audio_file": "audio/do_out.mp3"
+    },
+    {
+        "phrase_en": "put forward",
+        "phrase_ja": "提案する、進める",
+        "category": "action",
+        "situation": "アイデアを提案したり、時計を進める時に使う。",
+        "example_en": "She put forward a great idea.",
+        "example_ja": "彼女は素晴らしいアイデアを提案した。",
+        "audio_file": "audio/put_forward.mp3"
+    },
+    {
+        "phrase_en": "give in to",
+        "phrase_ja": "屈する、従う",
+        "category": "emotion",
+        "situation": "誘惑や圧力に負けて従う時に使う。",
+        "example_en": "He gave in to temptation.",
+        "example_ja": "彼は誘惑に負けた。",
+        "audio_file": "audio/give_in_to.mp3"
+    },
+    {
+        "phrase_en": "take to",
+        "phrase_ja": "好きになる、慣れる",
+        "category": "emotion",
+        "situation": "何かや誰かを好きになったり、慣れる時に使う。",
+        "example_en": "She took to her new school quickly.",
+        "example_ja": "彼女は新しい学校にすぐ慣れた。",
+        "audio_file": "audio/take_to.mp3"
+    },
+    {
+        "phrase_en": "get away",
+        "phrase_ja": "逃げる、休暇を取る",
+        "category": "action",
+        "situation": "危険や場所から逃げたり、休暇に行く時に使う。",
+        "example_en": "We got away for the weekend.",
+        "example_ja": "週末に旅行に行った。",
+        "audio_file": "audio/get_away.mp3"
+    },
+    {
+        "phrase_en": "have up",
+        "phrase_ja": "法廷に呼び出す、試す",
+        "category": "action",
+        "situation": "誰かを法廷に呼び出したり、試す時に使う。",
+        "example_en": "He was had up for speeding.",
+        "example_ja": "彼はスピード違反で呼び出された。",
+        "audio_file": "audio/have_up.mp3"
+    },
+    {
+        "phrase_en": "go down",
+        "phrase_ja": "下がる、沈む",
+        "category": "action",
+        "situation": "価格や気分が下がったり、船が沈む時に使う。",
+        "example_en": "The sun went down slowly.",
+        "example_ja": "太陽はゆっくりと沈んだ。",
+        "audio_file": "audio/go_down.mp3"
+    },
+    {
+        "phrase_en": "do for",
+        "phrase_ja": "代用する、破壊する",
+        "category": "action",
+        "situation": "何かで間に合わせたり、物を壊す時に使う。",
+        "example_en": "This box will do for storage.",
+        "example_ja": "この箱は収納に使えるよ。",
+        "audio_file": "audio/do_for.mp3"
+    },
+    {
+        "phrase_en": "put across",
+        "phrase_ja": "伝える、説明する",
+        "category": "action",
+        "situation": "アイデアや意見を明確に伝える時に使う。",
+        "example_en": "She put her point across clearly.",
+        "example_ja": "彼女は自分の意見を明確に伝えた。",
+        "audio_file": "audio/put_across.mp3"
+    },
+    {
+        "phrase_en": "give onto",
+        "phrase_ja": "通じる、面する",
+        "category": "daily_life",
+        "situation": "部屋や道が別の場所に通じる時に使う。",
+        "example_en": "The door gives onto the garden.",
+        "example_ja": "そのドアは庭に通じている。",
+        "audio_file": "audio/give_onto.mp3"
+    },
+    {
+        "phrase_en": "take against",
+        "phrase_ja": "嫌いになる、反対する",
+        "category": "emotion",
+        "situation": "誰かや何かを嫌いになったり、反対する時に使う。",
+        "example_en": "She took against the new policy.",
+        "example_ja": "彼女は新しい方針に反対した。",
+        "audio_file": "audio/take_against.mp3"
+    },
+    {
+        "phrase_en": "get ahead",
+        "phrase_ja": "成功する、進む",
+        "category": "action",
+        "situation": "仕事や人生で成功したり、進む時に使う。",
+        "example_en": "She’s getting ahead in her career.",
+        "example_ja": "彼女はキャリアで成功している。",
+        "audio_file": "audio/get_ahead.mp3"
+    },
+    {
+        "phrase_en": "have in",
+        "phrase_ja": "招く、在庫を持つ",
+        "category": "daily_life",
+        "situation": "人を家に招いたり、物を在庫として持つ時に使う。",
+        "example_en": "We have some guests in tonight.",
+        "example_ja": "今夜、ゲストを招いている。",
+        "audio_file": "audio/have_in.mp3"
+    },
+    {
+        "phrase_en": "go up",
+        "phrase_ja": "上がる、増える",
+        "category": "action",
+        "situation": "価格や数量が増えたり、建物が建つ時に使う。",
+        "example_en": "The price of fuel has gone up.",
+        "example_ja": "燃料の価格が上がった。",
+        "audio_file": "audio/go_up.mp3"
+    },
+    {
+        "phrase_en": "do off",
+        "phrase_ja": "だます、取り除く",
+        "category": "action",
+        "situation": "誰かをだましたり、汚れを取り除く時に使う。",
+        "example_en": "He did her off with a fake watch.",
+        "example_ja": "彼は彼女に偽物の時計を売りつけた。",
+        "audio_file": "audio/do_off.mp3"
+    },
+    {
+        "phrase_en": "put down",
+        "phrase_ja": "置く、批判する",
+        "category": "action",
+        "situation": "物を置いたり、誰かを批判する時に使う。",
+        "example_en": "Put down that heavy bag.",
+        "example_ja": "その重いバッグを置いて。",
+        "audio_file": "audio/put_down.mp3"
+    },
+    {
+        "phrase_en": "give up to",
+        "phrase_ja": "明け渡す、専念する",
+        "category": "action",
+        "situation": "何かや誰かに場所や時間を譲る時に使う。",
+        "example_en": "He gave the evening up to studying.",
+        "example_ja": "彼はその夜を勉強に費やした。",
+        "audio_file": "audio/give_up_to.mp3"
+    },
+    {
+        "phrase_en": "take round",
+        "phrase_ja": "案内する、見せる",
+        "category": "action",
+        "situation": "誰かを場所に案内したり、見せる時に使う。",
+        "example_en": "She took us round the museum.",
+        "example_ja": "彼女は私たちを博物館に案内した。",
+        "audio_file": "audio/take_round.mp3"
+    },
+    {
+        "phrase_en": "get along",
+        "phrase_ja": "仲良くする、やっていく",
+        "category": "daily_life",
+        "situation": "人と仲良くしたり、生活をやっていく時に使う。",
+        "example_en": "They get along like siblings.",
+        "example_ja": "彼らは兄弟のようになかよしだ。",
+        "audio_file": "audio/get_along.mp3"
+    },
+    {
+        "phrase_en": "have back",
+        "phrase_ja": "取り戻す、返される",
+        "category": "action",
+        "situation": "借りた物が返されたり、取り戻す時に使う。",
+        "example_en": "I had my book back from her.",
+        "example_ja": "彼女から本を返してもらった。",
+        "audio_file": "audio/have_back.mp3"
+    },
+    {
+        "phrase_en": "go away with",
+        "phrase_ja": "持ち去る、一緒に行く",
+        "category": "action",
+        "situation": "物や人を持ち去ったり、一緒に行く時に使う。",
+        "example_en": "She went away with my jacket.",
+        "example_ja": "彼女は私のジャケットを持ち去った。",
+        "audio_file": "audio/go_away_with.mp3"
+    },
+    {
+        "phrase_en": "do up to",
+        "phrase_ja": "～までやる、改装する",
+        "category": "action",
+        "situation": "ある程度まで作業をしたり、改装する時に使う。",
+        "example_en": "We did up the house to sell it.",
+        "example_ja": "売るために家を改装した。",
+        "audio_file": "audio/do_up_to.mp3"
+    },
+    {
+        "phrase_en": "put about",
+        "phrase_ja": "広める、悩ます",
+        "category": "action",
+        "situation": "噂を広めたり、誰かを悩ませる時に使う。",
+        "example_en": "Rumours were put about online.",
+        "example_ja": "ネット上で噂が広められた。",
+        "audio_file": "audio/put_about.mp3"
+    },
+    {
+        "phrase_en": "give round",
+        "phrase_ja": "配る、回す",
+        "category": "action",
+        "situation": "物をみんなに配ったり、回す時に使う。",
+        "example_en": "She gave round some sweets.",
+        "example_ja": "彼女はみんなにお菓子を配った。",
+        "audio_file": "audio/give_round.mp3"
+    },
+    {
+        "phrase_en": "take up with",
+        "phrase_ja": "付き合い始める、相談する",
+        "category": "action",
+        "situation": "誰かと親しくなったり、相談する時に使う。",
+        "example_en": "He took up with a new friend.",
+        "example_ja": "彼は新しい友達と親しくなった。",
+        "audio_file": "audio/take_up_with.mp3"
+    },
+    {
+        "phrase_en": "get out of",
+        "phrase_ja": "避ける、抜け出す",
+        "category": "action",
+        "situation": "義務や状況を避けたり、抜け出す時に使う。",
+        "example_en": "He got out of doing the chores.",
+        "example_ja": "彼は家事を避けた。",
+        "audio_file": "audio/get_out_of.mp3"
+    },
+    {
+        "phrase_en": "have around",
+        "phrase_ja": "招く、周りに持つ",
+        "category": "daily_life",
+        "situation": "人を招いたり、物を身近に持つ時に使う。",
+        "example_en": "We had friends around last night.",
+        "example_ja": "昨夜、友達を招いた。",
+        "audio_file": "audio/have_around.mp3"
+    },
+    {
+        "phrase_en": "go about",
+        "phrase_ja": "取り組む、動き回る",
+        "category": "action",
+        "situation": "仕事や活動に取り組んだり、動き回る時に使う。",
+        "example_en": "How do you go about fixing this?",
+        "example_ja": "これをどうやって直すの？",
+        "audio_file": "audio/go_about.mp3"
+    },
+    {
+        "phrase_en": "do through",
+        "phrase_ja": "調べ尽くす、やり遂げる",
+        "category": "action",
+        "situation": "徹底的に調べたり、作業を終える時に使う。",
+        "example_en": "We did through all the files.",
+        "example_ja": "すべてのファイルを調べ尽くした。",
+        "audio_file": "audio/do_through.mp3"
+    },
+    {
+        "phrase_en": "put over",
+        "phrase_ja": "伝える、延期する",
+        "category": "action",
+        "situation": "メッセージを伝えたり、予定を延期する時に使う。",
+        "example_en": "She put the meeting over to Monday.",
+        "example_ja": "彼女は会議を月曜に延期した。",
+        "audio_file": "audio/put_over.mp3"
+    },
+    {
+        "phrase_en": "give back to",
+        "phrase_ja": "社会に還元する、返す",
+        "category": "action",
+        "situation": "社会や人に貢献したり、物を返す時に使う。",
+        "example_en": "We give back to the community.",
+        "example_ja": "私たちは地域社会に還元している。",
+        "audio_file": "audio/give_back_to.mp3"
+    },
+    {
+        "phrase_en": "take in hand",
+        "phrase_ja": "取り扱う、制御する",
+        "category": "action",
+        "situation": "問題や状況を管理、制御する時に使う。",
+        "example_en": "She took the project in hand.",
+        "example_ja": "彼女はそのプロジェクトを管理した。",
+        "audio_file": "audio/take_in_hand.mp3"
+    },
+    {
+        "phrase_en": "get up to",
+        "phrase_ja": "～に取り組む、悪さをする",
+        "category": "action",
+        "situation": "何か面白いことやいたずらをする時に使う。",
+        "example_en": "What are the kids getting up to?",
+        "example_ja": "子供たちは何をやらかしてるの？",
+        "audio_file": "audio/get_up_to.mp3"
+    },
+    {
+        "phrase_en": "have down",
+        "phrase_ja": "理解する、書き留める",
+        "category": "action",
+        "situation": "情報を理解したり、メモする時に使う。",
+        "example_en": "I’ve got it all down now.",
+        "example_ja": "今、全部理解したよ。",
+        "audio_file": "audio/have_down.mp3"
+    },
+    {
+        "phrase_en": "go off with",
+        "phrase_ja": "持ち逃げする、一緒に去る",
+        "category": "action",
+        "situation": "物や人を持ち去ったり、一緒に去る時に使う。",
+        "example_en": "She went off with my pen.",
+        "example_ja": "彼女は私のペンを持ち逃げした。",
+        "audio_file": "audio/go_off_with.mp3"
+    },
+    {
+        "phrase_en": "do out of",
+        "phrase_ja": "だまして奪う、奪う",
+        "category": "action",
+        "situation": "だまして何かを奪う時に使う。",
+        "example_en": "He did her out of her money.",
+        "example_ja": "彼は彼女からお金をだまし取った。",
+        "audio_file": "audio/do_out_of.mp3"
+    },
+    {
+        "phrase_en": "put on to",
+        "phrase_ja": "紹介する、気付かせる",
+        "category": "action",
+        "situation": "誰かを何かに紹介したり、気付かせる時に使う。",
+        "example_en": "She put me on to a great book.",
+        "example_ja": "彼女は素晴らしい本を教えてくれた。",
+        "audio_file": "audio/put_on_to.mp3"
+    },
+    {
+        "phrase_en": "give out to",
+        "phrase_ja": "叱る、配る",
+        "category": "action",
+        "situation": "誰かを叱ったり、物を配る時に使う。",
+        "example_en": "The teacher gave out to the class.",
+        "example_ja": "先生はクラスを叱った。",
+        "audio_file": "audio/give_out_to.mp3"
+    }
+]

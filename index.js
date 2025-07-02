@@ -73,7 +73,7 @@ $(document).ready(function() {
                         const iconStyle = word.color ? `color: ${word.color};` : '';
                             return `
                                 <div class="col">
-                                    <div class="card vocab-card h-100 ${word.background || 'bg-light'} ${isLearned ? 'learned' : ''}" data-word="${word.word}">
+                                    <div class="card vocab-card h-100 ${word.background || 'bg-light'} ${isLearned ? 'learned' : ''}" data-word="${word.word}" data-audio-file="${word.audio_file || ''}">
                                         <input type="checkbox" class="form-check-input learned-checkbox" ${isLearned ? 'checked' : ''} title="学習済みとしてマーク">
                                         <div class="card-body text-center p-2 d-flex flex-column justify-content-center">
                                         <span class="vocab-icon iconify" data-icon="${icon}" style="${iconStyle}"></span>
@@ -282,9 +282,9 @@ $(document).ready(function() {
 
     // 両方のJSONファイルを読み込む
     Promise.all([
-        fetch(`kidswords.json?v=${new Date().getTime()}`).then(res => res.json()),
+        fetch(`kidswords_with_audio.json?v=${new Date().getTime()}`).then(res => res.json()),
         fetch(`phrase_with_audio.json?v=${new Date().getTime()}`).then(res => res.json()),
-        fetch(`phrasal_verbs.json?v=${new Date().getTime()}`).then(res => res.json())
+        fetch(`phrasal_verbs_with_audio.json?v=${new Date().getTime()}`).then(res => res.json())
     ]).then(([words, phrases, phrasalVerbs]) => {
         console.log('単語、フレーズ、句動詞のデータ読み込み成功');
         wordsData = words;
