@@ -113,15 +113,20 @@ $(document).ready(function() {
         $('#quizContainer').append(`
             <div class="question-card text-center" data-word="${question.word}" data-audio-file="${question.audio_file || ''}">
                 <p class="lead">この単語は何でしょう？</p>
-                <div class="my-3">
+                <div class="my-4 d-flex justify-content-center align-items-center">
+                    <h2 class="display-5 fw-bold mb-0">${question.word}</h2>
+                    <button id="playQuestionSound" class="btn btn-link text-secondary p-0 ms-3" style="font-size: 2.5rem; line-height: 1;" title="音声を聞く">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
                 </div>
-                <div id="hint-area" style="min-height: 7rem;">
+
+                <div id="hint-area" class="d-flex flex-column align-items-center" style="min-height: 5rem;">
                     <span class="vocab-icon iconify" data-icon="${icon}" ${iconStyle} style="font-size: 4rem;"></span>
-                    <h4 class="mt-2" id="questionWord">${question.word}</h4>
                 </div>
+
                 <div class="mt-3">
                     <button id="hintButton" class="btn btn-outline-secondary">
-                        <i class="fas fa-lightbulb me-1"></i> ヒントを見る
+                        <i class="fas fa-lightbulb me-1"></i> ヒントを見る (カテゴリ)
                     </button>
                 </div>
             </div>
@@ -174,39 +179,48 @@ $(document).ready(function() {
         $(document).on('click touchstart', '.answer-card', function(e) {
             e.preventDefault();
             e.stopPropagation();
-            console.log('回答選択:', $(this).data('answer'));
-            if (!window.audioContext) initAudioContext();
-            const selectedAnswer = $(this).data('answer');
-            const correctAnswer = window.words[currentQuestion].ruby || window.words[currentQuestion].meaning;
-            const $card = $(this);
 
+            const $card = $(this);
+            if ($card.hasClass('disabled')) return;
+
+            if (!window.audioContext) initAudioContext();
             $('.answer-card, #hintButton').off('click touchstart').addClass('disabled');
 
+            const selectedAnswer = $(this).data('answer');
+            const questionData = window.words[currentQuestion];
+            const correctAnswer = questionData.ruby || questionData.meaning;
+            const correctAnswerEn = questionData.word;
+            const isCorrect = selectedAnswer === correctAnswer;
+
             // 正解・不正解の判定
-            if (selectedAnswer === correctAnswer) {
+            if (isCorrect) {
                 $card.addClass('correct');
                 playCorrectSound();
                 if (navigator.vibrate) navigator.vibrate([200, 100, 200]);
+                updateStats(questionData, true);
 
                 if (isReviewMode) {
                     // --- 復習モードの正解処理 ---
                     updateProgress(true); // 先に進捗を更新
-                    // 復習モードでも単語の正解統計は更新する
-                    updateStats(window.words[currentQuestion], true);
                     if (currentQuestion + 1 >= window.words.length) {
                         // 全問正解で復習完了
                         levelUpOccurred = true; // 完了画面表示用のフラグ
                         showFeedback('復習完了！', '間違えた問題をすべてクリアしました！');
                     } else {
-                        setTimeout(handleNextQuestion, 1500);
+                        const feedbackBody = `
+                            <div class="text-center">
+                                <h4 class="text-success">正解！</h4>
+                                <p class="fs-5 fw-bold my-3">"${correctAnswerEn}"</p>
+                                <p class="text-muted">(${correctAnswer})</p>
+                            </div>
+                        `;
+                        showFeedback('正解です！', feedbackBody);
                     }
                 } else {
                     // --- 通常モードの正解処理 ---
                     const points = hintUsed ? 1 : 2;
                     score += points;
                     updateProgress(); // UIを更新
-                    // 通常モードの正解統計を更新
-                    updateStats(window.words[currentQuestion], true);
                     showToast(`正解！ +${points}点`, 'success');
 
                     // レベルアップ判定
@@ -214,16 +228,18 @@ $(document).ready(function() {
                         levelUpOccurred = true;
                         currentLevel++;
                         score = 0; // スコアをリセット
-
-                        // 1. レベルを永続化
                         localStorage.setItem(LEVEL_STORAGE_KEY, currentLevel);
-                        // 2. 効果音を再生
                         levelUpSound.play().catch(e => console.error("Audio play failed:", e));
-                        // 3. フィードバックを表示
                         showFeedback(`レベルアップ！🎉 Level ${currentLevel}達成！`, `おめでとうございます！<br>次のレベルに進みます！`);
                     } else {
-                        // レベルアップしない場合は、次の問題へ
-                        setTimeout(handleNextQuestion, 1500);
+                        const feedbackBody = `
+                            <div class="text-center">
+                                <h4 class="text-success">正解！</h4>
+                                <p class="fs-5 fw-bold my-3">"${correctAnswerEn}"</p>
+                                <p class="text-muted">(${correctAnswer})</p>
+                            </div>
+                        `;
+                        showFeedback('正解です！', feedbackBody);
                     }
                 }
             } else {
@@ -231,64 +247,38 @@ $(document).ready(function() {
                 $card.addClass('incorrect');
                 playIncorrectSound();
                 if (navigator.vibrate) navigator.vibrate([100, 50, 100]);
-                if (!isReviewMode && !incorrectQuestions.some(q => q.word === window.words[currentQuestion].word)) {
-                    incorrectQuestions.push(window.words[currentQuestion]);
+                if (!isReviewMode && !incorrectQuestions.some(q => q.word === questionData.word)) {
+                    incorrectQuestions.push(questionData);
                 }
-                // 不正解の統計を更新
-                updateStats(window.words[currentQuestion], false);
-                const feedbackBody = `"${window.words[currentQuestion].word}" は <strong>"${correctAnswer}"</strong> です、<br>"${selectedAnswer}" ではありません！`;
-                showFeedback('おっと！もう一度挑戦！😉', feedbackBody);
+                updateStats(questionData, false);
+                
+                // 正解のカードをハイライト
+                $(`.answer-card[data-answer="${correctAnswer}"]`).addClass('correct');
+
+                const feedbackBody = `
+                    <div class="text-center">
+                        <p>あなたの回答: <br><span class="text-danger fw-bold">"${selectedAnswer}"</span></p>
+                        <hr>
+                        <p>正解は...<br><strong class="fs-5">"${correctAnswerEn}"</strong><br><small class="text-muted">(${correctAnswer})</small></p>
+                    </div>
+                `;
+                showFeedback('残念！', feedbackBody);
             }
         });
+        // 新しい音声再生ボタンのイベント
+        $(document).on('click', '#playQuestionSound', function() {
+            const $button = $(this);
+            const $card = $button.closest('.question-card');
+            const word = $card.data('word');
+            const audioFile = $card.data('audio-file');
 
-        $(document).on('click touchstart', '.vocab-icon', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            const $icon = $(this);
-
-            console.log('アイコンタップ検知');
-            const word = $(this).data('word');
-            console.log('タップされた単語:', word, 'speechEnabled:', window.speechEnabled, 'speechSynthesis:', !!window.speechSynthesis);
-
-            $icon.addClass('speaking vocab-icon-spin');
-            speakWord(word, {
-                caller: 'vocab-icon',
-                lang: 'en-GB',
-                onEnd: () => $icon.removeClass('speaking vocab-icon-spin'),
-                onError: () => {
-                    $icon.removeClass('speaking vocab-icon-spin');
-                }
-            });
-        });
-
-        $(document).on('click touchstart', '.sound-icon', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            const $icon = $(this);
-
-            console.log('音声ボタンタップ');
-            const word = $(this).data('word');
-            console.log('タップされた単語:', word, 'speechEnabled:', window.speechEnabled, 'speechSynthesis:', !!window.speechSynthesis);
-
-            $icon.addClass('speaking');
-            speakWord(word, {
-                audioFile: currentQuestionData.audio_file,
-                caller: 'sound-icon',
-                lang: 'en-GB',
-                onEnd: () => $icon.removeClass('speaking'),
-                onError: () => {
-                    $icon.removeClass('speaking');
-                }
-            });
-        });
-
-        $(document).on('click', '#testSpeechButton', function(e) {
-            e.preventDefault();
-            console.log('音声テストボタンクリック');
-            speakWord('Hello, welcome to the quiz', { caller: 'test-button', lang: 'en-GB' });
-            showToast('音声テストを実行中: en-GB', 'info');
+            if (word) {
+                speakWord(word, {
+                    audioFile: audioFile,
+                    caller: 'quiz-sound-button',
+                    lang: 'en-GB'
+                });
+            }
         });
 
         $(document).on('click', '#nextQuestionButton', function(e) {
@@ -307,13 +297,14 @@ $(document).ready(function() {
         $(document).on('click', '#reviewButton', startReview);
 
         $('#feedbackModal').on('hidden.bs.modal', function() {
-            console.log('モーダル閉じ検知');
             if (levelUpOccurred) {
                 showCompletionScreen();
                 levelUpOccurred = false; // フラグをリセット
-            } else if ($('#quizContainer').find('#nextChallengeButton, #reviewButton').length === 0) {
+            } else {
                 // クイズ完了画面が表示されていない場合のみ次の問題へ
-                handleNextQuestion();
+                if ($('#quizContainer').find('#nextChallengeButton, #reviewButton').length === 0) {
+                    handleNextQuestion();
+                }
             }
         });
     }
