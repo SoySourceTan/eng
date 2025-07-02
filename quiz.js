@@ -111,10 +111,9 @@ $(document).ready(function() {
         const icon = question.icon || (window.defaultIcons && window.defaultIcons[question.category]) || 'mdi:help-circle-outline';
         const iconStyle = question.color ? `style="color: ${question.color}"` : '';
         $('#quizContainer').append(`
-            <div class="question-card text-center" data-word="${question.word}">
+            <div class="question-card text-center" data-word="${question.word}" data-audio-file="${question.audio_file || ''}">
                 <p class="lead">この単語は何でしょう？</p>
                 <div class="my-3">
-                    <i class="fas fa-volume-up sound-icon" data-word="${question.word}" style="font-size: 3rem; cursor: pointer;"></i>
                 </div>
                 <div id="hint-area" style="min-height: 7rem;">
                     <span class="vocab-icon iconify" data-icon="${icon}" ${iconStyle} style="font-size: 4rem;"></span>
@@ -153,6 +152,7 @@ $(document).ready(function() {
             const currentQuestionData = window.words[currentQuestion];
             if (currentQuestionData && currentQuestionData.word) {
                 speakWord(currentQuestionData.word, {
+                    audioFile: currentQuestionData.audio_file,
                     caller: 'auto-play',
                     lang: 'en-GB'
                 });
@@ -274,6 +274,7 @@ $(document).ready(function() {
 
             $icon.addClass('speaking');
             speakWord(word, {
+                audioFile: currentQuestionData.audio_file,
                 caller: 'sound-icon',
                 lang: 'en-GB',
                 onEnd: () => $icon.removeClass('speaking'),

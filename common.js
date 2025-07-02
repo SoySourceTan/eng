@@ -252,7 +252,7 @@ function speakWord(word, options = {}) {
 
 function loadData(callback) {
     console.log('データ読み込み開始');
-    fetch(`kidswords.json?v=${new Date().getTime()}`)
+    fetch(`kidswords_with_audio.json?v=${new Date().getTime()}`)
         .then(response => {
             console.log('読み込み結果:', response);
             if (!response.ok) {
