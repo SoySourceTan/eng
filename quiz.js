@@ -174,39 +174,47 @@ $(document).ready(function() {
         $(document).on('click touchstart', '.answer-card', function(e) {
             e.preventDefault();
             e.stopPropagation();
-            console.log('回答選択:', $(this).data('answer'));
             if (!window.audioContext) initAudioContext();
-            const selectedAnswer = $(this).data('answer');
-            const correctAnswer = window.words[currentQuestion].ruby || window.words[currentQuestion].meaning;
             const $card = $(this);
+            if ($card.hasClass('disabled')) return;
 
             $('.answer-card, #hintButton').off('click touchstart').addClass('disabled');
 
+            const selectedAnswer = $(this).data('answer');
+            const questionData = window.words[currentQuestion];
+            const correctAnswer = window.words[currentQuestion].ruby || window.words[currentQuestion].meaning;
+            const correctAnswerEn = questionData.word;
+            const isCorrect = selectedAnswer === correctAnswer;
+
             // 正解・不正解の判定
-            if (selectedAnswer === correctAnswer) {
+            if (isCorrect) {
                 $card.addClass('correct');
                 playCorrectSound();
                 if (navigator.vibrate) navigator.vibrate([200, 100, 200]);
+                updateStats(questionData, true);
 
                 if (isReviewMode) {
                     // --- 復習モードの正解処理 ---
                     updateProgress(true); // 先に進捗を更新
-                    // 復習モードでも単語の正解統計は更新する
-                    updateStats(window.words[currentQuestion], true);
                     if (currentQuestion + 1 >= window.words.length) {
                         // 全問正解で復習完了
                         levelUpOccurred = true; // 完了画面表示用のフラグ
                         showFeedback('復習完了！', '間違えた問題をすべてクリアしました！');
                     } else {
-                        setTimeout(handleNextQuestion, 1500);
+                        const feedbackBody = `
+                            <div class="text-center">
+                                <h4 class="text-success">正解！</h4>
+                                <p class="fs-5 fw-bold my-3">"${correctAnswerEn}"</p>
+                                <p class="text-muted">(${correctAnswer})</p>
+                            </div>
+                        `;
+                        showFeedback('正解です！', feedbackBody);
                     }
                 } else {
                     // --- 通常モードの正解処理 ---
                     const points = hintUsed ? 1 : 2;
                     score += points;
                     updateProgress(); // UIを更新
-                    // 通常モードの正解統計を更新
-                    updateStats(window.words[currentQuestion], true);
                     showToast(`正解！ +${points}点`, 'success');
 
                     // レベルアップ判定
@@ -214,16 +222,18 @@ $(document).ready(function() {
                         levelUpOccurred = true;
                         currentLevel++;
                         score = 0; // スコアをリセット
-
-                        // 1. レベルを永続化
                         localStorage.setItem(LEVEL_STORAGE_KEY, currentLevel);
-                        // 2. 効果音を再生
                         levelUpSound.play().catch(e => console.error("Audio play failed:", e));
-                        // 3. フィードバックを表示
                         showFeedback(`レベルアップ！🎉 Level ${currentLevel}達成！`, `おめでとうございます！<br>次のレベルに進みます！`);
                     } else {
-                        // レベルアップしない場合は、次の問題へ
-                        setTimeout(handleNextQuestion, 1500);
+                        const feedbackBody = `
+                            <div class="text-center">
+                                <h4 class="text-success">正解！</h4>
+                                <p class="fs-5 fw-bold my-3">"${correctAnswerEn}"</p>
+                                <p class="text-muted">(${correctAnswer})</p>
+                            </div>
+                        `;
+                        showFeedback('正解です！', feedbackBody);
                     }
                 }
             } else {
@@ -231,13 +241,22 @@ $(document).ready(function() {
                 $card.addClass('incorrect');
                 playIncorrectSound();
                 if (navigator.vibrate) navigator.vibrate([100, 50, 100]);
-                if (!isReviewMode && !incorrectQuestions.some(q => q.word === window.words[currentQuestion].word)) {
-                    incorrectQuestions.push(window.words[currentQuestion]);
+                if (!isReviewMode && !incorrectQuestions.some(q => q.word === questionData.word)) {
+                    incorrectQuestions.push(questionData);
                 }
-                // 不正解の統計を更新
-                updateStats(window.words[currentQuestion], false);
-                const feedbackBody = `"${window.words[currentQuestion].word}" は <strong>"${correctAnswer}"</strong> です、<br>"${selectedAnswer}" ではありません！`;
-                showFeedback('おっと！もう一度挑戦！😉', feedbackBody);
+                updateStats(questionData, false);
+                
+                // 正解のカードをハイライト
+                $(`.answer-card[data-answer="${correctAnswer}"]`).addClass('correct');
+
+                const feedbackBody = `
+                    <div class="text-center">
+                        <p>あなたの回答: <br><span class="text-danger fw-bold">"${selectedAnswer}"</span></p>
+                        <hr>
+                        <p>正解は...<br><strong class="fs-5">"${correctAnswerEn}"</strong><br><small class="text-muted">(${correctAnswer})</small></p>
+                    </div>
+                `;
+                showFeedback('残念！', feedbackBody);
             }
         });
 
