@@ -144,11 +144,16 @@ $(document).ready(function() {
         $('.answer-card').addClass('disabled');
         const selectedAnswer = $card.data('answer');
         const currentPhrase = currentPhrases[currentQuestionIndex];
-        const correctAnswer = (difficulty === 'easy') ? currentPhrase.phrase_en : currentPhrase.phrase_ja;
+        const correctAnswerEn = currentPhrase.phrase_en;
+        const correctAnswerJa = currentPhrase.phrase_ja;
+        const situation = currentPhrase.situation;
         const itemKey = currentPhrase.phrase_en;
         const itemData = { category: currentPhrase.category || 'phrasal_verb' };
 
-        if (selectedAnswer === correctAnswer) {
+        const correctAnswer = (difficulty === 'easy') ? correctAnswerEn : correctAnswerJa;
+        const isCorrect = selectedAnswer === correctAnswer;
+
+        if (isCorrect) {
             $card.addClass('correct');
             playCorrectSound();
             correctAnswersCount++;
@@ -164,14 +169,37 @@ $(document).ready(function() {
                 // レベルアップを通知するフィードバックモーダルを表示
                 showFeedback(`レベルアップ！🎉 Level ${currentLevel}達成！`, `おめでとうございます！`);
             } else {
-                setTimeout(handleNextQuestion, 1500);
+                // 通常の正解時もフィードバックモーダルを表示
+                const feedbackBody = `
+                    <div class="text-center">
+                        <h4 class="text-success">正解！</h4>
+                        <p class="fs-5 fw-bold my-3">"${correctAnswerEn}"</p>
+                        <p class="text-muted">(${correctAnswerJa})</p>
+                        <hr>
+                        <p class="text-start small"><strong>使われる状況：</strong><br>${situation || '解説はありません。'}</p>
+                    </div>
+                `;
+                showFeedback('正解です！', feedbackBody);
             }
         } else {
             $card.addClass('incorrect');
             playIncorrectSound();
-            const feedbackBody = `正解は <strong>"${correctAnswer}"</strong> でした。<br><hr><em>"${currentPhrase.phrase_en}"</em>: ${currentPhrase.phrase_ja}`;
             updateLearningStats('phrasalVerbQuiz', itemKey, itemData, false);
-            showFeedback('残念！もう一度挑戦！', feedbackBody);
+            // 正解のカードをハイライト
+            $(`.answer-card[data-answer="${correctAnswer}"]`).addClass('correct');
+
+            // 不正解時のフィードバックモーダル
+            const yourAnswerText = (difficulty === 'hard') ? selectedAnswer : `"${selectedAnswer}"`;
+            const feedbackBody = `
+                <div class="text-center">
+                    <p>あなたの回答: <br><span class="text-danger fw-bold">${yourAnswerText}</span></p>
+                    <hr>
+                    <p>正解は...<br><strong class="fs-5">"${correctAnswerEn}"</strong><br><small class="text-muted">(${correctAnswerJa})</small></p>
+                    <hr>
+                    <p class="text-start small"><strong>使われる状況：</strong><br>${situation || '解説はありません。'}</p>
+                </div>
+            `;
+            showFeedback('残念！', feedbackBody);
         }
     }
 
