@@ -22,7 +22,6 @@ $(document).ready(function() {
 
             const $card = $(this);
             const $icon = $card.find('.vocab-icon');
-
             const textToSpeak = $(this).data(dataAttribute);
             const audioFile = $(this).data('audio-file'); // 音声ファイルパスを取得
 
@@ -30,15 +29,23 @@ $(document).ready(function() {
                 console.error('単語データが見つかりません', this);
                 return;
             }
-            console.log(`音声アイコンクリック: ${textToSpeak}`);
 
-            $icon.addClass('speaking vocab-icon-spin');
+            // もしすでに回転中なら、何もしないごつする
+            if ($icon.hasClass('vocab-icon-spin')) {
+                return;
+            }
+
+            // 回転クラスを追加してアニメーションば開始するたい
+            $icon.addClass('vocab-icon-spin');
+
+            // 'animationend' イベントば一回だけ聞くごつする。アニメーションが終わったらクラスば削除するけんね
+            $icon.one('animationend', () => {
+                $icon.removeClass('vocab-icon-spin');
+            });
 
             speakWord(textToSpeak, {
-                audioFile: audioFile, // 音声ファイルパスを渡す
-                caller: 'index-sound-icon',
-                onEnd: () => $icon.removeClass('speaking vocab-icon-spin'),
-                onError: () => $icon.removeClass('speaking vocab-icon-spin')
+                audioFile: audioFile,
+                caller: 'index-sound-icon'
             });
         });
 

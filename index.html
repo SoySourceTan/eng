@@ -17,6 +17,22 @@
         }
         document.write(`<link rel="stylesheet" href="styles.css?v=${new Date().getTime()}">`);
     </script>
+    <!-- Undertale Easter Egg Style -->
+    <style>
+        @font-face {
+            font-family: 'Determination Mono';
+            src: url('https://cdn.jsdelivr.net/gh/alterblu/life-is-a-game-font@master/fonts/Determination%20Mono.ttf');
+        }
+        .easter-egg-trigger {
+            transition: opacity 0.3s ease-in-out;
+        }
+        .easter-egg-trigger:hover {
+            opacity: 0.8 !important;
+        }
+        #undertaleModal .modal-content { background-color: #000; border: 2px solid #fff; color: #fff; }
+        #undertaleModal .modal-title, #undertaleModal .modal-body p { font-family: 'Determination Mono', monospace; }
+        #undertaleModal .modal-body img { image-rendering: pixelated; /* GIFのドット絵をきれいに見せる */ }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg">
@@ -25,6 +41,9 @@
             <a href="clear-cache.html" class="btn btn-sm btn-outline-warning ms-2" title="キャッシュクリア">
                 <i class="fas fa-broom"></i>
             </a>
+            <button class="btn btn-sm easter-egg-trigger ms-2" style="opacity: 0.1;" title="???" data-bs-toggle="modal" data-bs-target="#undertaleModal">
+                <i class="fas fa-heart text-danger"></i>
+            </button>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -75,7 +94,7 @@
     </div>
 
     <!-- Sticky Footer Navigation for Mobile -->
-    <nav class="category-nav-footer fixed-bottom bg-light border-top d-lg-none">
+    <nav class="category-nav-footer fixed-bottom bg-light border-top">
         <div class="container-fluid h-100">
             <div class="d-flex align-items-center h-100">
                 <!-- Mode Toggle -->
@@ -95,6 +114,10 @@
                 <div id="categoryNavContainer" class="d-flex align-items-center h-100 flex-grow-1">
                     <!-- Category icons will be inserted here by JS -->
                 </div>
+                <!-- Easter Egg Trigger -->
+                <button class="btn btn-sm easter-egg-trigger" style="opacity: 0.1;" title="???" data-bs-toggle="modal" data-bs-target="#undertaleModal">
+                    <i class="fas fa-heart text-danger"></i>
+                </button>
             </div>
         </div>
     </nav>
@@ -103,6 +126,27 @@
     <a href="#" class="btn btn-primary back-to-top shadow" role="button" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </a>
+
+    <!-- Undertale Modal -->
+    <div class="modal fade" id="undertaleModal" tabindex="-1" aria-labelledby="undertaleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title" id="undertaleModalLabel">* A strange door appeared.</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p>* You hear a faint, funky music...</p>
+                    <div class="d-flex justify-content-around align-items-end flex-wrap p-3">
+                        <img src="images/undyne_dance.gif" alt="Undyne dancing" style="height: 150px;" title="Undyne">
+                        <img src="images/toriel_dance.gif" alt="Toriel dancing" style="height: 160px;" title="Toriel">
+                        <img src="images/sans_dance.gif" alt="Sans dancing" style="height: 120px;" title="Sans">
+                        <img src="images/papyrus_dance.gif" alt="Papyrus dancing" style="height: 180px;" title="Papyrus">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -115,6 +159,18 @@
         const version = new Date().getTime();
         document.write(`<script src="common.js?v=${version}"><\/script>`);
         document.write(`<script src="index.js?v=${version}"><\/script>`);
+    </script>
+    <!-- Easter Egg Script -->
+    <script>
+        $(document).ready(function() {
+            // モーダルが表示されたらGIFをリロードしてアニメーションを最初から再生
+            $('#undertaleModal').on('show.bs.modal', function () {
+                $(this).find('img').each(function() {
+                    const originalSrc = $(this).attr('src').split('?')[0];
+                    $(this).attr('src', originalSrc + '?' + new Date().getTime());
+                });
+            });
+        });
     </script>
 </body>
 </html>
