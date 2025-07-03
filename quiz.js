@@ -26,6 +26,7 @@ $(document).ready(function() {
     let allWords = []; // 元の単語リストを保持
     let levelUpOccurred = false; // レベルアップしたかを判定するフラグ
     let hintUsed = false;
+    let difficulty = 'normal'; // 'normal' or 'hard'
 
     function startReview() {
         if (incorrectQuestions.length === 0) return;
@@ -107,26 +108,43 @@ $(document).ready(function() {
         const answers = [correctAnswer, ...wrongAnswers].sort(() => Math.random() - 0.5);
 
         $('#quizContainer').empty();
-        // 単語のアイコンがあればそれを使い、なければカテゴリのデフォルトアイコンを使う
         const icon = question.icon || (window.defaultIcons && window.defaultIcons[question.category]) || 'mdi:help-circle-outline';
         const iconStyle = question.color ? `style="color: ${question.color}"` : '';
+
+        let questionWordHtml;
+        let hintSectionHtml;
+        let hintButtonText;
+
+        if (difficulty === 'hard') {
+            questionWordHtml = `
+                <h2 class="display-5 fw-bold mb-0" id="questionWord" style="display: none;">${question.word}</h2>
+                <p class="lead" id="hard-mode-text">音声を聞いてください</p>
+            `;
+            // Hardモードではアイコンは最初から表示（ぼかしなし）
+            hintSectionHtml = `<div class="d-flex flex-column align-items-center" style="min-height: 5rem;"><span class="vocab-icon iconify" data-icon="${icon}" ${iconStyle} style="font-size: 4rem;"></span></div>`;
+            hintButtonText = '英単語を見る';
+        } else { // normal
+            questionWordHtml = `<h2 class="display-5 fw-bold mb-0">${question.word}</h2>`;
+            // Normalモードではアイコンはぼかす
+            hintSectionHtml = `<div id="hint-area" class="d-flex flex-column align-items-center" style="min-height: 5rem;"><span class="vocab-icon iconify" data-icon="${icon}" ${iconStyle} style="font-size: 4rem;"></span></div>`;
+            hintButtonText = 'ヒントを見る';
+        }
+
         $('#quizContainer').append(`
             <div class="question-card text-center" data-word="${question.word}" data-audio-file="${question.audio_file || ''}">
                 <p class="lead">この単語は何でしょう？</p>
                 <div class="my-4 d-flex justify-content-center align-items-center">
-                    <h2 class="display-5 fw-bold mb-0">${question.word}</h2>
+                    ${questionWordHtml}
                     <button id="playQuestionSound" class="btn btn-link text-secondary p-0 ms-3" style="font-size: 2.5rem; line-height: 1;" title="音声を聞く">
                         <i class="fas fa-volume-up"></i>
                     </button>
                 </div>
 
-                <div id="hint-area" class="d-flex flex-column align-items-center" style="min-height: 5rem;">
-                    <span class="vocab-icon iconify" data-icon="${icon}" ${iconStyle} style="font-size: 4rem;"></span>
-                </div>
+                ${hintSectionHtml}
 
                 <div class="mt-3">
                     <button id="hintButton" class="btn btn-outline-secondary">
-                        <i class="fas fa-lightbulb me-1"></i> ヒントを見る
+                        <i class="fas fa-lightbulb me-1"></i> ${hintButtonText}
                     </button>
                 </div>
             </div>
@@ -143,8 +161,10 @@ $(document).ready(function() {
                 </button>
             </div>
         `);
-        // 前の問題で表示されたヒントの revealed クラスを削除し、ぼかし状態に戻す
-        $('#hint-area').removeClass('revealed');
+        // Normalモードの場合のみ、ヒントエリアのぼかしをリセット
+        if (difficulty === 'normal') {
+            $('#hint-area').removeClass('revealed');
+        }
 
         console.log('アイコン生成確認:', $('.vocab-icon').length, $('.vocab-icon').data('word'));
 
@@ -171,7 +191,14 @@ $(document).ready(function() {
         // ヒントボタンのイベント
         $(document).on('click', '#hintButton', function() {
             hintUsed = true;
-            $('#hint-area').addClass('revealed');
+            if (difficulty === 'hard') {
+                // Hardモード: 英単語を表示
+                $('#questionWord').show();
+                $('#hard-mode-text').hide();
+            } else {
+                // Normalモード: アイコンのぼかしを解除
+                $('#hint-area').addClass('revealed');
+            }
             $(this).prop('disabled', true).addClass('disabled');
             showToast('ヒントを使用しました (正解で+1点)', 'info');
         });
@@ -472,12 +499,21 @@ $(document).ready(function() {
     const startModal = new bootstrap.Modal('#startModal');
     const startGameButton = $('#startGameButton');
 
+    // 難易度選択の説明を更新
+    $('input[name="difficulty"]').on('change', function() {
+        const desc = $(this).val() === 'hard' 
+            ? 'HARD: 音声だけを聞いて、日本語の意味を選びます。ヒントで英単語が表示されます。'
+            : 'NORMAL: 英単語を見て、日本語の意味を選びます。';
+        $('#difficulty-description').text(desc);
+    });
+
     // ページ読み込み時にモーダルを表示
     displayStats();
     startModal.show();
 
     // 「ゲームを始める」ボタンがクリックされたらクイズを開始
     startGameButton.on('click', function() {
+        difficulty = $('input[name="difficulty"]:checked').val();
         // データの読み込みとクイズの初期化
         loadData(function(data) {
             allWords = data; // 元のデータを保持

@@ -106,8 +106,19 @@
                     <h5 class="modal-title" id="startModalLabel">単語クイズへようこそ！</h5>
                 </div>
                 <div class="modal-body">
-                    <p>準備ができたら下のボタンを押してクイズを開始してください。</p>
-                    <p class="small text-muted">音声が再生されますので、音量にご注意ください。</p>
+                    <div class="my-3">
+                        <label class="form-label fw-bold">難易度を選択してください:</label>
+                        <div class="btn-group w-100" role="group" aria-label="Difficulty selection">
+                            <input type="radio" class="btn-check" name="difficulty" id="difficulty-normal" value="normal" autocomplete="off" checked>
+                            <label class="btn btn-outline-primary" for="difficulty-normal">NORMAL</label>
+
+                            <input type="radio" class="btn-check" name="difficulty" id="difficulty-hard" value="hard" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="difficulty-hard">HARD</label>
+                        </div>
+                        <div class="form-text mt-2" id="difficulty-description">
+                            NORMAL: 英単語を見て、日本語の意味を選びます。
+                        </div>
+                    </div>
                     <div id="stats-area" class="mt-4 p-3 bg-light rounded" style="display: none;">
                         <h6 class="text-center mb-3 fw-bold"><i class="fas fa-chart-line me-2"></i>学習の記録</h6>
                         <div id="stats-content" class="small">
