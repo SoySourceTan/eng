@@ -275,14 +275,29 @@ $(document).ready(function() {
         Iconify.scan();
     }
 
+    function updateButtonStyles(selectedId) {
+        // すべてのモードボタンのラベルから 'btn-primary' を削除し、'btn-outline-primary' を追加
+        $('label[for^="mode-"]').removeClass('btn-primary').addClass('btn-outline-primary');
+
+        // 選択されたIDに基づいて、対応するラベルに 'btn-primary' を追加
+        const baseId = selectedId.replace('-desktop', '');
+        $(`label[for="${baseId}"], label[for="${baseId}-desktop"]`)
+            .removeClass('btn-outline-primary')
+            .addClass('btn-primary');
+    }
+
     $('input[name="mode-toggle"]').on('change', function() {
         const selectedId = this.id;
-        let selectedMode = 'words'; // default
-        if (selectedId.includes('phrases')) selectedMode = 'phrases';
-        if (selectedId.includes('phrasal-verbs')) selectedMode = 'phrasal_verbs';
+        let selectedMode = 'words';
 
-        // モバイル用とデスクトップ用の両方のボタンの状態を同期させる
-        $(`input[id*="${selectedMode}"]`).prop('checked', true);
+        if (selectedId.includes('phrasal-verbs')) {
+            selectedMode = 'phrasal_verbs';
+        } else if (selectedId.includes('phrases')) {
+            selectedMode = 'phrases';
+        }
+
+        // ボタンの見た目を更新
+        updateButtonStyles(selectedId);
 
         switchMode(selectedMode);
     });
@@ -297,7 +312,10 @@ $(document).ready(function() {
         wordsData = words;
         phrasesData = phrases;
         phrasalVerbsData = phrasalVerbs;
-        switchMode('words'); // 初期表示は単語モード
+
+        // 初期表示は単語モード（HTML側でcheckedとbtn-primaryが設定されているのでJSでの初期化は不要）
+        switchMode('words');
+
         bindNavEvents();
         bindCheckboxEvents();
     }).catch(error => {
